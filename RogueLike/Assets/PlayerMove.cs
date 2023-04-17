@@ -27,7 +27,11 @@ public class PlayerMove : MonoBehaviour
         animate.horizontal = movementVector.x;
 
         movementVector *= speed;
-
         rgbd2d.velocity = movementVector;
+
+    }
+
+    private void FixedUpdate()
+    {
     }
 }
