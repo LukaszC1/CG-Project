@@ -19,7 +19,13 @@ MonoBehaviour:
     width: 1920
     height: 989
   m_ShowMode: 4
+<<<<<<< Updated upstream
   m_Title: Hierarchy
+||||||| Stash base
+  m_Title: Project
+=======
+  m_Title: Scene
+>>>>>>> Stashed changes
   m_RootView: {fileID: 6}
   m_MinSize: {x: 875, y: 300}
   m_MaxSize: {x: 10000, y: 10000}
@@ -43,12 +49,30 @@ MonoBehaviour:
     serializedVersion: 2
     x: 0
     y: 30
+<<<<<<< Updated upstream
     width: 1920
     height: 939
   m_MinSize: {x: 300, y: 200}
   m_MaxSize: {x: 24288, y: 16192}
+||||||| Stash base
+    width: 1904
+    height: 923
+  m_MinSize: {x: 679, y: 492}
+  m_MaxSize: {x: 14002, y: 14042}
+=======
+    width: 1920
+    height: 939
+  m_MinSize: {x: 679, y: 492}
+  m_MaxSize: {x: 14002, y: 14042}
+>>>>>>> Stashed changes
   vertical: 0
+<<<<<<< Updated upstream
   controlID: 23
+||||||| Stash base
+  controlID: 99
+=======
+  controlID: 39
+>>>>>>> Stashed changes
 --- !u!114 &3
 MonoBehaviour:
   m_ObjectHideFlags: 52
@@ -64,11 +88,27 @@ MonoBehaviour:
   m_Children: []
   m_Position:
     serializedVersion: 2
+<<<<<<< Updated upstream
     x: 1493
+||||||| Stash base
+    x: 1454
+=======
+    x: 1466
+>>>>>>> Stashed changes
     y: 0
+<<<<<<< Updated upstream
     width: 427
     height: 939
   m_MinSize: {x: 241, y: 221}
+||||||| Stash base
+    width: 450
+    height: 923
+  m_MinSize: {x: 276, y: 71}
+=======
+    width: 454
+    height: 939
+  m_MinSize: {x: 276, y: 71}
+>>>>>>> Stashed changes
   m_MaxSize: {x: 4001, y: 4021}
   m_ActualView: {fileID: 12}
   m_Panes:
@@ -93,8 +133,16 @@ MonoBehaviour:
     serializedVersion: 2
     x: 0
     y: 0
+<<<<<<< Updated upstream
     width: 348
     height: 577
+||||||| Stash base
+    width: 360
+    height: 547
+=======
+    width: 363
+    height: 556
+>>>>>>> Stashed changes
   m_MinSize: {x: 201, y: 221}
   m_MaxSize: {x: 4001, y: 4021}
   m_ActualView: {fileID: 16}
@@ -118,9 +166,19 @@ MonoBehaviour:
   m_Position:
     serializedVersion: 2
     x: 0
+<<<<<<< Updated upstream
     y: 577
     width: 1493
     height: 362
+||||||| Stash base
+    y: 547
+    width: 1454
+    height: 376
+=======
+    y: 556
+    width: 1466
+    height: 383
+>>>>>>> Stashed changes
   m_MinSize: {x: 231, y: 271}
   m_MaxSize: {x: 10001, y: 10021}
   m_ActualView: {fileID: 14}
@@ -219,12 +277,30 @@ MonoBehaviour:
     serializedVersion: 2
     x: 0
     y: 0
+<<<<<<< Updated upstream
     width: 1493
     height: 939
   m_MinSize: {x: 200, y: 200}
   m_MaxSize: {x: 16192, y: 16192}
+||||||| Stash base
+    width: 1454
+    height: 923
+  m_MinSize: {x: 403, y: 492}
+  m_MaxSize: {x: 10001, y: 14042}
+=======
+    width: 1466
+    height: 939
+  m_MinSize: {x: 403, y: 492}
+  m_MaxSize: {x: 10001, y: 14042}
+>>>>>>> Stashed changes
   vertical: 1
+<<<<<<< Updated upstream
   controlID: 24
+||||||| Stash base
+  controlID: 100
+=======
+  controlID: 56
+>>>>>>> Stashed changes
 --- !u!114 &10
 MonoBehaviour:
   m_ObjectHideFlags: 52
@@ -244,12 +320,30 @@ MonoBehaviour:
     serializedVersion: 2
     x: 0
     y: 0
+<<<<<<< Updated upstream
     width: 1493
     height: 577
   m_MinSize: {x: 200, y: 100}
   m_MaxSize: {x: 16192, y: 8096}
+||||||| Stash base
+    width: 1454
+    height: 547
+  m_MinSize: {x: 403, y: 221}
+  m_MaxSize: {x: 8003, y: 4021}
+=======
+    width: 1466
+    height: 556
+  m_MinSize: {x: 403, y: 221}
+  m_MaxSize: {x: 8003, y: 4021}
+>>>>>>> Stashed changes
   vertical: 0
+<<<<<<< Updated upstream
   controlID: 25
+||||||| Stash base
+  controlID: 101
+=======
+  controlID: 45
+>>>>>>> Stashed changes
 --- !u!114 &11
 MonoBehaviour:
   m_ObjectHideFlags: 52
@@ -265,10 +359,24 @@ MonoBehaviour:
   m_Children: []
   m_Position:
     serializedVersion: 2
+<<<<<<< Updated upstream
     x: 348
+||||||| Stash base
+    x: 360
+=======
+    x: 363
+>>>>>>> Stashed changes
     y: 0
+<<<<<<< Updated upstream
     width: 1145
     height: 577
+||||||| Stash base
+    width: 1094
+    height: 547
+=======
+    width: 1103
+    height: 556
+>>>>>>> Stashed changes
   m_MinSize: {x: 202, y: 221}
   m_MaxSize: {x: 4002, y: 4021}
   m_ActualView: {fileID: 18}
@@ -433,10 +541,22 @@ MonoBehaviour:
     m_Tooltip: 
   m_Pos:
     serializedVersion: 2
+<<<<<<< Updated upstream
     x: 0
     y: 650
     width: 1492
     height: 341
+||||||| Stash base
+    x: 8
+    y: 628
+    width: 1453
+    height: 355
+=======
+    x: 0
+    y: 629
+    width: 1465
+    height: 362
+>>>>>>> Stashed changes
   m_ViewDataDictionary: {fileID: 0}
   m_OverlayCanvas:
     m_LastAppliedPresetName: Default
@@ -455,22 +575,32 @@ MonoBehaviour:
     m_SkipHidden: 0
     m_SearchArea: 1
     m_Folders:
-    - Assets
+    - Packages/com.unity.render-pipelines.core
     m_Globs: []
     m_OriginalText: 
   m_ViewMode: 1
   m_StartGridSize: 64
   m_LastFolders:
-  - Assets
+  - Packages/com.unity.render-pipelines.core
   m_LastFoldersGridSize: -1
   m_LastProjectPath: C:\Users\meduz\OneDrive\Documents\CG-Project\RogueLike
   m_LockTracker:
     m_IsLocked: 0
   m_FolderTreeState:
     scrollPos: {x: 0, y: 0}
+<<<<<<< Updated upstream
     m_SelectedIDs: 36840000
     m_LastClickedID: 33846
     m_ExpandedIDs: 000000003684000000ca9a3bffffff7f
+||||||| Stash base
+    m_SelectedIDs: 38690000
+    m_LastClickedID: 26936
+    m_ExpandedIDs: 000000003869000000ca9a3bffffff7f
+=======
+    m_SelectedIDs: d86a0000
+    m_LastClickedID: 27352
+    m_ExpandedIDs: 0000000038690000c26a0000c46a0000ce6a0000d06a0000fa6a0000006b00000e6b0000106b0000786b00007a6b00007c6b0000b86b000000ca9a3bffffff7f
+>>>>>>> Stashed changes
     m_RenameOverlay:
       m_UserAcceptedRename: 0
       m_Name: 
@@ -574,10 +704,22 @@ MonoBehaviour:
     m_Tooltip: 
   m_Pos:
     serializedVersion: 2
+<<<<<<< Updated upstream
     x: 1493
     y: 73
     width: 426
     height: 926
+||||||| Stash base
+    x: 1462
+    y: 81
+    width: 449
+    height: 902
+=======
+    x: 1466
+    y: 73
+    width: 453
+    height: 918
+>>>>>>> Stashed changes
   m_ViewDataDictionary: {fileID: 0}
   m_OverlayCanvas:
     m_LastAppliedPresetName: Default
@@ -616,10 +758,22 @@ MonoBehaviour:
     m_Tooltip: 
   m_Pos:
     serializedVersion: 2
+<<<<<<< Updated upstream
     x: 0
     y: 73
     width: 347
     height: 556
+||||||| Stash base
+    x: 8
+    y: 81
+    width: 359
+    height: 526
+=======
+    x: 0
+    y: 73
+    width: 362
+    height: 535
+>>>>>>> Stashed changes
   m_ViewDataDictionary: {fileID: 0}
   m_OverlayCanvas:
     m_LastAppliedPresetName: Default
@@ -674,10 +828,22 @@ MonoBehaviour:
     m_Tooltip: 
   m_Pos:
     serializedVersion: 2
+<<<<<<< Updated upstream
     x: 348
     y: 73
     width: 1143
     height: 556
+||||||| Stash base
+    x: 368
+    y: 81
+    width: 1092
+    height: 526
+=======
+    x: 363
+    y: 73
+    width: 1101
+    height: 535
+>>>>>>> Stashed changes
   m_ViewDataDictionary: {fileID: 0}
   m_OverlayCanvas:
     m_LastAppliedPresetName: Default
@@ -935,9 +1101,21 @@ MonoBehaviour:
   m_PlayAudio: 0
   m_AudioPlay: 0
   m_Position:
+<<<<<<< Updated upstream
     m_Target: {x: 2.7226214, y: 1.865915, z: 0.48777634}
+||||||| Stash base
+    m_Target: {x: 0.62661016, y: 0.6034329, z: 0.030992659}
+=======
+    m_Target: {x: 0.33427328, y: -0.2836458, z: -0.8978312}
+>>>>>>> Stashed changes
     speed: 2
+<<<<<<< Updated upstream
     m_Value: {x: 2.7226214, y: 1.865915, z: 0.48777634}
+||||||| Stash base
+    m_Value: {x: 0.62661016, y: 0.6034329, z: 0.030992659}
+=======
+    m_Value: {x: 0.33427328, y: -0.2836458, z: -0.8978312}
+>>>>>>> Stashed changes
   m_RenderMode: 0
   m_CameraMode:
     drawMode: 0
@@ -968,7 +1146,7 @@ MonoBehaviour:
       m_Fade:
         m_Target: 0
         speed: 2
-        m_Value: 0
+        m_Value: 1
       m_Color: {r: 0.5, g: 0.5, b: 0.5, a: 0.4}
       m_Pivot: {x: 0, y: 0, z: 0}
       m_Size: {x: 1, y: 1}
@@ -986,11 +1164,23 @@ MonoBehaviour:
   m_Rotation:
     m_Target: {x: 0, y: 0, z: 0, w: 1}
     speed: 2
-    m_Value: {x: 0, y: 0, z: 0, w: 1}
+    m_Value: {x: -0.000000006178525, y: 0.00000006730774, z: -0.000000013735743, w: -1}
   m_Size:
+<<<<<<< Updated upstream
     m_Target: 11.147254
+||||||| Stash base
+    m_Target: 6.900737
+=======
+    m_Target: 6.2356033
+>>>>>>> Stashed changes
     speed: 2
+<<<<<<< Updated upstream
     m_Value: 11.147254
+||||||| Stash base
+    m_Value: 6.900737
+=======
+    m_Value: 6.2356033
+>>>>>>> Stashed changes
   m_Ortho:
     m_Target: 1
     speed: 2
@@ -1008,7 +1198,7 @@ MonoBehaviour:
     m_FarClip: 10000
     m_DynamicClip: 1
     m_OcclusionCulling: 0
-  m_LastSceneViewRotation: {x: -0.08717229, y: 0.89959055, z: -0.21045254, w: -0.3726226}
+  m_LastSceneViewRotation: {x: -0.08202527, y: 0.8935685, z: -0.18235388, w: -0.40193984}
   m_LastSceneViewOrtho: 0
   m_ReplacementShader: {fileID: 0}
   m_ReplacementString: 
