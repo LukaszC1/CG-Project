@@ -33,5 +33,6 @@ public class Character : MonoBehaviour
         {
             currentHp=maxHp;
         }
+        hpBar.SetState(currentHp, maxHp);
     }
 }
