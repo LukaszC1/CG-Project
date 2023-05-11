@@ -383,6 +383,7 @@
 "Assets/Animate.cs"
 "Assets/Character.cs"
 "Assets/DisableAfterTime.cs"
+"Assets/EnemiesManager.cs"
 "Assets/Enemy.cs"
 "Assets/PlayerMove.cs"
 "Assets/StatusBar.cs"
