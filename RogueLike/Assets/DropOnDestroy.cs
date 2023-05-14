@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class DropOnDestroy : MonoBehaviour
 {
-    [SerializeField] GameObject healthPickUp;
+    [SerializeField] GameObject droppedItem;
     [SerializeField] [Range(0,1)] float chanceToDrop=1f;
 
 
@@ -13,7 +13,7 @@ public class DropOnDestroy : MonoBehaviour
 
         if (Random.value < chanceToDrop)
         {
-            Transform t = Instantiate(healthPickUp).transform;
+            Transform t = Instantiate(droppedItem).transform;
             t.position = transform.position;
         }
     }

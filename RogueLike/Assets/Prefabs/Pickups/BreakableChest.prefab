@@ -137,5 +137,5 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 6a3c5b0bff38a8e4996b63bad0dc96f9, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  healthPickUp: {fileID: 8564520037004418994, guid: f9b7bbda6c1e3514c9e18258110bfa1a, type: 3}
+  droppedItem: {fileID: 8564520037004418994, guid: f9b7bbda6c1e3514c9e18258110bfa1a, type: 3}
   chanceToDrop: 0.2

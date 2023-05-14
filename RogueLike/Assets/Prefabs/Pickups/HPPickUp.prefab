@@ -11,6 +11,7 @@ GameObject:
   - component: {fileID: 8564520037004418990}
   - component: {fileID: 8564520037004418993}
   - component: {fileID: 8564520037004418992}
+  - component: {fileID: 4383157718765432806}
   - component: {fileID: 8564520037004418995}
   m_Layer: 0
   m_Name: HPPickUp
@@ -96,6 +97,18 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 061bf8c0e553fb84bb5cc16847d42720, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!114 &4383157718765432806
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8564520037004418994}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 199e7b2349355814eaf0ccd1247288d0, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   healAmount: 200

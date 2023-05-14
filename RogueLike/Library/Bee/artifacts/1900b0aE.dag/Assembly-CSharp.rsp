@@ -387,11 +387,15 @@
 "Assets/DropOnDestroy.cs"
 "Assets/EnemiesManager.cs"
 "Assets/Enemy.cs"
+"Assets/ExperienceBar.cs"
+"Assets/HealPickUpObject.cs"
 "Assets/iDamageable.cs"
+"Assets/iPickUpObject.cs"
 "Assets/PickUp.cs"
 "Assets/PlayerMove.cs"
 "Assets/StatusBar.cs"
 "Assets/WhipWeapon.cs"
+"Assets/XPPickUpObject.cs"
 -langversion:9.0
 
 /deterministic

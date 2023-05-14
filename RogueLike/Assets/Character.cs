@@ -9,10 +9,26 @@ public class Character : MonoBehaviour
     [SerializeField] StatusBar hpBar;
 
 
+    int level = 1;
+    int experience = 0;
+    [SerializeField] ExperienceBar experienceBar;
+
+    int TO_LEVEL_UP
+    {
+        get { return level * 1000; }
+    }
     private void Awake()
     {
-        currentHp = maxHp;
+        
     }
+
+    private void Start()
+    {
+        currentHp = maxHp;
+        experienceBar.UpdateExperienceSlider(experience, TO_LEVEL_UP);
+        experienceBar.SetLevelText(level);
+    }
+
     public void TakeDamage(int damage)
     {
         currentHp -= damage;
@@ -35,4 +51,24 @@ public class Character : MonoBehaviour
         }
         hpBar.SetState(currentHp, maxHp);
     }
+
+    public void AddExperience(int amount)
+    {
+        experience += amount;
+        CheckLevelUp();
+        experienceBar.UpdateExperienceSlider(experience, TO_LEVEL_UP);
+    }
+
+
+    public void CheckLevelUp()
+    {
+        if (experience >= TO_LEVEL_UP)
+        {
+            experience -= TO_LEVEL_UP;
+            level+=1;
+            experienceBar.SetLevelText(level);
+        }
+    }
+
+
 }
