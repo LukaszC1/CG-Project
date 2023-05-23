@@ -390,6 +390,8 @@
 "Assets/PickUp.cs"
 "Assets/PlayerMove.cs"
 "Assets/StatusBar.cs"
+"Assets/ThrowingDagger.cs"
+"Assets/ThrowingDaggerProjectile.cs"
 "Assets/WhipWeapon.cs"
 "Assets/XPPickUpObject.cs"
 -langversion:9.0
