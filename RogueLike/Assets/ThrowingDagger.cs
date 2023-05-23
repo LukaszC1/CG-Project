@@ -32,6 +32,8 @@ public class ThrowingDagger : MonoBehaviour
     {
         GameObject thrownKnife = Instantiate(knifePrefab);
         thrownKnife.transform.position = transform.position;
-        thrownKnife.GetComponent<ThrowingDaggerProjectile>().setDirection(playerMove.lastHorizontalVector, 0f);
+
+
+        thrownKnife.GetComponent<ThrowingDaggerProjectile>().setDirection(playerMove.lastHorizontalVector, playerMove.lastVerticalVector);
     }
 }

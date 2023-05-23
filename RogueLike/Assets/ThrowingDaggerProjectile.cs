@@ -8,16 +8,10 @@ public class ThrowingDaggerProjectile : MonoBehaviour
     [SerializeField] float speed;
     [SerializeField] int damage = 5;
 
-    public void setDirection(float dirX, float dirY)
+    public void setDirection(float dirx, float diry)
     {
-        direction = new Vector3(dirX, dirY);
-
-        if (dirX < 0) 
-        {
-            Vector3 scale = transform.localScale;
-            scale.x = scale.x * -1;
-            transform.localScale = scale;
-        }
+        direction = new Vector3(dirx, diry);
+        transform.right = direction;
     }
 
     bool hitDetected = false;
@@ -25,6 +19,7 @@ public class ThrowingDaggerProjectile : MonoBehaviour
     void Update()
     {
         transform.position += direction * speed * Time.deltaTime;
+        //Debug.Log(transform.position);
 
         if (Time.frameCount % 6 == 0) //save time (check each 6 frames)
         {
@@ -32,7 +27,7 @@ public class ThrowingDaggerProjectile : MonoBehaviour
 
             foreach (Collider2D collision in collisions)
             {
-                Enemy enemy = collision.GetComponent<Enemy>();
+                iDamageable enemy = collision.GetComponent<iDamageable>();
 
                 if (enemy != null)
                 {

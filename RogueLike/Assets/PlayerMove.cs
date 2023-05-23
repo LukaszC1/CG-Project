@@ -19,22 +19,34 @@ public class PlayerMove : MonoBehaviour
         rgbd2d = GetComponent<Rigidbody2D>();
         movementVector = new Vector3();
         animate = GetComponent<Animate>();
+        lastHorizontalVector = 1;
     }
 
     // Update is called once per frame
     void Update()
     {
+     
         movementVector.x = Input.GetAxisRaw("Horizontal");
         movementVector.y = Input.GetAxisRaw("Vertical");
 
-        if(movementVector.x !=0)
+        if(movementVector.x != 0)
         {
-            lastHorizontalVector = movementVector.x;    
+            lastHorizontalVector = movementVector.x;
+            Debug.Log("lH" + lastHorizontalVector);
         }
-        if (movementVector.y !=0)
+        else if (movementVector.y != 0)
+            lastHorizontalVector = 0;
+
+
+        if (movementVector.y != 0)
         {
             lastVerticalVector = movementVector.y;
+            Debug.Log("lV" + lastVerticalVector);
+
         }
+        else if (movementVector.x != 0)
+            lastVerticalVector = 0;
+
 
         animate.horizontal = movementVector.x;
 
@@ -43,7 +55,5 @@ public class PlayerMove : MonoBehaviour
 
     }
 
-    private void FixedUpdate()
-    {
-    }
+   
 }
