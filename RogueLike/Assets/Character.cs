@@ -5,10 +5,10 @@ using UnityEngine;
 public class Character : MonoBehaviour
 {
     public int maxHp = 100;
+    public int armor = 0;
+
     [HideInInspector] public int currentHp = 100;
     [SerializeField] StatusBar hpBar;
-
-
     int level = 1;
     int experience = 0;
     [SerializeField] ExperienceBar experienceBar;
@@ -31,14 +31,24 @@ public class Character : MonoBehaviour
 
     public void TakeDamage(int damage)
     {
+
+        ApplyArmor(ref damage);
         currentHp -= damage;
 
         if(currentHp <= 0)
         {
             Destroy(gameObject);
         }
+
         hpBar.SetState(currentHp, maxHp);
     }
+
+    public void ApplyArmor(ref int damage)
+    {
+        damage -= armor;
+        if(damage < 0) { damage = 0; }
+    }
+
 
     public void Heal(int amount)
     {

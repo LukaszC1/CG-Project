@@ -387,6 +387,8 @@
 "Assets/HealPickUpObject.cs"
 "Assets/iDamageable.cs"
 "Assets/iPickUpObject.cs"
+"Assets/Item.cs"
+"Assets/PassiveItems.cs"
 "Assets/PickUp.cs"
 "Assets/PlayerMove.cs"
 "Assets/StatusBar.cs"

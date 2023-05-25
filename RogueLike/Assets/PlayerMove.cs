@@ -19,7 +19,10 @@ public class PlayerMove : MonoBehaviour
         rgbd2d = GetComponent<Rigidbody2D>();
         movementVector = new Vector3();
         animate = GetComponent<Animate>();
-        lastHorizontalVector = 1;
+    }
+    private void Start()
+    {
+        lastHorizontalVector = 1f; //initial value of the vector (for projectile weapons)
     }
 
     // Update is called once per frame
