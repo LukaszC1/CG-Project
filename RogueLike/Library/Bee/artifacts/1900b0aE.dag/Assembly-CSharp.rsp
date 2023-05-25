@@ -386,6 +386,8 @@
 "Assets/HealPickUpObject.cs"
 "Assets/iDamageable.cs"
 "Assets/iPickUpObject.cs"
+"Assets/MapController.cs"
+"Assets/MapTrigger.cs"
 "Assets/PickUp.cs"
 "Assets/PlayerMove.cs"
 "Assets/StatusBar.cs"
