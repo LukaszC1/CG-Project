@@ -14436,7 +14436,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a232d2c23fba69142bf29e7e91e7f0f6, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  targetMap: {fileID: 0}
+  targetMap: {fileID: 8479770238918095465}
 --- !u!61 &3048372417243165493
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -14461,7 +14461,7 @@ BoxCollider2D:
     adaptiveTiling: 0
   m_AutoTiling: 0
   serializedVersion: 2
-  m_Size: {x: 28, y: 28}
+  m_Size: {x: 20, y: 20}
   m_EdgeRadius: 0
 --- !u!1 &8677745737514543253
 GameObject:

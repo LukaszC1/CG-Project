@@ -2533,6 +2533,11 @@ MonoBehaviour:
   terrainMask:
     serializedVersion: 2
     m_Bits: 64
+  spawnedChunk:
+  - {fileID: 920701919}
+  latest: {fileID: 0}
+  maxDistance: 70
+  cooldownTime: 1
 --- !u!4 &1738270610
 Transform:
   m_ObjectHideFlags: 0

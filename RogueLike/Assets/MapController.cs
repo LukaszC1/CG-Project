@@ -1,3 +1,4 @@
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using Unity.PlasticSCM.Editor.WebApi;
@@ -14,6 +15,16 @@ public class MapController : MonoBehaviour
     public LayerMask terrainMask;
     PlayerMove movement;
 
+    [Header("Optimization")]
+    public List<GameObject> spawnedChunk;
+    public GameObject latest;
+    public float maxDistance; //> chunk size
+    float dist;
+    float cooldown;
+    public float cooldownTime;
+
+
+
     // Start is called before the first frame update
     void Start()
     {
@@ -24,6 +35,7 @@ public class MapController : MonoBehaviour
     void Update()
     {
         CheckChunks();
+        optimizer();
     }
 
 
@@ -110,6 +122,7 @@ public class MapController : MonoBehaviour
             {
                 noTerrain = currentChunk.transform.Find("Left Down").position;
                 ChunkSpawner();
+                spawnedChunk.Add(latest);
             }
 
         }
@@ -117,8 +130,40 @@ public class MapController : MonoBehaviour
 
     void ChunkSpawner()
     {
-        int rand = Random.Range(0, terrainChunk.Count);
-        Instantiate(terrainChunk[rand], noTerrain, Quaternion.identity);
+        int rand = UnityEngine.Random.Range(0, terrainChunk.Count);
+        latest = Instantiate(terrainChunk[rand], noTerrain, Quaternion.identity);
+        spawnedChunk.Add(latest);
+    }
+
+    void optimizer()
+    {
+
+
+        cooldown -= Time.deltaTime;
+
+        if (cooldown < 0f)
+        {
+            cooldown = cooldownTime;
+        }
+        else
+        {
+            return;
+        }
+
+
+        foreach (GameObject chunk in spawnedChunk)
+        {
+
+            dist = Vector3.Distance(player.transform.position, chunk.transform.position);  
+            if (dist > maxDistance) 
+            {
+                chunk.SetActive(false);
+            }
+            else
+            {
+                chunk.SetActive(true);
+            }
+        }
     }
 }
 
