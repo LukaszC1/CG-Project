@@ -39,7 +39,8 @@ public class ThrowingDaggerProjectile : MonoBehaviour
                 }
 
             }
-            if (decayTime <= 0 )
+          
+            if (decayTime <= 0 || hitDetected )
             {
                 Destroy(gameObject);
             }

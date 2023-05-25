@@ -99,3 +99,4 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   speed: 10
   damage: 5
+  decayTime: 0.3
