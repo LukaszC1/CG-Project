@@ -7,6 +7,7 @@ public class ThrowingDaggerProjectile : MonoBehaviour
     Vector3 direction;
     [SerializeField] float speed;
     [SerializeField] int damage = 5;
+    [SerializeField] float decayTime = 10;
 
     public void setDirection(float dirx, float diry)
     {
@@ -23,6 +24,7 @@ public class ThrowingDaggerProjectile : MonoBehaviour
 
         if (Time.frameCount % 6 == 0) //save time (check each 6 frames)
         {
+            decayTime -= Time.deltaTime; 
             Collider2D[] collisions = Physics2D.OverlapCircleAll(transform.position, 0.5f);
 
             foreach (Collider2D collision in collisions)
@@ -37,7 +39,7 @@ public class ThrowingDaggerProjectile : MonoBehaviour
                 }
 
             }
-            if (hitDetected)
+            if (decayTime <= 0 )
             {
                 Destroy(gameObject);
             }
