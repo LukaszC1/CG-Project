@@ -15,7 +15,7 @@ public class MusicManager : MonoBehaviour
 
     private void Start()
     {
-        Play(musicOnStart, true);
+        Play(musicOnStart, false);
     }
 
 
@@ -24,7 +24,7 @@ public class MusicManager : MonoBehaviour
     {
         if (interrupt == true)
         {
-            audioSource.volume = 0.5f;
+            audioSource.volume = 0.2f;
             audioSource.clip = music;
             audioSource.Play();
 
@@ -40,7 +40,7 @@ public class MusicManager : MonoBehaviour
     float volume;
     IEnumerator SmoothSwitch()
     {
-        volume = 0.5f;
+        volume = 0.2f;
 
         while (volume > 0f)
         {
