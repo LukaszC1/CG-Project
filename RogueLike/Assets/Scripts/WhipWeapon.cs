@@ -9,6 +9,7 @@ public class WhipWeapon : MonoBehaviour
     float timer;
 
     [SerializeField] GameObject rightWhipObject;
+    [SerializeField] GameObject leftWhipObject;
 
     PlayerMove playerMove;
     [SerializeField] Vector2 whipAttackSize = new Vector2(4f, 2f);
@@ -32,10 +33,19 @@ public class WhipWeapon : MonoBehaviour
     {
         timer = timeToAttack;
 
-        rightWhipObject.SetActive(true);
-        Collider2D[] colliders = Physics2D.OverlapBoxAll(rightWhipObject.transform.position, whipAttackSize, 0f);
-        ApplyDamage(colliders);
-
+        if (playerMove.lastHorizontalVector > 0)
+        {
+            rightWhipObject.SetActive(true);
+            Collider2D[] colliders = Physics2D.OverlapBoxAll(rightWhipObject.transform.position, whipAttackSize, 0f);
+            ApplyDamage(colliders);
+        }
+        else
+        {
+            leftWhipObject.SetActive(true);
+            leftWhipObject.SetActive(true);
+            Collider2D[] colliders = Physics2D.OverlapBoxAll(leftWhipObject.transform.position, whipAttackSize, 0f);
+            ApplyDamage(colliders);
+        }
     }
 
     private void ApplyDamage(Collider2D[] colliders)

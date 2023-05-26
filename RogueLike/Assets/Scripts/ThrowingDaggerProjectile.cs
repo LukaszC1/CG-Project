@@ -19,7 +19,7 @@ public class ThrowingDaggerProjectile : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        transform.position += direction * speed * Time.deltaTime;
+        transform.position += direction.normalized * speed * Time.deltaTime;
         //Debug.Log(transform.position);
 
         if (Time.frameCount % 6 == 0) //save time (check each 6 frames)

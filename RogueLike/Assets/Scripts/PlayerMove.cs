@@ -10,9 +10,14 @@ public class PlayerMove : MonoBehaviour
     [HideInInspector] public Vector3 movementVector;
     [HideInInspector] public float lastHorizontalVector;
     [HideInInspector] public float lastVerticalVector;
+    [HideInInspector] public float lastHorizontalVectorProjectiles;
+    [HideInInspector] public float lastVerticalVectorProjectiles;
+
 
     [SerializeField] float speed = 3f;
     bool facingRight = true;
+    public SpriteRenderer sprite;
+
 
     Animate animate;
     private void Awake()
@@ -20,6 +25,7 @@ public class PlayerMove : MonoBehaviour
         rgbd2d = GetComponent<Rigidbody2D>();
         movementVector = new Vector3();
         animate = GetComponent<Animate>();
+       
     }
     private void Start()
     {
@@ -36,19 +42,22 @@ public class PlayerMove : MonoBehaviour
         if(movementVector.x != 0)
         {
             lastHorizontalVector = movementVector.x;
-           
+            lastHorizontalVectorProjectiles = movementVector.x;
+
         }
-        else if (movementVector.y != 0)
-            lastHorizontalVector = 0;
+       else if (movementVector.y != 0)
+            lastHorizontalVectorProjectiles = 0;
 
 
         if (movementVector.x > 0 && !facingRight)
         {
-            Flip();
+            sprite.flipX = false;
+            facingRight = !facingRight;
         }
         if (movementVector.x < 0 && facingRight)
         {
-            Flip();
+            sprite.flipX = true;
+            facingRight = !facingRight;
         }
 
         if (movementVector.x == 0 && movementVector.y == 0)
@@ -64,11 +73,11 @@ public class PlayerMove : MonoBehaviour
         if (movementVector.y != 0)
         {
             lastVerticalVector = movementVector.y;
-           
+            lastVerticalVectorProjectiles = movementVector.y;
 
         }
         else if (movementVector.x != 0)
-            lastVerticalVector = 0;
+            lastVerticalVectorProjectiles = 0;
 
 
         animate.horizontal = movementVector.x;
@@ -76,14 +85,6 @@ public class PlayerMove : MonoBehaviour
         movementVector *= speed;
         rgbd2d.velocity = movementVector;
 
-    }
-    void Flip()
-    {
-        Vector3 currentScale = gameObject.transform.localScale;
-        currentScale.x *= -1;
-        gameObject.transform.localScale = currentScale;
-
-        facingRight = !facingRight;
     }
 
 }
