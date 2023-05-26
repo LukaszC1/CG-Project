@@ -8,6 +8,7 @@ public class ExitToMenu : MonoBehaviour
     
     public void SwitchMainmenu()
     {
+        Time.timeScale = 1f;
         SceneManager.LoadScene("MainMenu");
     }
 }
