@@ -12,6 +12,7 @@ public class PlayerMove : MonoBehaviour
     [HideInInspector] public float lastVerticalVector;
 
     [SerializeField] float speed = 3f;
+    bool facingRight = true;
 
     Animate animate;
     private void Awake()
@@ -41,6 +42,25 @@ public class PlayerMove : MonoBehaviour
             lastHorizontalVector = 0;
 
 
+        if (movementVector.x > 0 && !facingRight)
+        {
+            Flip();
+        }
+        if (movementVector.x < 0 && facingRight)
+        {
+            Flip();
+        }
+
+        if (movementVector.x == 0 && movementVector.y == 0)
+        {
+            animate.animator.SetBool("isMoving", false);
+        }
+        else
+        {
+            animate.animator.SetBool("isMoving", true);
+        }
+
+
         if (movementVector.y != 0)
         {
             lastVerticalVector = movementVector.y;
@@ -57,6 +77,16 @@ public class PlayerMove : MonoBehaviour
         rgbd2d.velocity = movementVector;
 
     }
+    void Flip()
+    {
+        Vector3 currentScale = gameObject.transform.localScale;
+        currentScale.x *= -1;
+        gameObject.transform.localScale = currentScale;
 
-   
+        facingRight = !facingRight;
+    }
+
 }
+
+
+

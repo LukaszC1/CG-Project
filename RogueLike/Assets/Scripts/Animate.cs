@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class Animate : MonoBehaviour
 {
-    Animator animator;
+    public Animator animator;
 
     public float horizontal;
 
