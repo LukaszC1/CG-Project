@@ -13,10 +13,12 @@ public class Enemy : MonoBehaviour, iDamageable
 
     [SerializeField] int hp = 4;
     [SerializeField] int damage = 1;
+    private SpriteRenderer sprite;
 
     private void Awake()
     {
         rgbd2d = GetComponent<Rigidbody2D>();
+        sprite = GetComponent<SpriteRenderer>();
     }
 
     public void SetTarget(GameObject target)
@@ -29,6 +31,16 @@ public class Enemy : MonoBehaviour, iDamageable
     {
         Vector3 direction = (targetDestination.position - transform.position).normalized;
         rgbd2d.velocity = direction * speed;
+
+        if (direction.x > 0)
+        {
+            sprite.flipX = false;
+        }
+        else
+        {
+            sprite.flipX = true;
+        }
+
     }
 
 
