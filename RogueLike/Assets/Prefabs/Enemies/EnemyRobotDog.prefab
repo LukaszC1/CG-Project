@@ -170,7 +170,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   speed: 2
-  hp: 4
+  timer: 0
+  hp: 4.5
   damage: 1
 --- !u!114 &4141227439950006934
 MonoBehaviour:

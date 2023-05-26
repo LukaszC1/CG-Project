@@ -6,6 +6,7 @@ using UnityEngine;
 public class EnemiesManager : MonoBehaviour
 {
     [SerializeField] GameObject enemy;
+    [SerializeField] GameObject enemy2;
     [SerializeField] Vector2 spawnArea;
     [SerializeField] float spawnTimer;
     [SerializeField] GameObject player;
@@ -33,8 +34,13 @@ public class EnemiesManager : MonoBehaviour
     {
         Vector3 position = GenerateRandomPosition();
         position += player.transform.position;
+        GameObject newEnemy;
 
-        GameObject newEnemy = Instantiate(enemy);
+        if (UnityEngine.Random.value > 0.5f)
+            newEnemy = Instantiate(enemy);
+        else
+            newEnemy = Instantiate(enemy2);
+
         newEnemy.transform.position = position;
         newEnemy.GetComponent<Enemy>().SetTarget(player);
         newEnemy.transform.parent = transform;

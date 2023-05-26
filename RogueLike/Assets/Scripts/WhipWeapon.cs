@@ -42,7 +42,6 @@ public class WhipWeapon : MonoBehaviour
         else
         {
             leftWhipObject.SetActive(true);
-            leftWhipObject.SetActive(true);
             Collider2D[] colliders = Physics2D.OverlapBoxAll(leftWhipObject.transform.position, whipAttackSize, 0f);
             ApplyDamage(colliders);
         }

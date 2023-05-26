@@ -4,7 +4,17 @@ using UnityEngine;
 
 public class DestructableObject : MonoBehaviour, iDamageable
 {
-  public void TakeDamage(int damage)
+    private bool tookDamage = false;
+    public bool TookDamage { get => tookDamage; set => tookDamage = value; }
+
+
+
+    public void ApplySlow()
+    {
+        return;
+    }
+
+    public void TakeDamage(float damage)
     {
         Destroy(gameObject);
         GetComponent<DropOnDestroy>().CheckDrop();

@@ -1,5 +1,6 @@
 using System.Collections;
 using System.Collections.Generic;
+using System.Threading;
 using UnityEngine;
 
 public class Enemy : MonoBehaviour, iDamageable
@@ -7,13 +8,19 @@ public class Enemy : MonoBehaviour, iDamageable
     Transform targetDestination;
     GameObject targetGameObject;
     Character targetCharacter;
-    [SerializeField] float speed;
+    [SerializeField] public float speed;
+    private float previousSpeed;
 
+    public float timer;
     Rigidbody2D rgbd2d;
 
-    [SerializeField] int hp = 4;
+    [SerializeField] float hp = 4;
     [SerializeField] int damage = 1;
     private SpriteRenderer sprite;
+    private bool isSlowed = false;
+    private bool tookDamage= false;
+
+    public bool TookDamage { get => tookDamage; set => tookDamage = value; }
 
     private void Awake()
     {
@@ -43,6 +50,16 @@ public class Enemy : MonoBehaviour, iDamageable
 
     }
 
+    private void Update()
+    {
+        timer -= Time.deltaTime;
+        if (timer < 0 && isSlowed)
+        {
+            speed = previousSpeed;
+            isSlowed = false;
+        }
+    }
+
 
     private void OnCollisionStay2D(Collision2D collision)
     {
@@ -61,7 +78,7 @@ public class Enemy : MonoBehaviour, iDamageable
         targetCharacter.TakeDamage(damage);
     }
 
-    public void TakeDamage(int damage)
+    public void TakeDamage(float damage)
     {
         hp -= damage;
 
@@ -71,4 +88,19 @@ public class Enemy : MonoBehaviour, iDamageable
             GetComponent<DropOnDestroy>().CheckDrop();
         }
     }
+
+    public void ApplySlow()
+    {
+        if (!isSlowed)
+        {
+            timer = 0.1f;
+            isSlowed = true;
+            previousSpeed = speed;
+            speed = speed * 0.5f;
+            
+        }
+        else
+            timer += 0.1f;
+    }
+
 }
