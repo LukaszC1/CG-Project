@@ -17064,6 +17064,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: wpn_forceField
       objectReference: {fileID: 0}
+    - target: {fileID: 4884365333385668482, guid: 563ecc66f5910e14891eade2a3d5414e, type: 3}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 4884365333385668487, guid: 563ecc66f5910e14891eade2a3d5414e, type: 3}
       propertyPath: m_RootOrder
       value: 3
