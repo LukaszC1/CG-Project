@@ -30,6 +30,7 @@ public class PlayerMove : MonoBehaviour
     private void Start()
     {
         lastHorizontalVector = 1f; //initial value of the vector (for projectile weapons)
+        lastHorizontalVectorProjectiles = 1f;
     }
 
     // Update is called once per frame
