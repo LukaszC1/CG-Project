@@ -2,43 +2,24 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class LaserRifle : MonoBehaviour
+public class LaserRifle : WeaponBase
 {
     // Start is called before the first frame update
-    [SerializeField] float timeToAttack;
-    float timer;
+    
+
     [SerializeField] GameObject laserPrefab;
-    [SerializeField] EnemiesManager enemiesManager;
 
-    
-
-    private void Awake()
-    {
-    
-    }
-
-
-    // Update is called once per frame
-    private void Update()
-    {
-        if (timer < timeToAttack)
-        {
-            timer += Time.deltaTime;
-            return;
-        }
-        timer = 0;
-        SpawnKnife();
-    }
 
     private void SpawnKnife()
     {
+       
 
-        if (enemiesManager.enemyList.Count == 0) { return; }
+        if (GetComponentInParent<EnemiesManager>().enemyList.Count == 0) { return; }
         GameObject thrownKnife = Instantiate(laserPrefab);
         Vector3 currentPosition = transform.position;
         thrownKnife.transform.position = currentPosition;
 
-        Transform closestEnemy = GetClosestEnemy(enemiesManager.enemyList, currentPosition);
+        Transform closestEnemy = GetClosestEnemy(GetComponentInParent<EnemiesManager>().enemyList, currentPosition);
         Vector3 throwDirection = closestEnemy.position - currentPosition;
 
         thrownKnife.GetComponent<ThrowingDaggerProjectile>().setDirection(throwDirection.x, throwDirection.y);
@@ -61,4 +42,8 @@ public class LaserRifle : MonoBehaviour
         return bestTarget;
     }
 
+    public override void Attack()
+    {
+        SpawnKnife();
+    }
 }

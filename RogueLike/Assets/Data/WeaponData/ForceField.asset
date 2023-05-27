@@ -15,6 +15,6 @@ MonoBehaviour:
   Name: 
   stats:
     damage: 10
-    timeToAttack: 3
+    timeToAttack: 1
     size: 0
   weaponBasePrefab: {fileID: 4884365333385668482, guid: 563ecc66f5910e14891eade2a3d5414e, type: 3}

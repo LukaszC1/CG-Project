@@ -3,20 +3,25 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class ForceField : MonoBehaviour
+public class ForceField : WeaponBase
 {
-    [SerializeField] float timeToAttack = 1f;
-    float timer, slowTimer = 0.1f;
+   
+    private float timerForce, slowTimer = 0.1f, timerToATTACK;
     [SerializeField] float forceFieldSize = 1;
     [SerializeField] int forceFieldDamage = 1;
 
-    private void Update()
+    
+
+    new private void Update()
     {
-        timer -= Time.deltaTime;
+        timerForce -= Time.deltaTime;
         slowTimer -= Time.deltaTime;
-        if (timer < 0f)
+        if (timerForce < 0f)
         {
-            Attack();
+            timerForce = weaponStats.timeToAttack;
+
+            Collider2D[] colliders = Physics2D.OverlapCircleAll(transform.position, forceFieldSize);
+            ApplyDamage(colliders);
         }
         if (slowTimer < 0f)
         {
@@ -25,14 +30,7 @@ public class ForceField : MonoBehaviour
         firstAttack();
     }
 
-    private void Attack()
-    {
-        timer = timeToAttack;
-
-        Collider2D[] colliders = Physics2D.OverlapCircleAll(transform.position, forceFieldSize);
-        ApplyDamage(colliders);
-    }
-
+    
     private void Slow()
     {
         slowTimer = 0.1f;
@@ -73,5 +71,10 @@ public class ForceField : MonoBehaviour
                 e.TakeDamage(forceFieldDamage);
             }  
         }
+    }
+
+    public override void Attack()
+    {
+        //empty for this weapon since it uses slow mechanic in update
     }
 }

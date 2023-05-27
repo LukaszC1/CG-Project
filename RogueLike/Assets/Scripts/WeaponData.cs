@@ -9,6 +9,8 @@ public class WeaponStats
     public int damage;
     public float timeToAttack;
     public float size;
+    [SerializeField] EnemiesManager enemiesManager;
+
     //weapon attributes
 
     public WeaponStats(int damage, float timeToAttack, float size)

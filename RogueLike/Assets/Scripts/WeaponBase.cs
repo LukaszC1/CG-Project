@@ -8,7 +8,7 @@ public abstract class WeaponBase : MonoBehaviour //weapons base class
     public WeaponStats weaponStats;
     public float timeToAttack = 1f;
     float timer;
-
+    
 
     public void Update()
     {
