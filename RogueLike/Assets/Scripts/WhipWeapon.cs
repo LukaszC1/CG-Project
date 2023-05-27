@@ -1,38 +1,38 @@
 using System;
 using System.Collections;
 using System.Collections.Generic;
+using Unity.VisualScripting.Antlr3.Runtime.Misc;
 using UnityEngine;
 
-public class WhipWeapon : MonoBehaviour
+public class WhipWeapon : WeaponBase
 {
-    [SerializeField] float timeToAttack=4f;
-    float timer;
-
+  
     [SerializeField] GameObject rightWhipObject;
     [SerializeField] GameObject leftWhipObject;
 
     PlayerMove playerMove;
     [SerializeField] Vector2 whipAttackSize = new Vector2(4f, 2f);
-    [SerializeField] int whipDamage = 2;
+ 
 
     private void Awake()
     {
         playerMove= GetComponentInParent<PlayerMove>();
     }
 
-    private void Update()
+
+    private void ApplyDamage(Collider2D[] colliders)
     {
-        timer -= Time.deltaTime;
-        if (timer < 0f)
+        for(int i=0; i < colliders.Length; i++)
         {
-            Attack();
+            iDamageable e = colliders[i].GetComponent<iDamageable>();
+            if (e != null)
+            e.TakeDamage(weaponStats.damage);
         }
     }
 
-    private void Attack()
+    public override void Attack()
     {
-        timer = timeToAttack;
-
+     
         if (playerMove.lastHorizontalVector > 0)
         {
             rightWhipObject.SetActive(true);
@@ -44,16 +44,6 @@ public class WhipWeapon : MonoBehaviour
             leftWhipObject.SetActive(true);
             Collider2D[] colliders = Physics2D.OverlapBoxAll(leftWhipObject.transform.position, whipAttackSize, 0f);
             ApplyDamage(colliders);
-        }
-    }
-
-    private void ApplyDamage(Collider2D[] colliders)
-    {
-        for(int i=0; i < colliders.Length; i++)
-        {
-            iDamageable e = colliders[i].GetComponent<iDamageable>();
-            if (e != null)
-            e.TakeDamage(whipDamage);
         }
     }
 }

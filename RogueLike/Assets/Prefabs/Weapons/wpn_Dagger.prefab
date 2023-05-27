@@ -16,7 +16,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!4 &7075382146051765422
 Transform:
   m_ObjectHideFlags: 0
@@ -44,5 +44,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: fd3283c4880385b4a8532da71b831289, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  weaponData: {fileID: 0}
+  weaponStats:
+    damage: 0
+    timeToAttack: 0
+    size: 0
   timeToAttack: 1.5
   knifePrefab: {fileID: 1957862162160582046, guid: f0ae72bbcb6d78842b22d5df36f50cc7, type: 3}

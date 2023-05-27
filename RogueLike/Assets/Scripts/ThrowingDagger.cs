@@ -2,11 +2,8 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class ThrowingDagger : MonoBehaviour
+public class ThrowingDagger : WeaponBase
 {
-    // Start is called before the first frame update
-    [SerializeField] float timeToAttack;
-    float timer;
     [SerializeField] GameObject knifePrefab;
     PlayerMove playerMove;
 
@@ -16,19 +13,7 @@ public class ThrowingDagger : MonoBehaviour
     }
 
 
-    // Update is called once per frame
-    private void Update()
-    {
-        if(timer < timeToAttack)
-        {
-            timer += Time.deltaTime;
-            return;
-        }
-        timer = 0;
-        SpawnKnife();
-    }
-
-    private void SpawnKnife()
+    public override void Attack()
     {
         GameObject thrownKnife = Instantiate(knifePrefab);
         thrownKnife.transform.position = transform.position;
