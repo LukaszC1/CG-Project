@@ -26,7 +26,10 @@ public class WhipWeapon : WeaponBase
         {
             iDamageable e = colliders[i].GetComponent<iDamageable>();
             if (e != null)
-            e.TakeDamage(weaponStats.damage);
+            {
+                PostMessage(weaponStats.damage, colliders[i].transform.position);
+                e.TakeDamage(weaponStats.damage);
+            }
         }
     }
 

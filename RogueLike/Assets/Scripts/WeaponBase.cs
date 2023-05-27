@@ -30,5 +30,9 @@ public abstract class WeaponBase : MonoBehaviour //weapons base class
     }
 
     public abstract void Attack(); //each weapon has to inherit and implement this method
-   
+
+    public virtual void PostMessage(int damage, Vector3 targetPos)
+    {
+        MessageSystem.instance.PostMessage(damage.ToString(), targetPos);
+    }
 }

@@ -12,7 +12,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 7d7eef267a89f5c42964427bae89aa01, type: 3}
   m_Name: ForceField
   m_EditorClassIdentifier: 
-  Name: 
+  Name: Force Field
   stats:
     damage: 10
     timeToAttack: 1

@@ -6,7 +6,7 @@ using UnityEngine;
 public class ForceField : WeaponBase
 {
    
-    private float timerForce, slowTimer = 0.1f, timerToATTACK;
+    private float timerForce, slowTimer = 0.1f;
     [SerializeField] float forceFieldSize = 1;
     [SerializeField] int forceFieldDamage = 1;
 
