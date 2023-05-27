@@ -334,6 +334,19 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 97168845480463634, guid: 0f7bb2faaf46ada41be51ad38e626143, type: 3}
   m_PrefabInstance: {fileID: 97168845418718580}
   m_PrefabAsset: {fileID: 0}
+--- !u!114 &74705006
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 74704995}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: df6c1b307fcd3bd43aeec114ac11aaed, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  magnetSize: 3
 --- !u!1 &75108514
 GameObject:
   m_ObjectHideFlags: 0
@@ -12424,6 +12437,51 @@ Tilemap:
     e31: 0
     e32: 0
     e33: 1
+--- !u!1 &84417785
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 84417786}
+  - component: {fileID: 84417787}
+  m_Layer: 0
+  m_Name: Magnet
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 0
+--- !u!4 &84417786
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 84417785}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 74704998}
+  m_RootOrder: 3
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &84417787
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 84417785}
+  m_Enabled: 0
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: df6c1b307fcd3bd43aeec114ac11aaed, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  magnetSize: 3
 --- !u!1 &189902965
 GameObject:
   m_ObjectHideFlags: 0
@@ -18506,6 +18564,10 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 97168844152140125, guid: 0f7bb2faaf46ada41be51ad38e626143, type: 3}
+      propertyPath: m_SortingOrder
+      value: 30
+      objectReference: {fileID: 0}
     - target: {fileID: 97168844659737916, guid: 0f7bb2faaf46ada41be51ad38e626143, type: 3}
       propertyPath: m_IsActive
       value: 0
@@ -18576,7 +18638,7 @@ PrefabInstance:
       objectReference: {fileID: 2084745097}
     - target: {fileID: 6206001889024312497, guid: 0f7bb2faaf46ada41be51ad38e626143, type: 3}
       propertyPath: m_IsActive
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 6206001889024312499, guid: 0f7bb2faaf46ada41be51ad38e626143, type: 3}
       propertyPath: enemiesManager
