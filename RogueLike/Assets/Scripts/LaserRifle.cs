@@ -1,25 +1,25 @@
 using System.Collections;
 using System.Collections.Generic;
+using System.Linq;
 using UnityEngine;
 
 public class LaserRifle : WeaponBase
 {
-    // Start is called before the first frame update
-    
-
     [SerializeField] GameObject laserPrefab;
 
 
     private void SpawnKnife()
     {
-       
-
-        if (GetComponentInParent<EnemiesManager>().enemyList.Count == 0) { return; }
+            //get enemy list somehow to fix the problem
+            List<GameObject>  enemies = GetComponentInParent<WeaponManager>().enemiesManager.enemyList;
+            
+        
+        if (enemies.Count == 0) { return; }
         GameObject thrownKnife = Instantiate(laserPrefab);
         Vector3 currentPosition = transform.position;
         thrownKnife.transform.position = currentPosition;
 
-        Transform closestEnemy = GetClosestEnemy(GetComponentInParent<EnemiesManager>().enemyList, currentPosition);
+        Transform closestEnemy = GetClosestEnemy(enemies, currentPosition);
         Vector3 throwDirection = closestEnemy.position - currentPosition;
 
         thrownKnife.GetComponent<ThrowingDaggerProjectile>().setDirection(throwDirection.x, throwDirection.y);

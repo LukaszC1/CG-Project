@@ -6,7 +6,7 @@ public class WeaponManager : MonoBehaviour
 {
     [SerializeField] Transform weaponObjectContainer;
     [SerializeField] WeaponData startingWeapon;
-
+    [SerializeField] public EnemiesManager enemiesManager;
 
     private void Start()
     {
