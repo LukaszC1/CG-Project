@@ -19664,7 +19664,7 @@ PrefabInstance:
       objectReference: {fileID: 1951896865}
     - target: {fileID: 97168845480463645, guid: 0f7bb2faaf46ada41be51ad38e626143, type: 3}
       propertyPath: upgrades.Array.size
-      value: 3
+      value: 4
       objectReference: {fileID: 0}
     - target: {fileID: 97168845480463645, guid: 0f7bb2faaf46ada41be51ad38e626143, type: 3}
       propertyPath: upgrades.Array.data[0]
@@ -19678,6 +19678,10 @@ PrefabInstance:
       propertyPath: upgrades.Array.data[2]
       value: 
       objectReference: {fileID: 11400000, guid: 1b41f5ed4eff7bf4285c70ed56b029ca, type: 2}
+    - target: {fileID: 97168845480463645, guid: 0f7bb2faaf46ada41be51ad38e626143, type: 3}
+      propertyPath: upgrades.Array.data[3]
+      value: 
+      objectReference: {fileID: 11400000, guid: f0b9e2a905f87204fb444914b0203fca, type: 2}
     - target: {fileID: 97168845480463647, guid: 0f7bb2faaf46ada41be51ad38e626143, type: 3}
       propertyPath: gameOverPanel
       value: 

@@ -20,8 +20,14 @@ public class Character : MonoBehaviour
 
     List<UpgradeData> selectedUpgrades;
     [SerializeField] List<UpgradeData> acquiredUpgrades;
-
     
+    WeaponManager weaponManager;
+
+    private void Awake()
+    {
+        weaponManager = GetComponent<WeaponManager>();
+    }
+
     int TO_LEVEL_UP
     {
         get { return level * 1000; }
@@ -121,9 +127,27 @@ public class Character : MonoBehaviour
     {
         UpgradeData upgradeData = selectedUpgrades[selectedUpgrade];
 
-       if( acquiredUpgrades == null ) { acquiredUpgrades = new List<UpgradeData>(); }   
+       if( acquiredUpgrades == null ) { acquiredUpgrades = new List<UpgradeData>(); }
 
-       acquiredUpgrades.Add(upgradeData);
+        switch (upgradeData.upgradeType)
+        {
+            case UpgradeType.WeaponUpgrade:
+                break;
+            case UpgradeType.ItemUpgrade:
+                break;
+            case UpgradeType.WeaponUnlock:
+                weaponManager.AddWeapon(upgradeData.weaponData);
+                break;
+            case UpgradeType.ItemUnlock:
+                break;
+        }
+
+        acquiredUpgrades.Add(upgradeData);
        upgrades.Remove(upgradeData);
+    }
+
+    internal void AddUpgradesIntoList(List<UpgradeData> upgradesToAdd)
+    {
+       this.upgrades.AddRange(upgradesToAdd);
     }
 }

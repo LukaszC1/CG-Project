@@ -9,6 +9,7 @@ public class UpgradeData : ScriptableObject
     public string upgradeName;
     public Sprite icon;
 
+    public WeaponData weaponData;
 }
 
 public enum UpgradeType
