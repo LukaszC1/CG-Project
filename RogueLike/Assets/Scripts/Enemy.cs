@@ -9,16 +9,22 @@ public class Enemy : MonoBehaviour, iDamageable
     GameObject targetGameObject;
     Character targetCharacter;
     [SerializeField] public float speed;
+    private float reverseSpeed;
+    private float originalSpeed;
     private float previousSpeed;
 
-    public float timer;
+    private float timer;
+    private float timer2 = 0.15f;
     Rigidbody2D rgbd2d;
 
     [SerializeField] float hp = 4;
     [SerializeField] int damage = 1;
+    [SerializeField] Material whiteMat;
+    Material originalMat;
     private SpriteRenderer sprite;
     private bool isSlowed = false;
     private bool tookDamage= false;
+    private bool takingDamage= false;
 
     public bool TookDamage { get => tookDamage; set => tookDamage = value; }
 
@@ -26,6 +32,9 @@ public class Enemy : MonoBehaviour, iDamageable
     {
         rgbd2d = GetComponent<Rigidbody2D>();
         sprite = GetComponent<SpriteRenderer>();
+        originalMat = GetComponent<Renderer>().material;
+        reverseSpeed = -1 * speed;
+        originalSpeed = speed;
     }
 
     public void SetTarget(GameObject target)
@@ -47,6 +56,21 @@ public class Enemy : MonoBehaviour, iDamageable
         {
             sprite.flipX = true;
         }
+
+        if (takingDamage)
+        {
+            timer2 -= Time.deltaTime;
+            GetComponent<Renderer>().material = whiteMat;
+            speed = reverseSpeed;
+            if (timer2 <= 0)
+            {   
+                GetComponent<Renderer>().material = originalMat;
+                timer2 = 0.15f;
+                takingDamage = false;
+            }
+        }
+        else
+            speed = originalSpeed;
 
     }
 
@@ -81,6 +105,10 @@ public class Enemy : MonoBehaviour, iDamageable
     public void TakeDamage(float damage)
     {
         hp -= damage;
+        if (!takingDamage)
+            takingDamage = true;
+        else
+            timer2 += 0.1f;
 
         if (hp<= 0)
         {
