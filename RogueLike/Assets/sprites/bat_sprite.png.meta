@@ -70,7 +70,7 @@ TextureImporter:
     maxTextureSize: 2048
     resizeAlgorithm: 0
     textureFormat: -1
-    textureCompression: 1
+    textureCompression: 0
     compressionQuality: 50
     crunchedCompression: 0
     allowsAlphaSplitting: 0
@@ -101,18 +101,6 @@ TextureImporter:
     overridden: 0
     androidETC2FallbackOverride: 0
     forceMaximumCompressionQuality_BC6H_BC7: 0
-  - serializedVersion: 3
-    buildTarget: WebGL
-    maxTextureSize: 2048
-    resizeAlgorithm: 0
-    textureFormat: -1
-    textureCompression: 1
-    compressionQuality: 50
-    crunchedCompression: 0
-    allowsAlphaSplitting: 0
-    overridden: 0
-    androidETC2FallbackOverride: 0
-    forceMaximumCompressionQuality_BC6H_BC7: 0
   spriteSheet:
     serializedVersion: 2
     sprites:
@@ -121,9 +109,9 @@ TextureImporter:
       rect:
         serializedVersion: 2
         x: 0
-        y: 64
+        y: 192
         width: 32
-        height: 32
+        height: 96
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -131,8 +119,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: ddb54ec71e054f641a8957600a7370eb
-      internalID: 1018018341
+      spriteID: 6b77d6ef8188474439d4a29d1d91ec6e
+      internalID: -1736331768
       vertices: []
       indices: 
       edges: []
@@ -142,9 +130,9 @@ TextureImporter:
       rect:
         serializedVersion: 2
         x: 0
-        y: 32
+        y: 96
         width: 32
-        height: 32
+        height: 96
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -152,8 +140,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 836e4c34c09c01348b5432b8fb5a6a0d
-      internalID: 154730995
+      spriteID: c59a9d04ce19fe747a43ddc7c15ba27e
+      internalID: 49765927
       vertices: []
       indices: 
       edges: []
@@ -165,7 +153,7 @@ TextureImporter:
         x: 0
         y: 0
         width: 32
-        height: 32
+        height: 96
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -173,8 +161,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 0ff342dfade2e194faf81958ab147825
-      internalID: 267601619
+      spriteID: f325551f1ea720947aa8419040705a9b
+      internalID: -1130750035
       vertices: []
       indices: 
       edges: []
@@ -190,9 +178,9 @@ TextureImporter:
     weights: []
     secondaryTextures: []
     nameFileIdTable:
-      bat_sprite_0: 1018018341
-      bat_sprite_1: 154730995
-      bat_sprite_2: 267601619
+      bat_sprite_0: -1736331768
+      bat_sprite_1: 49765927
+      bat_sprite_2: -1130750035
   spritePackingTag: 
   pSDRemoveMatte: 0
   pSDShowRemoveMatteOption: 0
