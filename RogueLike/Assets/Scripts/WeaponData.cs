@@ -18,6 +18,13 @@ public class WeaponStats
         this.timeToAttack = timeToAttack;
         this.size = size;
     }
+
+    internal void Sum(WeaponStats weaponUpgradeStats)
+    {
+        this.damage += weaponUpgradeStats.damage;
+        this.timeToAttack += weaponUpgradeStats.timeToAttack;
+        this.size += weaponUpgradeStats.size;
+    }
 }
 [CreateAssetMenu]
 public class WeaponData : ScriptableObject

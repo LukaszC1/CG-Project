@@ -8,6 +8,10 @@ public class Character : MonoBehaviour
     public int armor = 0;
     private bool playerIsDead = false;
 
+    public float hpRegen = 1f;
+    public float hpRegenTimer;
+
+
     [HideInInspector] public int currentHp = 100;
     [SerializeField] StatusBar hpBar;
     int level = 1;
@@ -28,6 +32,16 @@ public class Character : MonoBehaviour
         weaponManager = GetComponent<WeaponManager>();
     }
 
+    private void Update()
+    {
+        hpRegenTimer += Time.deltaTime * hpRegen;
+
+        if(hpRegenTimer > 1f)
+        {
+            Heal(1);
+            hpRegenTimer -= 1f;
+        }
+    }
     int TO_LEVEL_UP
     {
         get { return level * 1000; }
@@ -38,6 +52,7 @@ public class Character : MonoBehaviour
         currentHp = maxHp;
         experienceBar.UpdateExperienceSlider(experience, TO_LEVEL_UP);
         experienceBar.SetLevelText(level);
+        hpBar.SetState(currentHp, maxHp);
     }
 
     public void TakeDamage(int damage)
@@ -132,6 +147,7 @@ public class Character : MonoBehaviour
         switch (upgradeData.upgradeType)
         {
             case UpgradeType.WeaponUpgrade:
+                weaponManager.UpgradeWeapon(upgradeData);
                 break;
             case UpgradeType.ItemUpgrade:
                 break;
