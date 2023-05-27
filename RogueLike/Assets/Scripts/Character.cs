@@ -12,17 +12,21 @@ public class Character : MonoBehaviour
     [SerializeField] StatusBar hpBar;
     int level = 1;
     int experience = 0;
+
+
     [SerializeField] ExperienceBar experienceBar;
     [SerializeField] UpgradePanelManager upgradePanelManager;
+    [SerializeField] List<UpgradeData> upgrades;
+
+    List<UpgradeData> selectedUpgrades;
+    [SerializeField] List<UpgradeData> acquiredUpgrades;
+
+    
     int TO_LEVEL_UP
     {
         get { return level * 1000; }
     }
-    private void Awake()
-    {
-        
-    }
-
+    
     private void Start()
     {
         currentHp = maxHp;
@@ -82,12 +86,44 @@ public class Character : MonoBehaviour
     {
         if (experience >= TO_LEVEL_UP)
         {
-            upgradePanelManager.OpenPanel();
-            experience -= TO_LEVEL_UP;
-            level+=1;
-            experienceBar.SetLevelText(level);
+            LevelUp();
         }
     }
 
+    private void LevelUp()
+    {
+        if(selectedUpgrades == null) { selectedUpgrades = new List<UpgradeData>(); }
+        selectedUpgrades.Clear();
+        selectedUpgrades.AddRange(GetUpgrades(4));
 
+        upgradePanelManager.OpenPanel(selectedUpgrades);
+        experience -= TO_LEVEL_UP;
+        level += 1;
+        experienceBar.SetLevelText(level);
+
+    }
+
+    public List<UpgradeData> GetUpgrades(int count)
+    {
+        List<UpgradeData> upgradeList = new List<UpgradeData>();
+
+
+        if(count > upgrades.Count)
+            count = upgrades.Count;
+
+        for(int i = 0; i < count; i++)
+        upgradeList.Add(upgrades[Random.Range(0, upgrades.Count)]); //select random upgrades from the list
+
+        return upgradeList;
+    }
+
+    public void Upgrade (int selectedUpgrade)
+    {
+        UpgradeData upgradeData = selectedUpgrades[selectedUpgrade];
+
+       if( acquiredUpgrades == null ) { acquiredUpgrades = new List<UpgradeData>(); }   
+
+       acquiredUpgrades.Add(upgradeData);
+       upgrades.Remove(upgradeData);
+    }
 }
