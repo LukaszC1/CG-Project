@@ -24,6 +24,7 @@ public class Character : MonoBehaviour
 
     List<UpgradeData> selectedUpgrades;
     [SerializeField] List<UpgradeData> acquiredUpgrades;
+    [SerializeField] List<UpgradeData> upgradesAvailableOnStart;
     
     WeaponManager weaponManager;
 
@@ -53,6 +54,7 @@ public class Character : MonoBehaviour
         experienceBar.UpdateExperienceSlider(experience, TO_LEVEL_UP);
         experienceBar.SetLevelText(level);
         hpBar.SetState(currentHp, maxHp);
+        AddUpgradesIntoList(upgradesAvailableOnStart);
     }
 
     public void TakeDamage(int damage)
@@ -117,7 +119,9 @@ public class Character : MonoBehaviour
         selectedUpgrades.Clear();
         selectedUpgrades.AddRange(GetUpgrades(4));
 
+        if(selectedUpgrades.Count > 0)
         upgradePanelManager.OpenPanel(selectedUpgrades);
+
         experience -= TO_LEVEL_UP;
         level += 1;
         experienceBar.SetLevelText(level);
@@ -133,7 +137,14 @@ public class Character : MonoBehaviour
             count = upgrades.Count;
 
         for(int i = 0; i < count; i++)
-        upgradeList.Add(upgrades[Random.Range(0, upgrades.Count)]); //select random upgrades from the list
+        {
+            UpgradeData upgradeData = upgrades[Random.Range(0, upgrades.Count)];
+            while (upgradeList.Contains(upgradeData))
+            {
+                upgradeData = upgrades[Random.Range(0, upgrades.Count)];
+            }
+            upgradeList.Add(upgradeData); //select random upgrades from the list
+        }
 
         return upgradeList;
     }
@@ -164,6 +175,14 @@ public class Character : MonoBehaviour
 
     internal void AddUpgradesIntoList(List<UpgradeData> upgradesToAdd)
     {
+        if(upgradesToAdd == null) { return; }
+
        this.upgrades.AddRange(upgradesToAdd);
+    }
+    internal void AddUpgradeIntoList(UpgradeData upgradeToAdd)
+    {
+        if (upgradeToAdd == null) { return; }
+
+        upgrades.Add(upgradeToAdd);
     }
 }

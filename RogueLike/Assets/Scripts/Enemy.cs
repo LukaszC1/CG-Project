@@ -69,7 +69,9 @@ public class Enemy : MonoBehaviour, iDamageable
                 takingDamage = false;
             }
         }
-        else
+        else if (isSlowed)
+            speed = originalSpeed/2;
+        else 
             speed = originalSpeed;
 
     }

@@ -14,11 +14,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   Name: Throwing Dagger
   stats:
-    damage: 10
-    timeToAttack: 3
+    damage: 5
+    timeToAttack: 2
     size: 0
   weaponBasePrefab: {fileID: 7075382146051765423, guid: ecb1df5f60670094d9c62c1085564fb9, type: 3}
-  upgrades:
-  - {fileID: 11400000, guid: fb4df10a0a6d4334b80cb91edfd60400, type: 2}
-  - {fileID: 11400000, guid: f0b9e2a905f87204fb444914b0203fca, type: 2}
-  - {fileID: 11400000, guid: 85774d16d1aeb2d4aba25ddef61ae65b, type: 2}
+  firstUpgrade: {fileID: 11400000, guid: 85774d16d1aeb2d4aba25ddef61ae65b, type: 2}

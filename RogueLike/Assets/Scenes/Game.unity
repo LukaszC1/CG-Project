@@ -497,6 +497,19 @@ MonoBehaviour:
   weaponObjectContainer: {fileID: 566755594}
   startingWeapon: {fileID: 11400000, guid: 6cd1bd1bde2faac41ae3804c47f2d660, type: 2}
   enemiesManager: {fileID: 1665965312}
+--- !u!114 &74705014
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 74704995}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: df6c1b307fcd3bd43aeec114ac11aaed, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  magnetSize: 3
 --- !u!1 &75108514
 GameObject:
   m_ObjectHideFlags: 0
@@ -18650,7 +18663,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 10f54df1ccaca4a4eaccaa7a810ce056, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  enemy: {fileID: 2288361812883503458, guid: adb07d18256fc9a4dadbbdf658a34518, type: 3}
+  enemy: {fileID: 3467931841595559799, guid: 8c221984517684d42906c7b948cd83f8, type: 3}
   enemy2: {fileID: 1584743009333388939, guid: 0edda52240ed8a74b95f57a9def43e60, type: 3}
   spawnArea: {x: 15, y: 8}
   spawnTimer: 2
@@ -19913,6 +19926,26 @@ PrefabInstance:
       objectReference: {fileID: 11400000, guid: 388c5fed0e17c5d4e857cb8763640705, type: 2}
     - target: {fileID: 97168845480463645, guid: 0f7bb2faaf46ada41be51ad38e626143, type: 3}
       propertyPath: upgrades.Array.data[3]
+      value: 
+      objectReference: {fileID: 11400000, guid: 388c5fed0e17c5d4e857cb8763640705, type: 2}
+    - target: {fileID: 97168845480463645, guid: 0f7bb2faaf46ada41be51ad38e626143, type: 3}
+      propertyPath: upgradesAvailableOnStart.Array.size
+      value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 97168845480463645, guid: 0f7bb2faaf46ada41be51ad38e626143, type: 3}
+      propertyPath: upgradesAvailableOnStart.Array.data[0]
+      value: 
+      objectReference: {fileID: 11400000, guid: 388c5fed0e17c5d4e857cb8763640705, type: 2}
+    - target: {fileID: 97168845480463645, guid: 0f7bb2faaf46ada41be51ad38e626143, type: 3}
+      propertyPath: upgradesAvailableOnStart.Array.data[1]
+      value: 
+      objectReference: {fileID: 11400000, guid: e9ee7ff1cc2de514385ca483f9547272, type: 2}
+    - target: {fileID: 97168845480463645, guid: 0f7bb2faaf46ada41be51ad38e626143, type: 3}
+      propertyPath: upgradesAvailableOnStart.Array.data[2]
+      value: 
+      objectReference: {fileID: 11400000, guid: 66f2540394df95c4bb26020bb52e5580, type: 2}
+    - target: {fileID: 97168845480463645, guid: 0f7bb2faaf46ada41be51ad38e626143, type: 3}
+      propertyPath: upgradesAvailableOnStart.Array.data[3]
       value: 
       objectReference: {fileID: 11400000, guid: 388c5fed0e17c5d4e857cb8763640705, type: 2}
     - target: {fileID: 97168845480463647, guid: 0f7bb2faaf46ada41be51ad38e626143, type: 3}

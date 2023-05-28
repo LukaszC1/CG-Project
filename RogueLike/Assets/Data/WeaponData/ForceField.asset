@@ -14,7 +14,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   Name: Force Field
   stats:
-    damage: 10
-    timeToAttack: 1
-    size: 0
+    damage: 1
+    timeToAttack: 3
+    size: 2
   weaponBasePrefab: {fileID: 4884365333385668482, guid: 563ecc66f5910e14891eade2a3d5414e, type: 3}
+  upgrades: []

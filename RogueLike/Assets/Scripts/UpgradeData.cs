@@ -11,6 +11,7 @@ public class UpgradeData : ScriptableObject
 
     public WeaponData weaponData;
     public WeaponStats weaponUpgradeStats;
+    public UpgradeData nextupgrade;
 }
 
 public enum UpgradeType

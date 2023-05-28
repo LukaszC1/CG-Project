@@ -22,7 +22,9 @@ public class LaserRifle : WeaponBase
         Transform closestEnemy = GetClosestEnemy(enemies, currentPosition);
         Vector3 throwDirection = closestEnemy.position - currentPosition;
 
-        thrownKnife.GetComponent<ThrowingDaggerProjectile>().setDirection(throwDirection.x, throwDirection.y);
+        ThrowingDaggerProjectile projectile = thrownKnife.GetComponent<ThrowingDaggerProjectile>();
+        projectile.setDirection(throwDirection.x, throwDirection.y);
+        projectile.damage = weaponStats.damage;
     }
 
     Transform GetClosestEnemy(List<GameObject> enemies, Vector3 currentPosition)

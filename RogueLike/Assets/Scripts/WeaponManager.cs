@@ -11,14 +11,17 @@ public class WeaponManager : MonoBehaviour
     [SerializeField] public EnemiesManager enemiesManager;
 
     List<WeaponBase> weapons;
+    Character character;
 
     private void Awake()
     {
         weapons = new List<WeaponBase>();
+        character = GetComponent<Character>();
     }
     private void Start()
     {
         AddWeapon(startingWeapon);
+        
     }
     public void AddWeapon(WeaponData weaponData)
     {
@@ -30,11 +33,9 @@ public class WeaponManager : MonoBehaviour
         weaponBase.SetData(weaponData);
         weapons.Add(weaponBase);
 
-        Character character = GetComponent<Character>();
-
         if(character != null)
         {
-            character.AddUpgradesIntoList(weaponData.upgrades);
+            character.AddUpgradeIntoList(weaponData.firstUpgrade);
         }
     }
 
@@ -42,5 +43,9 @@ public class WeaponManager : MonoBehaviour
     {
         WeaponBase weaponToUpgrade = weapons.Find(wd => wd.weaponData == upgradeData.weaponData);
         weaponToUpgrade.Upgrade(upgradeData);
+        if (upgradeData.nextupgrade != null)
+        {
+            character.AddUpgradeIntoList(upgradeData.nextupgrade);
+        }
     }
 }

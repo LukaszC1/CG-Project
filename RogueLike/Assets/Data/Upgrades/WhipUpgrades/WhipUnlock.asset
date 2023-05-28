@@ -10,14 +10,14 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 1a669253bf985f54ab2ee2aee79629cf, type: 3}
-  m_Name: WhipFastAttack
+  m_Name: WhipUnlock
   m_EditorClassIdentifier: 
-  upgradeType: 0
-  upgradeName: Whip Fast
+  upgradeType: 2
+  upgradeName: Whip Unlock
   icon: {fileID: 21300000, guid: 57f2cb6385f33f340ae22c329b5ce746, type: 3}
   weaponData: {fileID: 11400000, guid: 6cd1bd1bde2faac41ae3804c47f2d660, type: 2}
   weaponUpgradeStats:
     damage: 0
-    timeToAttack: -1
+    timeToAttack: 0
     size: 0
-  nextupgrade: {fileID: 11400000, guid: 1b41f5ed4eff7bf4285c70ed56b029ca, type: 2}
+  nextupgrade: {fileID: 0}

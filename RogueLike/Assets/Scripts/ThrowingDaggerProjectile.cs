@@ -2,7 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class ThrowingDaggerProjectile : MonoBehaviour
+public class ThrowingDaggerProjectile : WeaponBase
 {
     Vector3 direction;
     [SerializeField] float speed;
@@ -17,14 +17,14 @@ public class ThrowingDaggerProjectile : MonoBehaviour
 
     bool hitDetected = false;
     // Update is called once per frame
-    void Update()
+    new private void Update()
     {
         transform.position += direction.normalized * speed * Time.deltaTime;
         //Debug.Log(transform.position);
 
         if (Time.frameCount % 6 == 0) //save time (check each 6 frames)
         {
-            decayTime -= Time.deltaTime; 
+            decayTime -= Time.deltaTime;
             Collider2D[] collisions = Physics2D.OverlapCircleAll(transform.position, 0.5f);
 
             foreach (Collider2D collision in collisions)
@@ -34,16 +34,22 @@ public class ThrowingDaggerProjectile : MonoBehaviour
                 if (enemy != null)
                 {
                     enemy.TakeDamage(damage);
+                    PostMessage(damage, collision.transform.position);
                     hitDetected = true;
                     break;
                 }
 
             }
-          
-            if (decayTime <= 0 || hitDetected )
+
+            if (decayTime <= 0 || hitDetected)
             {
                 Destroy(gameObject);
             }
         }
+    }
+
+    public override void Attack()
+    {
+        //empty for this weapon since it uses slow mechanic in update
     }
 }

@@ -14,7 +14,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   Name: LaserGun
   stats:
-    damage: 10
-    timeToAttack: 3
+    damage: 3
+    timeToAttack: 1.5
     size: 0
   weaponBasePrefab: {fileID: 6303090434357973200, guid: 111832fb56f8d5d4ab7ea15fa4107e0f, type: 3}
+  upgrades: []

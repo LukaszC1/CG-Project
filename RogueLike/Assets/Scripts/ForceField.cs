@@ -7,8 +7,6 @@ public class ForceField : WeaponBase
 {
    
     private float timerForce, slowTimer = 0.1f;
-    [SerializeField] float forceFieldSize = 1;
-    [SerializeField] int forceFieldDamage = 1;
 
     
 
@@ -20,7 +18,7 @@ public class ForceField : WeaponBase
         {
             timerForce = weaponStats.timeToAttack;
 
-            Collider2D[] colliders = Physics2D.OverlapCircleAll(transform.position, forceFieldSize);
+            Collider2D[] colliders = Physics2D.OverlapCircleAll(transform.position, weaponStats.size);
             ApplyDamage(colliders);
         }
         if (slowTimer < 0f)
@@ -35,7 +33,7 @@ public class ForceField : WeaponBase
     {
         slowTimer = 0.1f;
 
-        Collider2D[] colliders = Physics2D.OverlapCircleAll(transform.position, forceFieldSize);
+        Collider2D[] colliders = Physics2D.OverlapCircleAll(transform.position, weaponStats.size);
         for (int i = 0; i < colliders.Length; i++)
         {
             iDamageable e = colliders[i].GetComponent<iDamageable>();
@@ -48,13 +46,14 @@ public class ForceField : WeaponBase
 
     private void firstAttack()
     {
-        Collider2D[] colliders = Physics2D.OverlapCircleAll(transform.position, forceFieldSize);
+        Collider2D[] colliders = Physics2D.OverlapCircleAll(transform.position, weaponStats.size);
         for (int i = 0; i < colliders.Length; i++)
         {
             iDamageable e = colliders[i].GetComponent<iDamageable>();
             if (e != null && e.TookDamage==false)
             {
-                e.TakeDamage(forceFieldDamage);
+                PostMessage(weaponStats.damage, colliders[i].transform.position);
+                e.TakeDamage(weaponStats.damage);
                 e.ApplySlow();
                 e.TookDamage = true;
             }
@@ -68,7 +67,8 @@ public class ForceField : WeaponBase
             iDamageable e = colliders[i].GetComponent<iDamageable>();
             if (e != null)
             {
-                e.TakeDamage(forceFieldDamage);
+                PostMessage(weaponStats.damage, colliders[i].transform.position);
+                e.TakeDamage(weaponStats.damage);
             }  
         }
     }
