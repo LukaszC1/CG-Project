@@ -1,3 +1,4 @@
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
@@ -6,7 +7,7 @@ public class PassiveItems : MonoBehaviour
 {
     [SerializeField] List<Item> items;
     Character character;
-    [SerializeField] Item armorTest;
+
 
     private void Awake()
     {
@@ -15,7 +16,7 @@ public class PassiveItems : MonoBehaviour
 
     private void Start()
     {
-        Equip(armorTest);
+       
     }
     public void Equip(Item itemToEquip)
     {
@@ -23,8 +24,16 @@ public class PassiveItems : MonoBehaviour
         {
             items = new List<Item>(); //initialize list if not present
         }
-        items.Add(itemToEquip);
-        itemToEquip.Equip(character);
+        Item newItemInstance = new Item();
+        newItemInstance.Init(itemToEquip.Name);
+        newItemInstance.stats.Sum(itemToEquip.stats);
+
+
+        items.Add(newItemInstance);
+        newItemInstance.Equip(character);
+        if (itemToEquip.firstUpgrade != null)
+            character.AddUpgradeIntoList(itemToEquip.firstUpgrade);
+        character.updateWeapons();
     }
 
     public void UnEquip(Item itemToEquip)
@@ -34,5 +43,17 @@ public class PassiveItems : MonoBehaviour
             items = new List<Item>(); //initialize list if not present
         }
         items.Add(itemToEquip);
+    }
+
+    internal void UpgradeItem(UpgradeData upgradeData)
+    {
+        Item itemToUpgrade = items.Find(id => id.Name == upgradeData.item.Name);
+        itemToUpgrade.UnEquip(character);
+        itemToUpgrade.stats.Sum(upgradeData.itemStats);
+        itemToUpgrade.Equip(character);
+        if(upgradeData.nextupgrade != null)
+            character.AddUpgradeIntoList(upgradeData.nextupgrade);
+        character.updateWeapons();
+
     }
 }

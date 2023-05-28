@@ -8,7 +8,6 @@ public class ForceField : WeaponBase
    
     private float timerForce, slowTimer = 0.1f;
 
-    
 
     new private void Update()
     {
@@ -52,7 +51,7 @@ public class ForceField : WeaponBase
             iDamageable e = colliders[i].GetComponent<iDamageable>();
             if (e != null && e.TookDamage==false)
             {
-                PostMessage(weaponStats.damage, colliders[i].transform.position);
+                PostMessage((int)weaponStats.damage, colliders[i].transform.position);
                 e.TakeDamage(weaponStats.damage);
                 e.ApplySlow();
                 e.TookDamage = true;
@@ -67,7 +66,7 @@ public class ForceField : WeaponBase
             iDamageable e = colliders[i].GetComponent<iDamageable>();
             if (e != null)
             {
-                PostMessage(weaponStats.damage, colliders[i].transform.position);
+                PostMessage((int)weaponStats.damage, colliders[i].transform.position);
                 e.TakeDamage(weaponStats.damage);
             }  
         }
@@ -77,4 +76,5 @@ public class ForceField : WeaponBase
     {
         //empty for this weapon since it uses slow mechanic in update
     }
+
 }

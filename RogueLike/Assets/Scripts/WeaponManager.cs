@@ -10,7 +10,7 @@ public class WeaponManager : MonoBehaviour
     [SerializeField] WeaponData startingWeapon;
     [SerializeField] public EnemiesManager enemiesManager;
 
-    List<WeaponBase> weapons;
+    [HideInInspector]public List<WeaponBase> weapons;
     Character character;
 
     private void Awake()

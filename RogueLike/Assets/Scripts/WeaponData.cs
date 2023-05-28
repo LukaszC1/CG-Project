@@ -6,17 +6,19 @@ using UnityEngine;
 [Serializable]
 public class WeaponStats
 {
-    public int damage;
+    public float damage;
     public float timeToAttack;
     public float size;
+    public Vector2 vectorSize;
 
     //weapon attributes
 
-    public WeaponStats(int damage, float timeToAttack, float size)
+    public WeaponStats(float damage, float timeToAttack, float size, Vector2 vectorSize)
     {
         this.damage = damage;   
         this.timeToAttack = timeToAttack;
         this.size = size;
+        this.vectorSize = vectorSize;
     }
 
     internal void Sum(WeaponStats weaponUpgradeStats)
@@ -24,6 +26,7 @@ public class WeaponStats
         this.damage += weaponUpgradeStats.damage;
         this.timeToAttack += weaponUpgradeStats.timeToAttack;
         this.size += weaponUpgradeStats.size;
+        this.vectorSize += weaponUpgradeStats.vectorSize;
     }
 }
 [CreateAssetMenu]

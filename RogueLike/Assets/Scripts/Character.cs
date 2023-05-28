@@ -6,9 +6,15 @@ public class Character : MonoBehaviour
 {
     public int maxHp = 100;
     public int armor = 0;
+    public float hpRegen = 1f;
+    public float damageMultiplier = 1f;
+    public float areaMultiplier = 1f;
+    public float projectileSpeedMultiplier = 1f;
+    public float magnetSize = 1f;
+    public float cooldownMultiplier = 1f;
+
     private bool playerIsDead = false;
 
-    public float hpRegen = 1f;
     public float hpRegenTimer;
 
 
@@ -27,10 +33,14 @@ public class Character : MonoBehaviour
     [SerializeField] List<UpgradeData> upgradesAvailableOnStart;
     
     WeaponManager weaponManager;
+    PassiveItems passiveItems;
+    Magnet magnet;
 
     private void Awake()
     {
         weaponManager = GetComponent<WeaponManager>();
+        magnet = GetComponent<Magnet>();
+        passiveItems = GetComponent<PassiveItems>();
     }
 
     private void Update()
@@ -126,6 +136,15 @@ public class Character : MonoBehaviour
         level += 1;
         experienceBar.SetLevelText(level);
 
+        magnet.LevelUpUpdate();
+       
+        updateWeapons();
+    }
+
+    public void updateWeapons()
+    {
+        foreach (var weapon in weaponManager.weapons)
+            weapon.LevelUpUpdate();
     }
 
     public List<UpgradeData> GetUpgrades(int count)
@@ -161,16 +180,21 @@ public class Character : MonoBehaviour
                 weaponManager.UpgradeWeapon(upgradeData);
                 break;
             case UpgradeType.ItemUpgrade:
+                passiveItems.UpgradeItem(upgradeData);
                 break;
             case UpgradeType.WeaponUnlock:
                 weaponManager.AddWeapon(upgradeData.weaponData);
                 break;
             case UpgradeType.ItemUnlock:
+                passiveItems.Equip(upgradeData.item);
                 break;
         }
 
         acquiredUpgrades.Add(upgradeData);
        upgrades.Remove(upgradeData);
+
+       
+
     }
 
     internal void AddUpgradesIntoList(List<UpgradeData> upgradesToAdd)

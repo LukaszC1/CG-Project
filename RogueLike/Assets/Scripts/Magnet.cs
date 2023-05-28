@@ -4,11 +4,19 @@ using UnityEngine;
 
 public class Magnet : MonoBehaviour
 {
-    [SerializeField] float magnetSize = 3;
+    private float Size;
+
+    Character character;
+
+    private void Awake()
+    {
+        character = GetComponentInParent<Character>();
+        Size = character.magnetSize;
+    }
 
     private void Update()
     {
-        Collider2D[] colliders = Physics2D.OverlapCircleAll(transform.position, magnetSize);
+        Collider2D[] colliders = Physics2D.OverlapCircleAll(transform.position, Size);
         for (int i = 0; i < colliders.Length; i++)
         {
             iPickUpObject e = colliders[i].GetComponent<iPickUpObject>();
@@ -17,5 +25,10 @@ public class Magnet : MonoBehaviour
                 e.setTargetDestination(transform);
             }
         }
+    }
+
+    public void LevelUpUpdate()
+    {
+        Size = character.magnetSize;
     }
 }

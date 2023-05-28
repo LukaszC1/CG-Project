@@ -23,8 +23,13 @@ public class LaserRifle : WeaponBase
         Vector3 throwDirection = closestEnemy.position - currentPosition;
 
         ThrowingDaggerProjectile projectile = thrownKnife.GetComponent<ThrowingDaggerProjectile>();
+
+        projectile.laserRIfle = this;
         projectile.setDirection(throwDirection.x, throwDirection.y);
         projectile.damage = weaponStats.damage;
+        projectile.speed = projectile.speed * character.projectileSpeedMultiplier;
+        projectile.size = weaponStats.size * character.areaMultiplier;
+        projectile.transform.localScale = new Vector2(projectile.transform.localScale.x * transform.localScale.x, projectile.transform.localScale.y * transform.localScale.y);
     }
 
     Transform GetClosestEnemy(List<GameObject> enemies, Vector3 currentPosition)

@@ -10,7 +10,15 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 071eb4d59d72bf74aa0d1178f13e4980, type: 3}
-  m_Name: Armor
+  m_Name: Hollow Heart
   m_EditorClassIdentifier: 
-  Name: Armor
-  armor: 0
+  Name: 
+  stats:
+    maxHp: 20
+    armor: 0
+    hpRegen: 0
+    dmgMultiplier: 0
+    aoeMultiplier: 0
+    projectileSpeedMultiplier: 0
+    magnetSize: 0
+    cdMultiplier: 0

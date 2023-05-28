@@ -44,6 +44,16 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 6ad7cbde3620d6442b55751b16a5e2b8, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  timeToAttack: 1.5
+  weaponData: {fileID: 0}
+  weaponStats:
+    damage: 0
+    timeToAttack: 0
+    size: 0
+    vectorSize: {x: 0, y: 0}
+  playerMove: {fileID: 0}
+  originalAoE: {x: 0, y: 0}
+  originalScale: {x: 0, y: 0}
+  character: {fileID: 0}
+  originalDamage: 0
+  originalCd: 0
   laserPrefab: {fileID: 6666639319731228457, guid: 15270aac3751ebc488bea5dafa71fd31, type: 3}
-  enemiesManager: {fileID: 0}

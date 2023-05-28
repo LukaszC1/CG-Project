@@ -18,6 +18,17 @@ MonoBehaviour:
   weaponData: {fileID: 11400000, guid: 6cd1bd1bde2faac41ae3804c47f2d660, type: 2}
   weaponUpgradeStats:
     damage: 0
-    timeToAttack: -1
+    timeToAttack: 1
     size: 0
+    vectorSize: {x: 0, y: 0}
   nextupgrade: {fileID: 11400000, guid: 1b41f5ed4eff7bf4285c70ed56b029ca, type: 2}
+  item: {fileID: 0}
+  itemStats:
+    maxHp: 0
+    armor: 0
+    hpRegen: 0
+    dmgMultiplier: 0
+    aoeMultiplier: 0
+    projectileSpeedMultiplier: 0
+    magnetSize: 0
+    cdMultiplier: 0
