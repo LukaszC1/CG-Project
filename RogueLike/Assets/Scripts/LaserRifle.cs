@@ -24,7 +24,6 @@ public class LaserRifle : WeaponBase
 
         ThrowingDaggerProjectile projectile = thrownKnife.GetComponent<ThrowingDaggerProjectile>();
 
-        projectile.laserRIfle = this;
         projectile.setDirection(throwDirection.x, throwDirection.y);
         projectile.damage = weaponStats.damage;
         projectile.speed = projectile.speed * character.projectileSpeedMultiplier;

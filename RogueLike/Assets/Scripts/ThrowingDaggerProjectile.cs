@@ -9,8 +9,6 @@ public class ThrowingDaggerProjectile : MonoBehaviour
     public float damage;
     public float size;
     [SerializeField] float decayTime = 10;
-    public ThrowingDagger throwingDagger;
-    public LaserRifle laserRIfle;
 
     public void setDirection(float dirx, float diry)
     {
@@ -37,10 +35,7 @@ public class ThrowingDaggerProjectile : MonoBehaviour
                 if (enemy != null)
                 {
                     enemy.TakeDamage(damage);
-                    if (throwingDagger != null)
-                        throwingDagger.PostMessage((int)damage, collision.transform.position);
-                    else
-                        laserRIfle.PostMessage((int)damage, collision.transform.position);
+                    PostDamage((int)damage, collision.transform.position);
                     hitDetected = true;
                     break;
                 }
@@ -52,5 +47,10 @@ public class ThrowingDaggerProjectile : MonoBehaviour
                 Destroy(gameObject);
             }
         }
+    }
+
+    public void PostDamage(int damage, Vector3 worldPosition)
+    {
+        MessageSystem.instance.PostMessage(damage.ToString(), worldPosition);
     }
 }

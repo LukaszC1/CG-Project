@@ -13,7 +13,6 @@ public class ThrowingDagger : WeaponBase
         thrownKnife.transform.position = transform.position;
         ThrowingDaggerProjectile projectile = thrownKnife.GetComponent<ThrowingDaggerProjectile>();
 
-        projectile.throwingDagger = this;
         projectile.setDirection(playerMove.lastHorizontalVectorProjectiles, playerMove.lastVerticalVectorProjectiles);
         projectile.damage = weaponStats.damage;
         projectile.speed = projectile.speed * character.projectileSpeedMultiplier;

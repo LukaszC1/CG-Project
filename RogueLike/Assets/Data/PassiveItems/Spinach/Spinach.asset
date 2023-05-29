@@ -12,7 +12,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 071eb4d59d72bf74aa0d1178f13e4980, type: 3}
   m_Name: Spinach
   m_EditorClassIdentifier: 
-  Name: 
+  Name: Spinach
   stats:
     maxHp: 0
     armor: 0

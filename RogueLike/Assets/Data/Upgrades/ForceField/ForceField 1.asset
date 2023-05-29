@@ -14,6 +14,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   upgradeType: 0
   upgradeName: ForceField 1
+  upgradeDescription: +300% size
   icon: {fileID: 175416731, guid: 979541a49e68e774ba281775e7c356c6, type: 3}
   weaponData: {fileID: 11400000, guid: 260c8100008dfa0469424eda4cbf97e6, type: 2}
   weaponUpgradeStats:
@@ -22,3 +23,13 @@ MonoBehaviour:
     size: 3
     vectorSize: {x: 0, y: 0}
   nextupgrade: {fileID: 0}
+  item: {fileID: 0}
+  itemStats:
+    maxHp: 0
+    armor: 0
+    hpRegen: 0
+    dmgMultiplier: 0
+    aoeMultiplier: 0
+    projectileSpeedMultiplier: 0
+    magnetSize: 0
+    cdMultiplier: 0

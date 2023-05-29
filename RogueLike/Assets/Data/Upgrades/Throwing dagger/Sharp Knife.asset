@@ -14,10 +14,22 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   upgradeType: 0
   upgradeName: Sharp knife
+  upgradeDescription: +5 damage -1 cooldown
   icon: {fileID: 21300000, guid: c92c0a0971f48e74ead4774793c4731b, type: 3}
   weaponData: {fileID: 11400000, guid: b639c2ef7ce7cc54abb1043a0aa05baf, type: 2}
   weaponUpgradeStats:
     damage: 5
     timeToAttack: -1
     size: 0
+    vectorSize: {x: 0, y: 0}
   nextupgrade: {fileID: 11400000, guid: f0b9e2a905f87204fb444914b0203fca, type: 2}
+  item: {fileID: 0}
+  itemStats:
+    maxHp: 0
+    armor: 0
+    hpRegen: 0
+    dmgMultiplier: 0
+    aoeMultiplier: 0
+    projectileSpeedMultiplier: 0
+    magnetSize: 0
+    cdMultiplier: 0

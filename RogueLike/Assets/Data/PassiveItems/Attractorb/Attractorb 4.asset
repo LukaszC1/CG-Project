@@ -13,7 +13,8 @@ MonoBehaviour:
   m_Name: Attractorb 4
   m_EditorClassIdentifier: 
   upgradeType: 1
-  upgradeName: Attractorb 3
+  upgradeName: Attractorb 4
+  upgradeDescription: +1 magnet size
   icon: {fileID: 21300000, guid: f92aa23797949234eaa3d2baac6ec40f, type: 3}
   weaponData: {fileID: 0}
   weaponUpgradeStats:

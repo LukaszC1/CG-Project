@@ -13,7 +13,8 @@ MonoBehaviour:
   m_Name: WhipFastAttack
   m_EditorClassIdentifier: 
   upgradeType: 0
-  upgradeName: Whip Fast
+  upgradeName: Fast Monowire
+  upgradeDescription: -1 monowire cooldown
   icon: {fileID: 21300000, guid: 57f2cb6385f33f340ae22c329b5ce746, type: 3}
   weaponData: {fileID: 11400000, guid: 6cd1bd1bde2faac41ae3804c47f2d660, type: 2}
   weaponUpgradeStats:
