@@ -15,7 +15,7 @@ MonoBehaviour:
   upgradeType: 0
   upgradeName: Monowire Damage
   upgradeDescription: +5 monowire damage
-  icon: {fileID: 21300000, guid: 6b0b95026ff9485449951bbc7e1752db, type: 3}
+  icon: {fileID: 21300000, guid: 24c2ca3c010aebd4289eed847624e3b7, type: 3}
   weaponData: {fileID: 11400000, guid: 6cd1bd1bde2faac41ae3804c47f2d660, type: 2}
   weaponUpgradeStats:
     damage: 5
