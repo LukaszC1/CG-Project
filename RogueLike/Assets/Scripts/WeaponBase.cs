@@ -74,7 +74,7 @@ public abstract class WeaponBase : MonoBehaviour //weapons base class
 
     public virtual void PostMessage(int damage, Vector3 targetPos)
     {
-        MessageSystem.instance.PostMessage(damage.ToString(), targetPos);
+        MessageSystem.instance.PostMessage(damage, targetPos);
     }
 
 

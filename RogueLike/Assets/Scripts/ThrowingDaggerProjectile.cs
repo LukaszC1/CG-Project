@@ -51,6 +51,6 @@ public class ThrowingDaggerProjectile : MonoBehaviour
 
     public void PostDamage(int damage, Vector3 worldPosition)
     {
-        MessageSystem.instance.PostMessage(damage.ToString(), worldPosition);
+        MessageSystem.instance.PostMessage(damage, worldPosition);
     }
 }

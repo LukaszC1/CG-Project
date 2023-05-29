@@ -289,6 +289,12 @@ MonoBehaviour:
     damage: 0
     timeToAttack: 0
     size: 0
+    vectorSize: {x: 0, y: 0}
+  playerMove: {fileID: 0}
+  originalAoE: {x: 0, y: 0}
+  originalScale: {x: 0, y: 0}
+  character: {fileID: 0}
+  originalDamage: 0
+  originalCd: 0
   rightWhipObject: {fileID: 8261066138264698785}
   leftWhipObject: {fileID: 8261066138146762130}
-  whipAttackSize: {x: 3.3, y: 1.7}

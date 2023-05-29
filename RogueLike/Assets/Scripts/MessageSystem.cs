@@ -12,7 +12,7 @@ public class MessageSystem : MonoBehaviour
         instance = this; 
     }
 
-    int objectCount = 10;
+    int objectCount = 100;
     int count = 0;
 
     private void Start()
@@ -28,11 +28,24 @@ public class MessageSystem : MonoBehaviour
     [SerializeField] GameObject damagePopup;
     List<TMPro.TextMeshPro> messagePool;
 
-    public void PostMessage (string message, Vector3 position)
+    public void PostMessage (int damage, Vector3 position)
     {
+        string message = damage.ToString();
         messagePool[count].gameObject.SetActive (true);
         messagePool[count].transform.position = position;
         messagePool[count].text = message;
+        messagePool[count].alpha = 1.0f;
+        messagePool[count].transform.localScale = new Vector3(0.55f,0.55f,0.55f);
+
+        if (damage < 20)
+        messagePool[count].color = new Color(1,1,1);
+        else if(damage >= 20 && damage < 50)
+        messagePool[count].color = new Color(1, 1, 0);
+        else if (damage >= 50 && damage < 100)
+        messagePool[count].color = new Color(1, 0, 0);
+        else
+        messagePool[count].color = new Color(0.043f, 0.85f, 0.85f);
+
         count += 1;
 
         if(count >= objectCount)
