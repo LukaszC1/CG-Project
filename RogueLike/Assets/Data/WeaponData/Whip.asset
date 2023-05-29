@@ -14,7 +14,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   Name: Whip
   stats:
-    damage: 20
+    damage: 5
     timeToAttack: 2
     size: 0
     vectorSize: {x: 3.3, y: 1.7}
