@@ -20582,6 +20582,10 @@ PrefabInstance:
       value: 
       objectReference: {fileID: 11400000, guid: 6cd1bd1bde2faac41ae3804c47f2d660, type: 2}
     - target: {fileID: 7673161292812363981, guid: b5dee914bdb26484db3e13ed5fa24925, type: 3}
+      propertyPath: amountBonus
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7673161292812363981, guid: b5dee914bdb26484db3e13ed5fa24925, type: 3}
       propertyPath: experienceBar
       value: 
       objectReference: {fileID: 653231191}

@@ -10,15 +10,17 @@ public class WeaponStats
     public float timeToAttack;
     public float size;
     public Vector2 vectorSize;
+    public int amount;
 
     //weapon attributes
 
-    public WeaponStats(float damage, float timeToAttack, float size, Vector2 vectorSize)
+    public WeaponStats(float damage, float timeToAttack, float size, Vector2 vectorSize, int amount)
     {
         this.damage = damage;   
         this.timeToAttack = timeToAttack;
         this.size = size;
         this.vectorSize = vectorSize;
+        this.amount = amount;
     }
 
     internal void Sum(WeaponStats weaponUpgradeStats)
@@ -27,6 +29,7 @@ public class WeaponStats
         this.timeToAttack += weaponUpgradeStats.timeToAttack;
         this.size += weaponUpgradeStats.size;
         this.vectorSize += weaponUpgradeStats.vectorSize;
+        this.amount += weaponUpgradeStats.amount;
     }
 }
 [CreateAssetMenu]

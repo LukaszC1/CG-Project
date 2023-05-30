@@ -15,6 +15,7 @@ public abstract class WeaponBase : MonoBehaviour //weapons base class
     public Character character;
     public float originalDamage;
     public float originalCd;
+    public int originalAmount;
 
 
     public void Awake()
@@ -31,6 +32,7 @@ public abstract class WeaponBase : MonoBehaviour //weapons base class
         originalDamage = weaponStats.damage;
         originalCd = weaponStats.timeToAttack;
         originalAoEF = weaponStats.size;
+        originalAmount = weaponStats.amount;
 
         if (weaponStats.vectorSize.x != 0 || weaponStats.vectorSize.y != 0)
             weaponStats.vectorSize = new Vector2(weaponStats.vectorSize.x * character.areaMultiplier, weaponStats.vectorSize.y * character.areaMultiplier);
@@ -39,6 +41,7 @@ public abstract class WeaponBase : MonoBehaviour //weapons base class
         transform.localScale = new Vector2(transform.localScale.x * character.areaMultiplier, transform.localScale.y * character.areaMultiplier);
         weaponStats.damage = weaponStats.damage * character.damageMultiplier;
         weaponStats.timeToAttack = weaponStats.timeToAttack * character.cooldownMultiplier;
+        weaponStats.amount += character.amountBonus;
     }
     public void Update()
     {
@@ -55,7 +58,7 @@ public abstract class WeaponBase : MonoBehaviour //weapons base class
     {
         weaponData = wd;
 
-        weaponStats = new WeaponStats(wd.stats.damage, wd.stats.timeToAttack, wd.stats.size, wd.stats.vectorSize);
+        weaponStats = new WeaponStats(wd.stats.damage, wd.stats.timeToAttack, wd.stats.size, wd.stats.vectorSize, wd.stats.amount);
     }
 
     public abstract void Attack(); //each weapon has to inherit and implement this method
@@ -66,9 +69,11 @@ public abstract class WeaponBase : MonoBehaviour //weapons base class
             weaponStats.vectorSize = new Vector2(originalAoE.x * character.areaMultiplier, originalAoE.y * character.areaMultiplier);
         if (weaponStats.size != 0)
             weaponStats.size = originalAoEF * character.areaMultiplier;
-         transform.localScale = new Vector2(originalScale.x * character.areaMultiplier, originalScale.y * character.areaMultiplier);
-         weaponStats.damage = originalDamage * character.damageMultiplier;
-         weaponStats.timeToAttack = originalCd * character.cooldownMultiplier;
+        transform.localScale = new Vector2(originalScale.x * character.areaMultiplier, originalScale.y * character.areaMultiplier);
+        weaponStats.damage = originalDamage * character.damageMultiplier;
+        weaponStats.timeToAttack = originalCd * character.cooldownMultiplier;
+        weaponStats.amount = originalAmount + character.amountBonus;
+
     }
 
 
@@ -90,6 +95,7 @@ public abstract class WeaponBase : MonoBehaviour //weapons base class
         this.originalAoEF += upgradeData.weaponUpgradeStats.size;
         this.originalAoE += upgradeData.weaponUpgradeStats.vectorSize;
         this.originalScale = new Vector2(originalScale.x * percentageIncrease, originalScale.y * percentageIncrease);
+        this.originalAmount += upgradeData.weaponUpgradeStats.amount;
         LevelUpUpdate();
     }
 }

@@ -18,5 +18,6 @@ MonoBehaviour:
     timeToAttack: 2
     size: 0
     vectorSize: {x: 3.3, y: 1.7}
+    amount: 1
   weaponBasePrefab: {fileID: 8261066138873244552, guid: 6d9f2681f6212914094faf0115a97eb8, type: 3}
   firstUpgrade: {fileID: 11400000, guid: c7477bae66fc8cf45bbe557c13305d8c, type: 2}

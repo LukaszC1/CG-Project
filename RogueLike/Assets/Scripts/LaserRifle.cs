@@ -8,27 +8,32 @@ public class LaserRifle : WeaponBase
     [SerializeField] GameObject laserPrefab;
 
 
-    private void SpawnKnife()
+    private IEnumerator SpawnKnife()
     {
             //get enemy list somehow to fix the problem
             List<GameObject>  enemies = GetComponentInParent<WeaponManager>().enemiesManager.enemyList;
             
         
-        if (enemies.Count == 0) { return; }
-        GameObject thrownKnife = Instantiate(laserPrefab);
-        Vector3 currentPosition = transform.position;
-        thrownKnife.transform.position = currentPosition;
+        if (enemies.Count == 0) { yield break; }
 
-        Transform closestEnemy = GetClosestEnemy(enemies, currentPosition);
-        Vector3 throwDirection = closestEnemy.position - currentPosition;
+        for (int i = 0; i < weaponStats.amount; i++)
+        {
+            GameObject thrownKnife = Instantiate(laserPrefab);
+            Vector3 currentPosition = transform.position;
+            thrownKnife.transform.position = currentPosition;
 
-        ThrowingDaggerProjectile projectile = thrownKnife.GetComponent<ThrowingDaggerProjectile>();
+            Transform closestEnemy = GetClosestEnemy(enemies, currentPosition);
+            Vector3 throwDirection = closestEnemy.position - currentPosition;
 
-        projectile.setDirection(throwDirection.x, throwDirection.y);
-        projectile.damage = weaponStats.damage;
-        projectile.speed = projectile.speed * character.projectileSpeedMultiplier;
-        projectile.size = weaponStats.size * character.areaMultiplier;
-        projectile.transform.localScale = new Vector2(projectile.transform.localScale.x * transform.localScale.x, projectile.transform.localScale.y * transform.localScale.y);
+            ThrowingDaggerProjectile projectile = thrownKnife.GetComponent<ThrowingDaggerProjectile>();
+
+            projectile.setDirection(throwDirection.x, throwDirection.y);
+            projectile.damage = weaponStats.damage;
+            projectile.speed = projectile.speed * character.projectileSpeedMultiplier;
+            projectile.size = weaponStats.size * character.areaMultiplier;
+            projectile.transform.localScale = new Vector2(projectile.transform.localScale.x * transform.localScale.x, projectile.transform.localScale.y * transform.localScale.y);
+            yield return new WaitForSeconds(0.1f);
+        }
     }
 
     Transform GetClosestEnemy(List<GameObject> enemies, Vector3 currentPosition)
@@ -50,6 +55,6 @@ public class LaserRifle : WeaponBase
 
     public override void Attack()
     {
-        SpawnKnife();
+        StartCoroutine(SpawnKnife());
     }
 }

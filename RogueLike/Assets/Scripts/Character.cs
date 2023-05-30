@@ -12,6 +12,7 @@ public class Character : MonoBehaviour
     public float projectileSpeedMultiplier = 1f;
     public float magnetSize = 1f;
     public float cooldownMultiplier = 1f;
+    public int amountBonus = 0;
 
     private bool playerIsDead = false;
 

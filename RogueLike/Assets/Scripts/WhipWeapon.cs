@@ -7,8 +7,8 @@ using UnityEngine;
 public class WhipWeapon : WeaponBase
 {
   
-    [SerializeField] GameObject rightWhipObject;
-    [SerializeField] GameObject leftWhipObject;
+    [SerializeField] GameObject WhipObject;
+    private Vector2 startPosition;
 
     private void ApplyDamage(Collider2D[] colliders)
     {
@@ -25,18 +25,42 @@ public class WhipWeapon : WeaponBase
 
     public override void Attack()
     {
-     
-        if (playerMove.lastHorizontalVector > 0)
-        {
-            rightWhipObject.SetActive(true);
-            Collider2D[] colliders = Physics2D.OverlapBoxAll(rightWhipObject.transform.position, weaponStats.vectorSize, 0f);
-            ApplyDamage(colliders);
-        }
-        else
-        {
-            leftWhipObject.SetActive(true);
-            Collider2D[] colliders = Physics2D.OverlapBoxAll(leftWhipObject.transform.position, weaponStats.vectorSize, 0f);
-            ApplyDamage(colliders);
+        StartCoroutine(CoroutineAttack());
+    }
+
+    private IEnumerator CoroutineAttack()
+    {
+            startPosition = transform.position;
+            if (playerMove.lastHorizontalVector > 0)
+            {
+                for (int i = 0; i < weaponStats.amount; i++)
+                {
+                    GameObject strike = Instantiate(WhipObject);
+                    strike.transform.position = new Vector2(startPosition.x + 1.5f + i, startPosition.y);
+                    Collider2D[] colliders = Physics2D.OverlapBoxAll(strike.transform.position, weaponStats.vectorSize, 0f);
+                    if (i % 2 == 0)
+                        strike.transform.localScale = new Vector2(strike.transform.localScale.x * transform.localScale.x, strike.transform.localScale.y * transform.localScale.y);
+                    else
+                        strike.transform.localScale = new Vector2(strike.transform.localScale.x * transform.localScale.x, -strike.transform.localScale.y * transform.localScale.y);
+                    ApplyDamage(colliders);
+                    yield return new WaitForSeconds(0.2f);
+                }
+            }
+            else
+            {
+                for (int i = 0; i < weaponStats.amount; i++)
+                {
+                    GameObject strike = Instantiate(WhipObject);
+                    strike.transform.position = new Vector2(startPosition.x - 1.5f - i, startPosition.y);
+                    Collider2D[] colliders = Physics2D.OverlapBoxAll(strike.transform.position, weaponStats.vectorSize, 0f);
+                    if (i % 2 == 0)
+                        strike.transform.localScale = new Vector2(-strike.transform.localScale.x * transform.localScale.x, strike.transform.localScale.y * transform.localScale.y);
+                    else
+                        strike.transform.localScale = new Vector2(-strike.transform.localScale.x * transform.localScale.x, -strike.transform.localScale.y * transform.localScale.y);
+                    ApplyDamage(colliders);
+                    yield return new WaitForSeconds(0.2f);
+                }
+            }
+            
         }
     }
-}
