@@ -3,43 +3,78 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
+[Serializable]
+public class EnemiesSpawnWave
+{
+    public GameObject enemyPrefab;
+    public int amount;
+    public float length;
+
+
+    public EnemiesSpawnWave(GameObject enemyPrefab, int amount, float length)
+    {
+        this.enemyPrefab = enemyPrefab;
+        this.amount = amount;
+        this.length = length;
+    }
+
+}
+
+
 public class EnemiesManager : MonoBehaviour
 {
-    [SerializeField] GameObject enemy;
-    [SerializeField] GameObject enemy2;
     [SerializeField] Vector2 spawnArea;
-    [SerializeField] float spawnTimer;
     [SerializeField] GameObject player;
-    float timer;
     public List<GameObject> enemyList;
 
+    public List<EnemiesSpawnWave> enemiesSpawnWaveList;
 
-    private void Awake()
-    {
-        SpawnEnemy();
-    }
+
     private void Update()
-    {
-        timer -= Time.deltaTime;
-        if (timer < 0f)
-        {
-            SpawnEnemy();
-            timer = spawnTimer;
-        }
+    { 
         enemyList.RemoveAll(x => x == null);
+
+    }
+    private void LateUpdate()
+    {
+        if (Time.timeScale == 1 && enemiesSpawnWaveList.Count > 0)
+            ProcessSpawn();
+    }
+
+    private void ProcessSpawn()
+    {
+        if (enemiesSpawnWaveList == null) { return; }
+
+        for (int i = 0; i < enemiesSpawnWaveList.Count; i++)
+        {
+            enemiesSpawnWaveList[i].length -= Time.deltaTime;
+            while (enemiesSpawnWaveList[i].amount > enemyList.Count)
+            {
+                SpawnEnemy(enemiesSpawnWaveList[UnityEngine.Random.Range(0, enemiesSpawnWaveList.Count)].enemyPrefab);
+            }
+            if (enemiesSpawnWaveList[i].length <= 0)
+                enemiesSpawnWaveList.RemoveAt(i);
+        }
+
+    }
+
+    public void AddWaveToSpawn(GameObject enemyToSpawn, int amount, float length)
+    {
+        EnemiesSpawnWave wave = new EnemiesSpawnWave(enemyToSpawn, amount, length);
+
+        if (enemiesSpawnWaveList == null) { enemiesSpawnWaveList = new List<EnemiesSpawnWave>(); }
+
+        enemiesSpawnWaveList.Add(wave);
     }
 
 
-    private void SpawnEnemy()
+    public void SpawnEnemy(GameObject enemyToSpawn)
     {
         Vector3 position = GenerateRandomPosition();
         position += player.transform.position;
         GameObject newEnemy;
+        newEnemy = Instantiate(enemyToSpawn);
 
-        if (UnityEngine.Random.value > 0.5f)
-            newEnemy = Instantiate(enemy);
-        else
-            newEnemy = Instantiate(enemy2);
 
         newEnemy.transform.position = position;
         newEnemy.GetComponent<Enemy>().SetTarget(player);

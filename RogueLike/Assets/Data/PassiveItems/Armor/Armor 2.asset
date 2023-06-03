@@ -22,8 +22,9 @@ MonoBehaviour:
     timeToAttack: 0
     size: 0
     vectorSize: {x: 0, y: 0}
+    amount: 0
   nextupgrade: {fileID: 11400000, guid: 7c1c6c679a555104d923d7e876f2905c, type: 2}
-  item: {fileID: 0}
+  item: {fileID: 11400000, guid: aef95b7043abbea4888025e22c144269, type: 2}
   itemStats:
     maxHp: 0
     armor: 1
