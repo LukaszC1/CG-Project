@@ -10,19 +10,21 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 1a669253bf985f54ab2ee2aee79629cf, type: 3}
-  m_Name: MoreDamageDagger
+  m_Name: Laser Rifle 1
   m_EditorClassIdentifier: 
   upgradeType: 0
-  upgradeName: MoreDamageDagger
-  upgradeDescription: +15 damage
-  icon: {fileID: 21300000, guid: c92c0a0971f48e74ead4774793c4731b, type: 3}
-  weaponData: {fileID: 11400000, guid: b639c2ef7ce7cc54abb1043a0aa05baf, type: 2}
+  upgradeName: Laser Rifle 1
+  upgradeDescription: Fires 1 more projectile.
+  icon: {fileID: 21300000, guid: 9687b8cba872c4f50aeb3b2b3ff1a0b7, type: 3}
+  weaponData: {fileID: 11400000, guid: d26b7667d87497e448529ce8e39a6dc4, type: 2}
   weaponUpgradeStats:
-    damage: 15
+    damage: 0
     timeToAttack: 0
     size: 0
     vectorSize: {x: 0, y: 0}
-  nextupgrade: {fileID: 11400000, guid: fb4df10a0a6d4334b80cb91edfd60400, type: 2}
+    amount: 1
+    pierce: 0
+  nextupgrade: {fileID: 11400000, guid: 4ad12f50a8a4c5a4c8cd85744e03d650, type: 2}
   item: {fileID: 0}
   itemStats:
     maxHp: 0
@@ -33,3 +35,4 @@ MonoBehaviour:
     projectileSpeedMultiplier: 0
     magnetSize: 0
     cdMultiplier: 0
+    amountBonus: 0

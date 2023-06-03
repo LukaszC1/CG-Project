@@ -6,7 +6,7 @@ public class DropOnDestroy : MonoBehaviour
 {
     [SerializeField] GameObject droppedItem;
     [SerializeField] [Range(0,1)] float chanceToDrop=1f;
-    bool quitting = false;
+    public bool quitting = false;
 
     private void OnApplicationQuit()
     {

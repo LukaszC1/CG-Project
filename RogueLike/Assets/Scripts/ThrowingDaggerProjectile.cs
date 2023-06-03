@@ -8,7 +8,10 @@ public class ThrowingDaggerProjectile : MonoBehaviour
     public float speed;
     public float damage;
     public float size;
+    public int pierce = 1;
     [SerializeField] float decayTime = 10;
+
+    List<iDamageable> damagedEnemies;
 
     public void setDirection(float dirx, float diry)
     {
@@ -16,7 +19,11 @@ public class ThrowingDaggerProjectile : MonoBehaviour
         transform.right = direction;
     }
 
-    bool hitDetected = false;
+    private void Start()
+    {
+        damagedEnemies = new List<iDamageable>();
+    }
+
     // Update is called once per frame
     private void Update()
     {
@@ -32,17 +39,20 @@ public class ThrowingDaggerProjectile : MonoBehaviour
             {
                 iDamageable enemy = collision.GetComponent<iDamageable>();
 
-                if (enemy != null)
+                if (damagedEnemies == null) { damagedEnemies=new List<iDamageable>(); }
+
+                if (enemy != null && !damagedEnemies.Contains(enemy))
                 {
                     enemy.TakeDamage(damage);
                     PostDamage((int)damage, collision.transform.position);
-                    hitDetected = true;
+                    damagedEnemies.Add(enemy);
+                    pierce--;
                     break;
                 }
 
             }
 
-            if (decayTime <= 0 || hitDetected)
+            if (decayTime <= 0 || pierce <= 0)
             {
                 Destroy(gameObject);
             }

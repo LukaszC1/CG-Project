@@ -14,15 +14,17 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   upgradeType: 0
   upgradeName: ForceField 1
-  upgradeDescription: +300% size
+  upgradeDescription: Base Area up by 40%. Base damage up by 2.
   icon: {fileID: 175416731, guid: 979541a49e68e774ba281775e7c356c6, type: 3}
   weaponData: {fileID: 11400000, guid: 260c8100008dfa0469424eda4cbf97e6, type: 2}
   weaponUpgradeStats:
-    damage: 0
+    damage: 2
     timeToAttack: 0
-    size: 3
+    size: 0.1
     vectorSize: {x: 0, y: 0}
-  nextupgrade: {fileID: 0}
+    amount: 0
+    pierce: 0
+  nextupgrade: {fileID: 11400000, guid: d7741a1af0716b447a87df240e6d0f3e, type: 2}
   item: {fileID: 0}
   itemStats:
     maxHp: 0

@@ -58,7 +58,7 @@ public abstract class WeaponBase : MonoBehaviour //weapons base class
     {
         weaponData = wd;
 
-        weaponStats = new WeaponStats(wd.stats.damage, wd.stats.timeToAttack, wd.stats.size, wd.stats.vectorSize, wd.stats.amount);
+        weaponStats = new WeaponStats(wd.stats.damage, wd.stats.timeToAttack, wd.stats.size, wd.stats.vectorSize, wd.stats.amount, wd.stats.pierce);
     }
 
     public abstract void Attack(); //each weapon has to inherit and implement this method
@@ -96,6 +96,7 @@ public abstract class WeaponBase : MonoBehaviour //weapons base class
         this.originalAoE += upgradeData.weaponUpgradeStats.vectorSize;
         this.originalScale = new Vector2(originalScale.x * percentageIncrease, originalScale.y * percentageIncrease);
         this.originalAmount += upgradeData.weaponUpgradeStats.amount;
+        weaponStats.pierce += upgradeData.weaponUpgradeStats.pierce;
         LevelUpUpdate();
     }
 }

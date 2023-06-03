@@ -54,15 +54,20 @@ public class Character : MonoBehaviour
             hpRegenTimer -= 1f;
         }
     }
-    int TO_LEVEL_UP
+    int TO_LEVEL_UP()
     {
-        get { return level * 1000; }
+        if (level <= 20)
+            return 5 + (level - 1) * 10;
+        else if (level > 20 && level <= 40)
+            return 5 + (level - 1) * 13;
+        else
+            return 5 + (level - 1) * 16;
     }
     
     private void Start()
     {
         currentHp = maxHp;
-        experienceBar.UpdateExperienceSlider(experience, TO_LEVEL_UP);
+        experienceBar.UpdateExperienceSlider(experience, TO_LEVEL_UP());
         experienceBar.SetLevelText(level);
         hpBar.SetState(currentHp, maxHp);
         AddUpgradesIntoList(upgradesAvailableOnStart);
@@ -112,13 +117,13 @@ public class Character : MonoBehaviour
     {
         experience += amount;
         CheckLevelUp();
-        experienceBar.UpdateExperienceSlider(experience, TO_LEVEL_UP);
+        experienceBar.UpdateExperienceSlider(experience, TO_LEVEL_UP());
     }
 
 
     public void CheckLevelUp()
     {
-        if (experience >= TO_LEVEL_UP)
+        if (experience >= TO_LEVEL_UP())
         {
             LevelUp();
         }
@@ -133,7 +138,7 @@ public class Character : MonoBehaviour
         if(selectedUpgrades.Count > 0)
         upgradePanelManager.OpenPanel(selectedUpgrades);
 
-        experience -= TO_LEVEL_UP;
+        experience -= TO_LEVEL_UP();
         level += 1;
         experienceBar.SetLevelText(level);
 

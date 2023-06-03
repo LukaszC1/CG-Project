@@ -25,6 +25,8 @@ public class Enemy : MonoBehaviour, iDamageable
     private bool isSlowed = false;
     private bool tookDamage= false;
     private bool takingDamage= false;
+    float maxDistance = 20f;
+    DropOnDestroy dropOnDestroy;
 
     public bool TookDamage { get => tookDamage; set => tookDamage = value; }
 
@@ -32,6 +34,7 @@ public class Enemy : MonoBehaviour, iDamageable
     {
         rgbd2d = GetComponent<Rigidbody2D>();
         sprite = GetComponent<SpriteRenderer>();
+        dropOnDestroy = GetComponent<DropOnDestroy>();
         originalMat = GetComponent<Renderer>().material;
         reverseSpeed = -1 * speed;
         originalSpeed = speed;
@@ -47,6 +50,15 @@ public class Enemy : MonoBehaviour, iDamageable
     {
         Vector3 direction = (targetDestination.position - transform.position).normalized;
         rgbd2d.velocity = direction * speed;
+        float distance = Vector3.Distance(transform.position, targetDestination.position);
+
+        if (distance > maxDistance)
+        {
+            dropOnDestroy.quitting = true;
+            Destroy(gameObject);
+        }
+
+
 
         if (direction.x > 0)
         {

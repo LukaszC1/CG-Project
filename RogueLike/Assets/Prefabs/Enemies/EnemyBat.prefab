@@ -169,9 +169,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: def6cb8ba6c283e43bdb5deca00711eb, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  speed: 2
-  timer: 0
-  timer2: 0
+  speed: 1
   hp: 1
   damage: 1
   whiteMat: {fileID: 2100000, guid: e3265ab4bf004d28a9537516768c1c75, type: 3}

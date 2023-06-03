@@ -28,7 +28,7 @@ Transform:
   m_GameObject: {fileID: 4884365333385668482}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: 0, y: -0.21, z: 0}
-  m_LocalScale: {x: 0.5, y: 0.5, z: 0.5}
+  m_LocalScale: {x: 0.25, y: 0.25, z: 0.25}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 0}
@@ -119,6 +119,17 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 143f87b5ed20ebe4cb87b4836d3fc8c0, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  timeToAttack: 3
-  forceFieldSize: 2
-  forceFieldDamage: 1
+  weaponData: {fileID: 0}
+  weaponStats:
+    damage: 0
+    timeToAttack: 0
+    size: 0
+    vectorSize: {x: 0, y: 0}
+    amount: 0
+  playerMove: {fileID: 0}
+  originalAoE: {x: 0, y: 0}
+  originalScale: {x: 0, y: 0}
+  character: {fileID: 0}
+  originalDamage: 0
+  originalCd: 0
+  originalAmount: 0

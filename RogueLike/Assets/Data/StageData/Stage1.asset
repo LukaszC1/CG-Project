@@ -16,5 +16,35 @@ MonoBehaviour:
   - eventType: 0
     time: 0
     enemyToSpawn: {fileID: 1584743009333388939, guid: 0edda52240ed8a74b95f57a9def43e60, type: 3}
+    amount: 15
+    length: 60
+  - eventType: 0
+    time: 60
+    enemyToSpawn: {fileID: 1584743009333388939, guid: 0edda52240ed8a74b95f57a9def43e60, type: 3}
     amount: 30
     length: 60
+  - eventType: 0
+    time: 60
+    enemyToSpawn: {fileID: 2288361812883503458, guid: adb07d18256fc9a4dadbbdf658a34518, type: 3}
+    amount: 30
+    length: 60
+  - eventType: 0
+    time: 120
+    enemyToSpawn: {fileID: 1584743009333388939, guid: 0edda52240ed8a74b95f57a9def43e60, type: 3}
+    amount: 50
+    length: 60
+  - eventType: 0
+    time: 180
+    enemyToSpawn: {fileID: 2288361812883503458, guid: adb07d18256fc9a4dadbbdf658a34518, type: 3}
+    amount: 40
+    length: 60
+  - eventType: 0
+    time: 240
+    enemyToSpawn: {fileID: 3467931841595559799, guid: 8c221984517684d42906c7b948cd83f8, type: 3}
+    amount: 30
+    length: 60
+  - eventType: 1
+    time: 300
+    enemyToSpawn: {fileID: 0}
+    amount: 0
+    length: 0

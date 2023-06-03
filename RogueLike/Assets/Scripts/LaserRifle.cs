@@ -32,6 +32,7 @@ public class LaserRifle : WeaponBase
             projectile.speed = projectile.speed * character.projectileSpeedMultiplier;
             projectile.size = weaponStats.size * character.areaMultiplier;
             projectile.transform.localScale = new Vector2(projectile.transform.localScale.x * transform.localScale.x, projectile.transform.localScale.y * transform.localScale.y);
+            projectile.pierce = weaponStats.pierce;
             yield return new WaitForSeconds(0.1f);
         }
     }
@@ -42,12 +43,15 @@ public class LaserRifle : WeaponBase
         float closestDistanceSqr = Mathf.Infinity;
         foreach (GameObject potentialTarget in enemies)
         {
-            Vector3 directionToTarget = potentialTarget.transform.position - currentPosition;
-            float dSqrToTarget = directionToTarget.sqrMagnitude;
-            if (dSqrToTarget < closestDistanceSqr)
+            if (potentialTarget != null)
             {
-                closestDistanceSqr = dSqrToTarget;
-                bestTarget = potentialTarget.transform;
+                Vector3 directionToTarget = potentialTarget.transform.position - currentPosition;
+                float dSqrToTarget = directionToTarget.sqrMagnitude;
+                if (dSqrToTarget < closestDistanceSqr)
+                {
+                    closestDistanceSqr = dSqrToTarget;
+                    bestTarget = potentialTarget.transform;
+                }
             }
         }
         return bestTarget;

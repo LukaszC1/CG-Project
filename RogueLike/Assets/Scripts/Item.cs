@@ -14,6 +14,7 @@ public class ItemStats
     public float projectileSpeedMultiplier;
     public int magnetSize;
     public float cdMultiplier;
+    public int amountBonus;
    
 
     internal void Sum(ItemStats stats)
@@ -26,6 +27,7 @@ public class ItemStats
         projectileSpeedMultiplier += stats.projectileSpeedMultiplier;
         magnetSize += stats.magnetSize;
         cdMultiplier -= stats.cdMultiplier;
+        amountBonus += stats.amountBonus;
     }
 }
 
@@ -54,6 +56,7 @@ public class Item : ScriptableObject
         character.projectileSpeedMultiplier += stats.projectileSpeedMultiplier;
         character.magnetSize += stats.magnetSize;
         character.cooldownMultiplier -= stats.cdMultiplier;
+        character.amountBonus += stats.amountBonus;
     }
 
     public void UnEquip(Character character)
@@ -66,6 +69,7 @@ public class Item : ScriptableObject
         character.projectileSpeedMultiplier -= stats.projectileSpeedMultiplier;
         character.magnetSize -= stats.magnetSize;
         character.cooldownMultiplier += stats.cdMultiplier;
+        character.amountBonus -= stats.amountBonus;
     }
 
 

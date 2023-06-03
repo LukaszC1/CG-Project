@@ -10,18 +10,20 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 1a669253bf985f54ab2ee2aee79629cf, type: 3}
-  m_Name: WhipMoreDamage
+  m_Name: Monowire 7
   m_EditorClassIdentifier: 
   upgradeType: 0
-  upgradeName: Monowire Damage
-  upgradeDescription: +10 monowire damage
+  upgradeName: Monowire 7
+  upgradeDescription: 'Base Damage up by 5. '
   icon: {fileID: 21300000, guid: 24c2ca3c010aebd4289eed847624e3b7, type: 3}
   weaponData: {fileID: 11400000, guid: 6cd1bd1bde2faac41ae3804c47f2d660, type: 2}
   weaponUpgradeStats:
-    damage: 10
+    damage: 5
     timeToAttack: 0
     size: 0
     vectorSize: {x: 0, y: 0}
+    amount: 0
+    pierce: 0
   nextupgrade: {fileID: 0}
   item: {fileID: 0}
   itemStats:

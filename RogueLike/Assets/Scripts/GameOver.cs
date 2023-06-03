@@ -5,13 +5,17 @@ using UnityEngine;
 public class GameOver : MonoBehaviour
 {
     public GameObject gameOverPanel;
-    [SerializeField] GameObject weapons;
+
+    PauseManager pauseManager;
+
+    private void Start()
+    {
+        pauseManager = FindObjectOfType<PauseManager>();
+    }
 
     public void PlayerGameOver()
     {
-        Debug.Log("Game over!");
-        GetComponent<PlayerMove>().enabled = false;
         gameOverPanel.SetActive(true);
-        weapons.SetActive(false);
+        pauseManager.PauseGame();
     }
 }
