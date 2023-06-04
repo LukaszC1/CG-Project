@@ -8,17 +8,20 @@ public class DamagePopup : MonoBehaviour
     [SerializeField ]float timeToLive = 1f;
     float ttl = 1f;
     TMPro.TextMeshPro textMeshPro;
+    AudioSource enemyHit;
 
     public bool isActive = false;
 
     private void Awake()
     {
         textMeshPro = GetComponent<TextMeshPro>();
+        enemyHit = GetComponent<AudioSource>();
     }
 
     private void OnEnable()
     {
         ttl = timeToLive;
+        enemyHit.Play();
     }
 
     private void Update()

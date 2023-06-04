@@ -43,6 +43,7 @@ public class WhipWeapon : WeaponBase
                     else
                         strike.transform.localScale = new Vector2(strike.transform.localScale.x * transform.localScale.x, -strike.transform.localScale.y * transform.localScale.y);
                     ApplyDamage(colliders);
+                    weaponSound.Play();
                     yield return new WaitForSeconds(0.2f);
                 }
             }
@@ -58,6 +59,7 @@ public class WhipWeapon : WeaponBase
                     else
                         strike.transform.localScale = new Vector2(-strike.transform.localScale.x * transform.localScale.x, -strike.transform.localScale.y * transform.localScale.y);
                     ApplyDamage(colliders);
+                    weaponSound.Play();
                     yield return new WaitForSeconds(0.2f);
                 }
             }

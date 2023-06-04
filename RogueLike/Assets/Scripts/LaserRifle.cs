@@ -18,6 +18,8 @@ public class LaserRifle : WeaponBase
 
         for (int i = 0; i < weaponStats.amount; i++)
         {
+            weaponSound.Play();
+
             GameObject thrownKnife = Instantiate(laserPrefab);
             Vector3 currentPosition = transform.position;
             thrownKnife.transform.position = currentPosition;

@@ -21,6 +21,7 @@ public class Character : MonoBehaviour
 
     [HideInInspector] public int currentHp = 100;
     [SerializeField] StatusBar hpBar;
+    [SerializeField] AudioSource xpSound;
     int level = 1;
     int experience = 0;
 
@@ -116,6 +117,7 @@ public class Character : MonoBehaviour
     public void AddExperience(int amount)
     {
         experience += amount;
+        xpSound.Play();
         CheckLevelUp();
         experienceBar.UpdateExperienceSlider(experience, TO_LEVEL_UP());
     }

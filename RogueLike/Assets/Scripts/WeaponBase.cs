@@ -16,12 +16,12 @@ public abstract class WeaponBase : MonoBehaviour //weapons base class
     public float originalDamage;
     public float originalCd;
     public int originalAmount;
-
+    public AudioSource weaponSound;
 
     public void Awake()
     {
         playerMove = GetComponentInParent<PlayerMove>();
-
+        weaponSound= GetComponent<AudioSource>();
         character = GetComponentInParent<Character>();
 
     }

@@ -16,6 +16,7 @@ public class ThrowingDagger : WeaponBase
     {
         for (int i = 0; i < weaponStats.amount; i++)
         {
+            weaponSound.Play();
             GameObject thrownKnife = Instantiate(knifePrefab);
             thrownKnife.transform.position = new Vector2(transform.position.x, transform.position.y + UnityEngine.Random.Range(-0.3f, 0.3f));
             ThrowingDaggerProjectile projectile = thrownKnife.GetComponent<ThrowingDaggerProjectile>();
