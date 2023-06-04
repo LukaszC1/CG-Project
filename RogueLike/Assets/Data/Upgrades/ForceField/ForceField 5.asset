@@ -20,7 +20,7 @@ MonoBehaviour:
   weaponUpgradeStats:
     damage: 2
     timeToAttack: 0
-    size: 0.05
+    size: 0.2
     vectorSize: {x: 0, y: 0}
     amount: 0
     pierce: 0
@@ -35,3 +35,4 @@ MonoBehaviour:
     projectileSpeedMultiplier: 0
     magnetSize: 0
     cdMultiplier: 0
+    amountBonus: 0
