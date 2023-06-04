@@ -50,7 +50,16 @@ public class MapController : MonoBehaviour
                 noTerrain = currentChunk.transform.Find("Right").position;
                 ChunkSpawner();
             }
-
+            if (!Physics2D.OverlapCircle(currentChunk.transform.Find("Right Up").position, radius, terrainMask))
+            {
+                noTerrain = currentChunk.transform.Find("Right Up").position;
+                ChunkSpawner();
+            }
+            if (!Physics2D.OverlapCircle(currentChunk.transform.Find("Right Down").position, radius, terrainMask))
+            {
+                noTerrain = currentChunk.transform.Find("Right Down").position;
+                ChunkSpawner();
+            }
         }
 
        else if (movement.movementVector.x < 0 && movement.movementVector.y == 0) //left side
@@ -60,6 +69,17 @@ public class MapController : MonoBehaviour
                 noTerrain = currentChunk.transform.Find("Left").position;
                 ChunkSpawner();
             }
+            if (!Physics2D.OverlapCircle(currentChunk.transform.Find("Left Up").position, radius, terrainMask))
+            {
+                noTerrain = currentChunk.transform.Find("Left Up").position;
+                ChunkSpawner();
+            }
+            if (!Physics2D.OverlapCircle(currentChunk.transform.Find("Left Down").position, radius, terrainMask))
+            {
+                noTerrain = currentChunk.transform.Find("Left Down").position;
+                ChunkSpawner();
+                spawnedChunk.Add(latest);
+            }
 
         }
 
@@ -68,6 +88,16 @@ public class MapController : MonoBehaviour
             if (!Physics2D.OverlapCircle(currentChunk.transform.Find("Up").position, radius, terrainMask))
             {
                 noTerrain = currentChunk.transform.Find("Up").position;
+                ChunkSpawner();
+            }
+            if (!Physics2D.OverlapCircle(currentChunk.transform.Find("Right Up").position, radius, terrainMask))
+            {
+                noTerrain = currentChunk.transform.Find("Right Up").position;
+                ChunkSpawner();
+            }
+            if (!Physics2D.OverlapCircle(currentChunk.transform.Find("Left Up").position, radius, terrainMask))
+            {
+                noTerrain = currentChunk.transform.Find("Left Up").position;
                 ChunkSpawner();
             }
 
@@ -80,41 +110,11 @@ public class MapController : MonoBehaviour
                 noTerrain = currentChunk.transform.Find("Down").position;
                 ChunkSpawner();
             }
-
-        }
-
-        else if (movement.movementVector.x > 0 && movement.movementVector.y > 0) //R up
-        {
-            if (!Physics2D.OverlapCircle(currentChunk.transform.Find("Right Up").position, radius, terrainMask))
-            {
-                noTerrain = currentChunk.transform.Find("Right Up").position;
-                ChunkSpawner();
-            }
-
-        }
-
-        else if (movement.movementVector.x > 0 && movement.movementVector.y < 0) //R down
-        {
             if (!Physics2D.OverlapCircle(currentChunk.transform.Find("Right Down").position, radius, terrainMask))
             {
                 noTerrain = currentChunk.transform.Find("Right Down").position;
                 ChunkSpawner();
             }
-
-        }
-
-        else if (movement.movementVector.x < 0 && movement.movementVector.y > 0) //L up
-        {
-            if (!Physics2D.OverlapCircle(currentChunk.transform.Find("Left Up").position, radius, terrainMask))
-            {
-                noTerrain = currentChunk.transform.Find("Left Up").position;
-                ChunkSpawner();
-            }
-
-        }
-
-        else if (movement.movementVector.x < 0 && movement.movementVector.y < 0) //L down
-        {
             if (!Physics2D.OverlapCircle(currentChunk.transform.Find("Left Down").position, radius, terrainMask))
             {
                 noTerrain = currentChunk.transform.Find("Left Down").position;
@@ -123,6 +123,8 @@ public class MapController : MonoBehaviour
             }
 
         }
+
+
     }
 
     void ChunkSpawner()
