@@ -117,9 +117,17 @@ namespace SlimUI.ModernMenu{
 			}
 		}
 
+		public void Return()
+		{
+			if(playMenu) playMenu.SetActive(false);
+			if(exitMenu) exitMenu.SetActive(false);
+			firstMenu.SetActive(true);
+		}
+
 		public void PlayCampaign(){
 			exitMenu.SetActive(false);
 			if(extrasMenu) extrasMenu.SetActive(false);
+			firstMenu.SetActive(false);
 			playMenu.SetActive(true);
 		}
 		
@@ -237,6 +245,7 @@ namespace SlimUI.ModernMenu{
 		public void AreYouSure(){
 			exitMenu.SetActive(true);
 			if(extrasMenu) extrasMenu.SetActive(false);
+			firstMenu.SetActive(false);
 			DisablePlayCampaign();
 		}
 
