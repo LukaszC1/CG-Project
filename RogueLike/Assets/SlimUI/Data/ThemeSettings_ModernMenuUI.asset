@@ -18,7 +18,7 @@ MonoBehaviour:
       serializedVersion: 2
       rgba: 4294967295
   custom2:
-    graphic2: {r: 0.9056604, g: 0.123033054, b: 0.8397744, a: 1}
+    graphic2: {r: 0.121568635, g: 0.90588236, b: 0.90588236, a: 1}
     text2:
       serializedVersion: 2
       rgba: 4294966499
@@ -27,7 +27,7 @@ MonoBehaviour:
     text3:
       serializedVersion: 2
       rgba: 4293066721
-  currentColor: {r: 1, g: 0.6862745, b: 0, a: 1}
+  currentColor: {r: 0.121568635, g: 0.90588236, b: 0.90588236, a: 1}
   textColor:
     serializedVersion: 2
-    rgba: 4294967295
+    rgba: 4294966499

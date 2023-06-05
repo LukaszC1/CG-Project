@@ -75,6 +75,8 @@ namespace SlimUI.ModernMenu{
 		[Header("SFX")]
         [Tooltip("The GameObject holding the Audio Source component for the HOVER SOUND")]
         public AudioSource hoverSound;
+        [Tooltip("The GameObject holding the Audio Source component for the CLICK SOUND")]
+        public AudioSource clickSound;
         [Tooltip("The GameObject holding the Audio Source component for the AUDIO SLIDER")]
         public AudioSource sliderSound;
         [Tooltip("The GameObject holding the Audio Source component for the SWOOSH SOUND when switching to the Settings Screen")]
@@ -233,7 +235,12 @@ namespace SlimUI.ModernMenu{
 			hoverSound.Play();
 		}
 
-		public void PlaySFXHover(){
+        public void PlayClick()
+        {
+            clickSound.Play();
+        }
+
+        public void PlaySFXHover(){
 			sliderSound.Play();
 		}
 
