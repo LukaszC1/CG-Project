@@ -16,7 +16,7 @@ MonoBehaviour:
   stats:
     damage: 10
     timeToAttack: 1.2
-    size: 0.2
+    size: 0.25
     vectorSize: {x: 0, y: 0}
     amount: 1
     pierce: 1

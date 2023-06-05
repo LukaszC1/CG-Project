@@ -23,6 +23,7 @@ public class Enemy : MonoBehaviour, iDamageable
     Material originalMat;
     private SpriteRenderer sprite;
     private bool isSlowed = false;
+    [HideInInspector]public bool isStunned = false;
     private bool tookDamage= false;
     private bool takingDamage= false;
     float maxDistance = 20f;
@@ -75,15 +76,17 @@ public class Enemy : MonoBehaviour, iDamageable
             GetComponent<Renderer>().material = whiteMat;
             speed = reverseSpeed;
             if (timer2 <= 0)
-            {   
+            {
                 GetComponent<Renderer>().material = originalMat;
                 timer2 = 0.15f;
                 takingDamage = false;
             }
         }
+        else if (isStunned)
+            speed = 0;
         else if (isSlowed)
-            speed = originalSpeed/2;
-        else 
+            speed = originalSpeed / 2;
+        else
             speed = originalSpeed;
 
     }

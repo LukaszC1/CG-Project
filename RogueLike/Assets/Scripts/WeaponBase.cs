@@ -10,7 +10,7 @@ public abstract class WeaponBase : MonoBehaviour //weapons base class
     float timer;
     public PlayerMove playerMove;
     public Vector2 originalAoE;
-    private float originalAoEF;
+    public float originalAoEF;
     public Vector2 originalScale;
     public Character character;
     public float originalDamage;

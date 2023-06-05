@@ -54,7 +54,14 @@ public class Character : MonoBehaviour
             Heal(1);
             hpRegenTimer -= 1f;
         }
+    
     }
+
+    private void FixedUpdate()
+    {
+        CheckLevelUp();
+    }
+
     int TO_LEVEL_UP()
     {
         if (level <= 20)
@@ -118,7 +125,6 @@ public class Character : MonoBehaviour
     {
         experience += amount;
         xpSound.Play();
-        CheckLevelUp();
         experienceBar.UpdateExperienceSlider(experience, TO_LEVEL_UP());
     }
 
@@ -143,6 +149,7 @@ public class Character : MonoBehaviour
         experience -= TO_LEVEL_UP();
         level += 1;
         experienceBar.SetLevelText(level);
+        experienceBar.UpdateExperienceSlider(experience, TO_LEVEL_UP());
 
         magnet.LevelUpUpdate();
        
@@ -192,9 +199,11 @@ public class Character : MonoBehaviour
                 break;
             case UpgradeType.WeaponUnlock:
                 weaponManager.AddWeapon(upgradeData.weaponData);
+                CheckForMaxWeapons();
                 break;
             case UpgradeType.ItemUnlock:
                 passiveItems.Equip(upgradeData.item);
+                CheckForMaxItems();
                 break;
         }
 
@@ -203,6 +212,22 @@ public class Character : MonoBehaviour
 
        
 
+    }
+
+    private void CheckForMaxWeapons()
+    {
+        if(weaponManager.weapons.Count >= 6)
+        {
+            upgrades.RemoveAll(x => x.upgradeType == UpgradeType.WeaponUnlock);
+        }
+    }
+
+    private void CheckForMaxItems()
+    {
+        if (passiveItems.items.Count >= 6)
+        {
+            upgrades.RemoveAll(x => x.upgradeType == UpgradeType.ItemUnlock);
+        }
     }
 
     internal void AddUpgradesIntoList(List<UpgradeData> upgradesToAdd)
