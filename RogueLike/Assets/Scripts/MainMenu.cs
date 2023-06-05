@@ -8,12 +8,13 @@ public class MainMenu : MonoBehaviour
 {
     [SerializeField] GameObject mainMenu;
     PauseManager pauseManager;
-   
+    
         
     
     void Awake()
     {
         pauseManager = GetComponent<PauseManager>();
+        
     }
 
     // Update is called once per frame
