@@ -13,15 +13,17 @@ MonoBehaviour:
   m_Name: Candelabrador 4
   m_EditorClassIdentifier: 
   upgradeType: 1
-  upgradeName: Candelabrador 4
+  upgradeName: Ballistic Coprocessor 4
   upgradeDescription: +20% area
-  icon: {fileID: 21300000, guid: f214d580be15eb4499985668a3229655, type: 3}
+  icon: {fileID: 21300000, guid: 64ad13a8a5f7af6488bc7a1771398c95, type: 3}
   weaponData: {fileID: 0}
   weaponUpgradeStats:
     damage: 0
     timeToAttack: 0
     size: 0
     vectorSize: {x: 0, y: 0}
+    amount: 0
+    pierce: 0
   nextupgrade: {fileID: 0}
   item: {fileID: 11400000, guid: aa06a3406d2ee5946b02f9a12d82aa3c, type: 2}
   itemStats:
@@ -33,3 +35,4 @@ MonoBehaviour:
     projectileSpeedMultiplier: 0
     magnetSize: 0
     cdMultiplier: 0
+    amountBonus: 0

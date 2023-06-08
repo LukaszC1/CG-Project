@@ -13,15 +13,17 @@ MonoBehaviour:
   m_Name: Empty Tome 0
   m_EditorClassIdentifier: 
   upgradeType: 3
-  upgradeName: Empty Tome
+  upgradeName: Upgraded Cyberdeck
   upgradeDescription: -10% cooldown
-  icon: {fileID: 21300000, guid: ba972e622844715409c675cd678efb30, type: 3}
+  icon: {fileID: 21300000, guid: 8390a4821d9b8d34092608fb9b0bdf3d, type: 3}
   weaponData: {fileID: 0}
   weaponUpgradeStats:
     damage: 0
     timeToAttack: 0
     size: 0
     vectorSize: {x: 0, y: 0}
+    amount: 0
+    pierce: 0
   nextupgrade: {fileID: 0}
   item: {fileID: 11400000, guid: fd95e2b4039ecfd45b105f88efaeeddc, type: 2}
   itemStats:
@@ -33,3 +35,4 @@ MonoBehaviour:
     projectileSpeedMultiplier: 0
     magnetSize: 0
     cdMultiplier: 0
+    amountBonus: 0

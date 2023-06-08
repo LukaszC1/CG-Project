@@ -13,15 +13,17 @@ MonoBehaviour:
   m_Name: Armor 0
   m_EditorClassIdentifier: 
   upgradeType: 3
-  upgradeName: 'Armor '
+  upgradeName: Subdermal Armor
   upgradeDescription: +1 armor
-  icon: {fileID: 21300000, guid: 025461d55c46dbe4aa90ae7f6de583e9, type: 3}
+  icon: {fileID: 21300000, guid: 0ed0f90ff8dcce747a857e37e2bd335c, type: 3}
   weaponData: {fileID: 0}
   weaponUpgradeStats:
     damage: 0
     timeToAttack: 0
     size: 0
     vectorSize: {x: 0, y: 0}
+    amount: 0
+    pierce: 0
   nextupgrade: {fileID: 11400000, guid: f55a7a7fbe6c89c4b9d4bbbb9f78443d, type: 2}
   item: {fileID: 11400000, guid: aef95b7043abbea4888025e22c144269, type: 2}
   itemStats:
@@ -33,3 +35,4 @@ MonoBehaviour:
     projectileSpeedMultiplier: 0
     magnetSize: 0
     cdMultiplier: 0
+    amountBonus: 0

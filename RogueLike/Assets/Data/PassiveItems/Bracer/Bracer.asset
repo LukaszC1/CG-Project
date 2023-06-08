@@ -12,7 +12,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 071eb4d59d72bf74aa0d1178f13e4980, type: 3}
   m_Name: Bracer
   m_EditorClassIdentifier: 
-  Name: 
+  Name: Reflex Tuner
   stats:
     maxHp: 0
     armor: 0
@@ -22,4 +22,5 @@ MonoBehaviour:
     projectileSpeedMultiplier: 0.2
     magnetSize: 0
     cdMultiplier: 0
+    amountBonus: 0
   firstUpgrade: {fileID: 11400000, guid: 9a8ddf193e2c1a840ae06a9a31afb166, type: 2}

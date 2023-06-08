@@ -13,15 +13,17 @@ MonoBehaviour:
   m_Name: Bracer 0
   m_EditorClassIdentifier: 
   upgradeType: 3
-  upgradeName: Bracer
+  upgradeName: Reflex Tuner
   upgradeDescription: +20% projectile speed
-  icon: {fileID: 21300000, guid: 1829801de496d4b4eaebad67e8af1343, type: 3}
+  icon: {fileID: 21300000, guid: e04e0b4df4f6b274fb599de7b1dd6dff, type: 3}
   weaponData: {fileID: 0}
   weaponUpgradeStats:
     damage: 0
     timeToAttack: 0
     size: 0
     vectorSize: {x: 0, y: 0}
+    amount: 0
+    pierce: 0
   nextupgrade: {fileID: 0}
   item: {fileID: 11400000, guid: 45b77bb4db3508242892568717c63fef, type: 2}
   itemStats:
@@ -33,3 +35,4 @@ MonoBehaviour:
     projectileSpeedMultiplier: 0
     magnetSize: 0
     cdMultiplier: 0
+    amountBonus: 0

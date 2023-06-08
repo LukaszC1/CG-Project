@@ -13,15 +13,17 @@ MonoBehaviour:
   m_Name: Attractorb 0
   m_EditorClassIdentifier: 
   upgradeType: 3
-  upgradeName: Attractorb
+  upgradeName: Magnetic Field Generator
   upgradeDescription: +1 magnet size
-  icon: {fileID: 21300000, guid: f92aa23797949234eaa3d2baac6ec40f, type: 3}
+  icon: {fileID: 21300000, guid: 2d701e79af243494abe2d20a59621344, type: 3}
   weaponData: {fileID: 0}
   weaponUpgradeStats:
     damage: 0
     timeToAttack: 0
     size: 0
     vectorSize: {x: 0, y: 0}
+    amount: 0
+    pierce: 0
   nextupgrade: {fileID: 11400000, guid: 2cb12a9cba75d5740aa462636f02c9c4, type: 2}
   item: {fileID: 11400000, guid: b3fb3ccc18167f34a82dc5b6d1ad30af, type: 2}
   itemStats:
@@ -33,3 +35,4 @@ MonoBehaviour:
     projectileSpeedMultiplier: 0
     magnetSize: 0
     cdMultiplier: 0
+    amountBonus: 0
