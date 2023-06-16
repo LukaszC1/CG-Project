@@ -15,13 +15,15 @@ MonoBehaviour:
   upgradeType: 2
   upgradeName: 'Force Field '
   upgradeDescription: Unlocks the force field
-  icon: {fileID: 1388183567, guid: 979541a49e68e774ba281775e7c356c6, type: 3}
+  icon: {fileID: 175416731, guid: 979541a49e68e774ba281775e7c356c6, type: 3}
   weaponData: {fileID: 11400000, guid: 260c8100008dfa0469424eda4cbf97e6, type: 2}
   weaponUpgradeStats:
     damage: 0
     timeToAttack: 0
     size: 0
     vectorSize: {x: 0, y: 0}
+    amount: 0
+    pierce: 0
   nextupgrade: {fileID: 0}
   item: {fileID: 0}
   itemStats:
@@ -33,3 +35,4 @@ MonoBehaviour:
     projectileSpeedMultiplier: 0
     magnetSize: 0
     cdMultiplier: 0
+    amountBonus: 0
