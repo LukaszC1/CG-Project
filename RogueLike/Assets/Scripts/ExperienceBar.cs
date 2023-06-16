@@ -8,7 +8,7 @@ public class ExperienceBar : MonoBehaviour
     [SerializeField] Slider slider;
     [SerializeField] TMPro.TextMeshProUGUI levelText;
 
-    public void UpdateExperienceSlider (int current, int target)
+    public void UpdateExperienceSlider (float current, float target)
     {
         slider.maxValue = target;
         slider.value = current;

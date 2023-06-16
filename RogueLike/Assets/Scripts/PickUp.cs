@@ -11,7 +11,6 @@ public class PickUp : MonoBehaviour
         if (c != null)
         {
             GetComponent<iPickUpObject>().OnPickUp(c);
-            Destroy(gameObject);
         }
     }
 

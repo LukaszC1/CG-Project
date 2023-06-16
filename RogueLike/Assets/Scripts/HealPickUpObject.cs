@@ -12,6 +12,7 @@ public class HealPickUpObject : MonoBehaviour, iPickUpObject
     public void OnPickUp(Character character)
     {
         character.Heal(healAmount);
+        Destroy(gameObject);
     }
 
     private void Update()

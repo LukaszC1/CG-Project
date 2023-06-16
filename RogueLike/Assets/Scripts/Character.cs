@@ -22,8 +22,8 @@ public class Character : MonoBehaviour
     [HideInInspector] public int currentHp = 100;
     [SerializeField] StatusBar hpBar;
     [SerializeField] AudioSource xpSound;
-    int level = 1;
-    int experience = 0;
+    [HideInInspector]public int level = 1;
+    float experience = 0;
 
 
     [SerializeField] ExperienceBar experienceBar;
@@ -122,7 +122,7 @@ public class Character : MonoBehaviour
         hpBar.SetState(currentHp, maxHp);
     }
 
-    public void AddExperience(int amount)
+    public void AddExperience(float amount)
     {
         experience += amount;
         xpSound.Play();

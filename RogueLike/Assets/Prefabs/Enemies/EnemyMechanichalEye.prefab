@@ -143,10 +143,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: def6cb8ba6c283e43bdb5deca00711eb, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  speed: 2
-  hp: 150
-  damage: 5
+  speed: 1
+  isBoss: 0
+  hp: 270
+  damage: 2
   whiteMat: {fileID: 2100000, guid: e3265ab4bf004d28a9537516768c1c75, type: 3}
+  isStunned: 0
 --- !u!114 &1628593570443082883
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -159,7 +161,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 6a3c5b0bff38a8e4996b63bad0dc96f9, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  droppedItem: {fileID: 534324648650151031, guid: 5f97faeae853f154db7f64c065ff258d, type: 3}
+  droppedItem: {fileID: 534324648650151031, guid: 42b984cdbd03c3a47bfeabe00c7b978b, type: 3}
   chanceToDrop: 1
   quitting: 0
 --- !u!58 &8854984511585827046
@@ -177,4 +179,4 @@ CircleCollider2D:
   m_UsedByComposite: 0
   m_Offset: {x: 0, y: 0}
   serializedVersion: 2
-  m_Radius: 0.17
+  m_Radius: 0.2

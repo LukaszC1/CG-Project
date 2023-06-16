@@ -9,6 +9,7 @@ public class Enemy : MonoBehaviour, iDamageable
     GameObject targetGameObject;
     Character targetCharacter;
     [SerializeField] public float speed;
+    public bool isBoss;
     private float reverseSpeed;
     private float originalSpeed;
     private float previousSpeed;
@@ -26,7 +27,8 @@ public class Enemy : MonoBehaviour, iDamageable
     [HideInInspector]public bool isStunned = false;
     private bool tookDamage= false;
     private bool takingDamage= false;
-    float maxDistance = 20f;
+    float maxDistance = 30f;
+    float distance;
     DropOnDestroy dropOnDestroy;
 
     public bool TookDamage { get => tookDamage; set => tookDamage = value; }
@@ -41,6 +43,18 @@ public class Enemy : MonoBehaviour, iDamageable
         originalSpeed = speed;
     }
 
+    private void Start()
+    {
+        if (isBoss)
+        {
+            if (targetCharacter == null)
+            {
+                targetCharacter = targetGameObject.GetComponent<Character>();
+            }    
+            hp *= targetCharacter.level;
+        }
+    }
+
     public void SetTarget(GameObject target)
     {
         targetGameObject = target;
@@ -51,12 +65,19 @@ public class Enemy : MonoBehaviour, iDamageable
     {
         Vector3 direction = (targetDestination.position - transform.position).normalized;
         rgbd2d.velocity = direction * speed;
-        float distance = Vector3.Distance(transform.position, targetDestination.position);
+        distance = Vector3.Distance(transform.position, targetDestination.position);
 
         if (distance > maxDistance)
         {
-            dropOnDestroy.quitting = true;
-            Destroy(gameObject);
+            if (isBoss)
+            {
+                transform.position = GameManager.Instance.GenerateRandomPosition();
+            }
+            else
+            {
+                dropOnDestroy.quitting = true;
+                Destroy(gameObject);
+            }
         }
 
 

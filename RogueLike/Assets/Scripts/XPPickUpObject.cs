@@ -4,14 +4,29 @@ using UnityEngine;
 
 public class XPPickUpObject : MonoBehaviour, iPickUpObject
 {
-    [SerializeField] int xpAmount;
+    [SerializeField] float xpAmount;
     private float speed = 2.3f;
     private float speed2 = 3;
     Transform targetDestination;
     private float timer = 0.2f;
+
+
+    private void Start()
+    {
+        if (GameManager.Instance.xpGemAmount >= 300)
+        {
+            GameManager.Instance.xpBank += xpAmount;
+            Destroy(gameObject);
+        }
+        else
+            GameManager.Instance.xpGemAmount++;
+    }
+
     public void OnPickUp(Character character)
     {
         character.AddExperience(xpAmount);
+        GameManager.Instance.xpGemAmount--;
+        Destroy(gameObject);
     }
     private void Update()
     {

@@ -32,11 +32,11 @@ public class DamagePopup : MonoBehaviour
 
             if (ttl > 0.5f)
             {
-                transform.localScale = new Vector3(transform.localScale.x * 1.003f, transform.localScale.y * 1.003f, transform.localScale.z);
+                transform.localScale = new Vector3(transform.localScale.x + Time.deltaTime, transform.localScale.y + Time.deltaTime, transform.localScale.z);
             }
             else if (ttl > 0)
             {
-                transform.localScale = new Vector3(transform.localScale.x * 0.998f, transform.localScale.y * 0.998f, transform.localScale.z);
+                transform.localScale = new Vector3(transform.localScale.x - Time.deltaTime, transform.localScale.y - Time.deltaTime, transform.localScale.z);
                 textMeshPro.alpha *= 0.988f;
             }
             else if (ttl < 0)

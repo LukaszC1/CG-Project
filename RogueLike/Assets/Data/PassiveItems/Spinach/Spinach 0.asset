@@ -14,7 +14,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   upgradeType: 3
   upgradeName: Adrenaline Booster
-  upgradeDescription: +20% damage
+  upgradeDescription: +5% damage
   icon: {fileID: 21300000, guid: c67fb79ba5d675c4dba0db6200614018, type: 3}
   weaponData: {fileID: 0}
   weaponUpgradeStats:

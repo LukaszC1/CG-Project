@@ -14,7 +14,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   upgradeType: 1
   upgradeName: Ballistic Coprocessor 1
-  upgradeDescription: +20% area
+  upgradeDescription: +5% area
   icon: {fileID: 21300000, guid: 64ad13a8a5f7af6488bc7a1771398c95, type: 3}
   weaponData: {fileID: 0}
   weaponUpgradeStats:
@@ -31,7 +31,7 @@ MonoBehaviour:
     armor: 0
     hpRegen: 0
     dmgMultiplier: 0
-    aoeMultiplier: 0.2
+    aoeMultiplier: 0.05
     projectileSpeedMultiplier: 0
     magnetSize: 0
     cdMultiplier: 0

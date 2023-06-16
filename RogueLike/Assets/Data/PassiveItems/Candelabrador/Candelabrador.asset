@@ -18,7 +18,7 @@ MonoBehaviour:
     armor: 0
     hpRegen: 0
     dmgMultiplier: 0
-    aoeMultiplier: 0.2
+    aoeMultiplier: 0.05
     projectileSpeedMultiplier: 0
     magnetSize: 0
     cdMultiplier: 0

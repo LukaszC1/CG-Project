@@ -14,7 +14,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   upgradeType: 3
   upgradeName: Upgraded Cyberdeck
-  upgradeDescription: -10% cooldown
+  upgradeDescription: -5% cooldown
   icon: {fileID: 21300000, guid: 8390a4821d9b8d34092608fb9b0bdf3d, type: 3}
   weaponData: {fileID: 0}
   weaponUpgradeStats:

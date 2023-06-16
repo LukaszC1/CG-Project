@@ -6,6 +6,7 @@ using System;
 
 public enum StageEventType
 {
+    SpawnEnemyWave,
     SpawnEnemy,
     WinStage
 }

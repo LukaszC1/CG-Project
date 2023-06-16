@@ -1,5 +1,5 @@
 fileFormatVersion: 2
-guid: 4738f6a5fa633e34991b75f0f31e11a5
+guid: 262927fe500b7f84ca3cb5b2b82c939c
 TextureImporter:
   internalIDToNameTable: []
   externalObjects: {}
@@ -70,7 +70,7 @@ TextureImporter:
     maxTextureSize: 2048
     resizeAlgorithm: 0
     textureFormat: -1
-    textureCompression: 1
+    textureCompression: 2
     compressionQuality: 50
     crunchedCompression: 0
     allowsAlphaSplitting: 0
@@ -105,55 +105,13 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: tank_sprite_0
-      rect:
-        serializedVersion: 2
-        x: 0
-        y: 1480
-        width: 1480
-        height: 1480
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: 74432a1782f696e46b6af8ff5bdf9f6c
-      internalID: -1769090536
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: tank_sprite_1
-      rect:
-        serializedVersion: 2
-        x: 1480
-        y: 1480
-        width: 1480
-        height: 1480
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: 000f70e9bc2a3ac4c8a993ea63c50bdc
-      internalID: -88157743
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: tank_sprite_2
+      name: cyber-tiger_0
       rect:
         serializedVersion: 2
         x: 0
         y: 0
-        width: 1480
-        height: 1480
+        width: 80
+        height: 48
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -161,20 +119,20 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 4bb0b01a00eb6d94e82ad460bcad1ade
-      internalID: -740872615
+      spriteID: 4a237b1205818364885fb30d853a00aa
+      internalID: -79148588
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: tank_sprite_3
+      name: cyber-tiger_1
       rect:
         serializedVersion: 2
-        x: 1480
+        x: 80
         y: 0
-        width: 1480
-        height: 1480
+        width: 80
+        height: 48
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -182,8 +140,92 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 9c4bd9422e9f4104081e37123826f914
-      internalID: 1495904364
+      spriteID: 0fe393e335b6b1f439d55de50dc64455
+      internalID: -947436844
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: cyber-tiger_2
+      rect:
+        serializedVersion: 2
+        x: 160
+        y: 0
+        width: 80
+        height: 48
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 015fb91682f35874bb7d70c327409dfe
+      internalID: -200503499
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: cyber-tiger_3
+      rect:
+        serializedVersion: 2
+        x: 240
+        y: 0
+        width: 80
+        height: 48
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 992744ffa59399640986e61e71d1ac15
+      internalID: 1387174960
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: cyber-tiger_4
+      rect:
+        serializedVersion: 2
+        x: 320
+        y: 0
+        width: 80
+        height: 48
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: a03456b6f0abdf2458edaa7bc69525c6
+      internalID: 1406719312
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: cyber-tiger_5
+      rect:
+        serializedVersion: 2
+        x: 400
+        y: 0
+        width: 80
+        height: 48
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 5ccd251f1140f804f9665f14710110c3
+      internalID: -391918828
       vertices: []
       indices: 
       edges: []
@@ -199,10 +241,12 @@ TextureImporter:
     weights: []
     secondaryTextures: []
     nameFileIdTable:
-      tank_sprite_0: -1769090536
-      tank_sprite_1: -88157743
-      tank_sprite_2: -740872615
-      tank_sprite_3: 1495904364
+      cyber-tiger_0: -79148588
+      cyber-tiger_1: -947436844
+      cyber-tiger_2: -200503499
+      cyber-tiger_3: 1387174960
+      cyber-tiger_4: 1406719312
+      cyber-tiger_5: -391918828
   spritePackingTag: 
   pSDRemoveMatte: 0
   pSDShowRemoveMatteOption: 0
