@@ -22,9 +22,8 @@ public class WeaponManager : MonoBehaviour
     }
     private void Start()
     {
-        AddWeapon(startingWeapon);
         equipedItemsManager.ReturnWeaponsIcons()[0].Set(startingWeapon.firstUpgrade);
-        
+        AddWeapon(startingWeapon);
     }
     public void AddWeapon(WeaponData weaponData)
     {

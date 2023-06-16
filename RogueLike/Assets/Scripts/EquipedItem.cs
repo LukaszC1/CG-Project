@@ -6,20 +6,18 @@ using TMPro;
 
 public class EquipedItem : MonoBehaviour
 {
-    public Image icon;
+    [SerializeField] public  Image icon;
     [SerializeField] TextMeshProUGUI levelText;
     private int level = 1;
 
     public bool isSet = false;
-    public void Start()
-    {
-        icon = GetComponent<Image>();
-    }
+    
     public void Set(UpgradeData upgradeData)
     {
+        gameObject.SetActive(true);
         isSet = true;
         icon.sprite = upgradeData.icon;
-        gameObject.SetActive(true);
+        
     }
 
     public void Clean()

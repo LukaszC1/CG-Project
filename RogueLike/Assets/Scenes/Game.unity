@@ -13160,7 +13160,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 49dfe6fda699587499429a832e0f3a05, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  icon: {fileID: 0}
+  icon: {fileID: 110936826}
   levelText: {fileID: 994286878}
   isSet: 0
 --- !u!1 &115349825
@@ -13298,7 +13298,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 49dfe6fda699587499429a832e0f3a05, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  icon: {fileID: 0}
+  icon: {fileID: 117263528}
   levelText: {fileID: 1617850541}
   isSet: 0
 --- !u!1 &182606733
@@ -15209,7 +15209,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 49dfe6fda699587499429a832e0f3a05, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  icon: {fileID: 0}
+  icon: {fileID: 387628982}
   levelText: {fileID: 1330060650}
   isSet: 0
 --- !u!1 &414447182
@@ -15437,7 +15437,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 49dfe6fda699587499429a832e0f3a05, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  icon: {fileID: 0}
+  icon: {fileID: 441208476}
   levelText: {fileID: 2029848525}
   isSet: 0
 --- !u!1 &466385473
@@ -15805,7 +15805,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 49dfe6fda699587499429a832e0f3a05, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  icon: {fileID: 0}
+  icon: {fileID: 489481355}
   levelText: {fileID: 1198977866}
   isSet: 0
 --- !u!1 &503964349
@@ -16362,7 +16362,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 49dfe6fda699587499429a832e0f3a05, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  icon: {fileID: 0}
+  icon: {fileID: 574899744}
   levelText: {fileID: 640075982}
   isSet: 0
 --- !u!1 &606707974
@@ -18591,7 +18591,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 49dfe6fda699587499429a832e0f3a05, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  icon: {fileID: 0}
+  icon: {fileID: 733254782}
   levelText: {fileID: 236772441}
   isSet: 0
 --- !u!4 &740618445 stripped
@@ -19895,7 +19895,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 49dfe6fda699587499429a832e0f3a05, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  icon: {fileID: 0}
+  icon: {fileID: 913312714}
   levelText: {fileID: 621643219}
   isSet: 0
 --- !u!1 &913658012
@@ -20989,7 +20989,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 49dfe6fda699587499429a832e0f3a05, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  icon: {fileID: 0}
+  icon: {fileID: 993874470}
   levelText: {fileID: 1372695316}
   isSet: 0
 --- !u!1 &994286876
@@ -25063,7 +25063,7 @@ GameObject:
   - component: {fileID: 1274558554}
   - component: {fileID: 1274558553}
   m_Layer: 5
-  m_Name: Player HUD
+  m_Name: Canvas
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -27349,7 +27349,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 49dfe6fda699587499429a832e0f3a05, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  icon: {fileID: 0}
+  icon: {fileID: 1444644094}
   levelText: {fileID: 42030867}
   isSet: 0
 --- !u!1 &1449630467
@@ -27577,7 +27577,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 49dfe6fda699587499429a832e0f3a05, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  icon: {fileID: 0}
+  icon: {fileID: 1458527385}
   levelText: {fileID: 317824807}
   isSet: 0
 --- !u!4 &1461420925 stripped
@@ -28616,7 +28616,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 49dfe6fda699587499429a832e0f3a05, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  icon: {fileID: 0}
+  icon: {fileID: 1510274132}
   levelText: {fileID: 913658014}
   isSet: 0
 --- !u!1 &1528028618 stripped

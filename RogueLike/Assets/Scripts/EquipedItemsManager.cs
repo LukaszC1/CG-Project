@@ -16,7 +16,7 @@ public class EquipedItemsManager : MonoBehaviour
         }
 
 
-        for (int i = 0; i < equipedWeapons.Count; i++)
+        for (int i = 1; i < equipedWeapons.Count; i++) //skip the first one since it will always be active at the start
         {
             equipedWeapons[i].gameObject.SetActive(false);
         }
