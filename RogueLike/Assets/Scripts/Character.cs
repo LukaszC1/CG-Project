@@ -222,6 +222,20 @@ public class Character : MonoBehaviour
    
 
     }
+    public void UpgradeWeaponPickUp(UpgradeData upgradeData)
+    {
+        List<EquipedItem> iconList = new List<EquipedItem>();
+
+        if (upgradeData.upgradeType == UpgradeType.WeaponUpgrade)
+        {   
+            iconList = equipedItemsManager.ReturnWeaponsIcons();
+        }
+        else
+            iconList = equipedItemsManager.ReturnItemsIcons();
+
+        AddLevel(iconList, upgradeData);
+        weaponManager.UpgradeWeapon(upgradeData);
+    }
 
     private void AddIcon(List<EquipedItem> input, UpgradeData upgradeData)
     {
@@ -275,5 +289,15 @@ public class Character : MonoBehaviour
         if (upgradeToAdd == null) { return; }
 
         upgrades.Add(upgradeToAdd);
+    }
+
+    internal void AcquiredUpgradesAdd(UpgradeData upgrade)
+    {
+        acquiredUpgrades.Add(upgrade);
+    }
+
+    internal void UpgradesRemove(UpgradeData upgrade)
+    {
+        upgrades.Remove(upgrade);
     }
 }
