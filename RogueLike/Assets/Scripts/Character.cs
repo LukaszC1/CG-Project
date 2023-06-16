@@ -28,6 +28,7 @@ public class Character : MonoBehaviour
 
     [SerializeField] ExperienceBar experienceBar;
     [SerializeField] UpgradePanelManager upgradePanelManager;
+    [SerializeField] EquipedItemsManager equipedItemsManager;
     [SerializeField] List<UpgradeData> upgrades;
 
     List<UpgradeData> selectedUpgrades;
@@ -186,6 +187,7 @@ public class Character : MonoBehaviour
     public void Upgrade (int selectedUpgrade)
     {
         UpgradeData upgradeData = selectedUpgrades[selectedUpgrade];
+        List<EquipedItem> iconList = new List<EquipedItem>();
 
        if( acquiredUpgrades == null ) { acquiredUpgrades = new List<UpgradeData>(); }
 
@@ -193,26 +195,58 @@ public class Character : MonoBehaviour
         {
             case UpgradeType.WeaponUpgrade:
                 weaponManager.UpgradeWeapon(upgradeData);
+                iconList = equipedItemsManager.ReturnWeaponsIcons();
+                AddLevel(iconList, upgradeData);
                 break;
             case UpgradeType.ItemUpgrade:
                 passiveItems.UpgradeItem(upgradeData);
+                iconList = equipedItemsManager.ReturnItemsIcons();
+                AddLevel(iconList, upgradeData);
                 break;
             case UpgradeType.WeaponUnlock:
                 weaponManager.AddWeapon(upgradeData.weaponData);
                 CheckForMaxWeapons();
+                iconList = equipedItemsManager.ReturnWeaponsIcons();
+                AddIcon(iconList, upgradeData);
                 break;
             case UpgradeType.ItemUnlock:
                 passiveItems.Equip(upgradeData.item);
                 CheckForMaxItems();
+                iconList = equipedItemsManager.ReturnItemsIcons();
+                AddIcon(iconList, upgradeData);
                 break;
         }
 
-        acquiredUpgrades.Add(upgradeData);
+       acquiredUpgrades.Add(upgradeData);
        upgrades.Remove(upgradeData);
-
-       
+   
 
     }
+
+    private void AddIcon(List<EquipedItem> input, UpgradeData upgradeData)
+    {
+        foreach (var icon in input) //find first empty slot and add the icon
+        {
+            if (icon.isSet != true)
+            {
+                icon.Set(upgradeData);
+                break;
+            }
+        }
+    }
+
+    private void AddLevel(List<EquipedItem> input, UpgradeData upgradeData)
+    {
+        foreach (var icon in input)
+        {
+            if (icon.isSet == true && icon.icon.sprite == upgradeData.icon)
+            {
+                icon.LevelEquipedItem();
+                break;
+            }
+        }
+    }
+
 
     private void CheckForMaxWeapons()
     {

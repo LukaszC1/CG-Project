@@ -12,15 +12,18 @@ public class WeaponManager : MonoBehaviour
 
     [HideInInspector]public List<WeaponBase> weapons;
     Character character;
+    EquipedItemsManager equipedItemsManager;
 
     private void Awake()
     {
         weapons = new List<WeaponBase>();
         character = GetComponent<Character>();
+        equipedItemsManager = FindObjectOfType<EquipedItemsManager>();
     }
     private void Start()
     {
         AddWeapon(startingWeapon);
+        equipedItemsManager.ReturnWeaponsIcons()[0].Set(startingWeapon.firstUpgrade);
         
     }
     public void AddWeapon(WeaponData weaponData)
