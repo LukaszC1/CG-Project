@@ -123,7 +123,8 @@ namespace SlimUI.ModernMenu{
 		{
 			if(playMenu) playMenu.SetActive(false);
 			if(exitMenu) exitMenu.SetActive(false);
-			firstMenu.SetActive(true);
+            if (extrasMenu) extrasMenu.SetActive(false);
+            firstMenu.SetActive(true);
 		}
 
 		public void PlayCampaign(){
@@ -131,6 +132,11 @@ namespace SlimUI.ModernMenu{
 			if(extrasMenu) extrasMenu.SetActive(false);
 			firstMenu.SetActive(false);
 			playMenu.SetActive(true);
+		}
+
+		public void SelectCharacter()
+		{
+			extrasMenu.SetActive(true);
 		}
 		
 		public void PlayCampaignMobile(){
