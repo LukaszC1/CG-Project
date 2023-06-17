@@ -9,7 +9,7 @@ public class PlasmaGrenade : MonoBehaviour
     public float damage;
     public float size;
     public int pierce = 1;
-    [SerializeField] float decayTime = 10;
+    [SerializeField] float decayTime = 100;
     [SerializeField] GameObject plasmaExlposion;
     public Character character;
     public float timeToAttack;
@@ -34,47 +34,46 @@ public class PlasmaGrenade : MonoBehaviour
         transform.Rotate(0.0f, 0.0f, 3, Space.Self);
         //Debug.Log(transform.position);
 
-        if (Time.frameCount % 3 == 0) //save time (check each 6 frames)
-        {
-            decayTime -= Time.deltaTime;
-            Collider2D[] collisions = Physics2D.OverlapCircleAll(transform.position, size);
+    
+         decayTime -= Time.deltaTime;
+         Collider2D[] collisions = Physics2D.OverlapCircleAll(transform.position, size);
 
-            foreach (Collider2D collision in collisions)
-            {
-                iDamageable enemy = collision.GetComponent<iDamageable>();
+         foreach (Collider2D collision in collisions)
+         {
+             iDamageable enemy = collision.GetComponent<iDamageable>();
 
-                if (damagedEnemies == null) { damagedEnemies = new List<iDamageable>(); }
+             if (damagedEnemies == null) { damagedEnemies = new List<iDamageable>(); }
 
-                if (enemy != null && !damagedEnemies.Contains(enemy))
-                {
-                    damagedEnemies.Add(enemy);
-                    pierce--;
-                    GameObject explosion = Instantiate(plasmaExlposion);
-                    Vector3 currentPosition = transform.position;
-                    explosion.transform.position = currentPosition;
-                    explosion.transform.localScale = new Vector2(explosion.transform.localScale.x * transform.localScale.x, explosion.transform.localScale.y * transform.localScale.y);
+             if (enemy != null && !damagedEnemies.Contains(enemy))
+             {
+                 damagedEnemies.Add(enemy);
+                 pierce--;
+                 GameObject explosion = Instantiate(plasmaExlposion);
+                 Vector3 currentPosition = transform.position;
+                 explosion.transform.position = currentPosition;
+                 explosion.transform.localScale = new Vector2(explosion.transform.localScale.x * transform.localScale.x, explosion.transform.localScale.y * transform.localScale.y);
 
-                    Collider2D[] colliders = Physics2D.OverlapCircleAll(explosion.transform.position, size*5);
-                    for (int i = 0; i < colliders.Length; i++)
-                    {
-                        iDamageable e = colliders[i].GetComponent<iDamageable>();
-                        if (e != null)
-                        {
-                            PostDamage((int)damage, colliders[i].transform.position);
-                            e.TakeDamage(damage);
-                        }
-                    }
+                 Collider2D[] colliders = Physics2D.OverlapCircleAll(explosion.transform.position, size*5);
+                 for (int i = 0; i < colliders.Length; i++)
+                 {
+                     iDamageable e = colliders[i].GetComponent<iDamageable>();
+                     if (e != null)
+                     {
+                         PostDamage((int)damage, colliders[i].transform.position);
+                         e.TakeDamage(damage);
+                     }
+                 }
 
-                    break;
-                }
+                 break;
+             }
 
-            }
+         }
 
-            if (decayTime <= 0 || pierce <= 0)
-            {
-                Destroy(gameObject);
-            }
-        }
+         if (decayTime <= 0 || pierce <= 0)
+         {
+             Destroy(gameObject);
+         }
+     
     }
     public void PostDamage(int damage, Vector3 worldPosition)
     {

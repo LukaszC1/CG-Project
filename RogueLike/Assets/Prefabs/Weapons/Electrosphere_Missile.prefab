@@ -101,7 +101,7 @@ MonoBehaviour:
   damage: 0
   size: 0
   pierce: 1
-  decayTime: 10
+  decayTime: 3
   electroSpherePrefab: {fileID: 5396218117999773982, guid: 050edad4da5d309488e83597e0e0a12b, type: 3}
   character: {fileID: 0}
   timeToAttack: 0

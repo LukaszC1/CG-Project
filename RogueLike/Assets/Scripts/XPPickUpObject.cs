@@ -13,7 +13,7 @@ public class XPPickUpObject : MonoBehaviour, iPickUpObject
 
     private void Start()
     {
-        if (GameManager.Instance.xpGemAmount >= 300)
+        if (GameManager.Instance.xpGemAmount >= 400)
         {
             GameManager.Instance.xpBank += xpAmount;
             Destroy(gameObject);

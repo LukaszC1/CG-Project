@@ -101,7 +101,7 @@ MonoBehaviour:
   damage: 0
   size: 0
   pierce: 1
-  decayTime: 10
+  decayTime: 3
   plasmaExlposion: {fileID: 4106367920245705605, guid: 031eccbc9d7ba1f4c987a6ddce5a592a, type: 3}
   character: {fileID: 0}
   timeToAttack: 0

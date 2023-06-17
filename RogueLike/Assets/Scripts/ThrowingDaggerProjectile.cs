@@ -9,7 +9,7 @@ public class ThrowingDaggerProjectile : MonoBehaviour
     public float damage;
     public float size;
     public int pierce = 1;
-    [SerializeField] float decayTime = 10;
+    [SerializeField] float decayTime = 100;
 
     List<iDamageable> damagedEnemies;
 
@@ -30,33 +30,31 @@ public class ThrowingDaggerProjectile : MonoBehaviour
         transform.position += direction.normalized * speed * Time.deltaTime;
         //Debug.Log(transform.position);
 
-        if (Time.frameCount % 6 == 0) //save time (check each 6 frames)
+        decayTime -= Time.deltaTime;
+        Collider2D[] collisions = Physics2D.OverlapCircleAll(transform.position, size);
+
+        foreach (Collider2D collision in collisions)
         {
-            decayTime -= Time.deltaTime;
-            Collider2D[] collisions = Physics2D.OverlapCircleAll(transform.position, size);
+            iDamageable enemy = collision.GetComponent<iDamageable>();
 
-            foreach (Collider2D collision in collisions)
+            if (damagedEnemies == null) { damagedEnemies=new List<iDamageable>(); }
+
+            if (enemy != null && !damagedEnemies.Contains(enemy))
             {
-                iDamageable enemy = collision.GetComponent<iDamageable>();
-
-                if (damagedEnemies == null) { damagedEnemies=new List<iDamageable>(); }
-
-                if (enemy != null && !damagedEnemies.Contains(enemy))
-                {
-                    enemy.TakeDamage(damage);
-                    PostDamage((int)damage, collision.transform.position);
-                    damagedEnemies.Add(enemy);
-                    pierce--;
-                    break;
-                }
-
+                enemy.TakeDamage(damage);
+                PostDamage((int)damage, collision.transform.position);
+                damagedEnemies.Add(enemy);
+                pierce--;
+                break;
             }
 
-            if (decayTime <= 0 || pierce <= 0)
-            {
-                Destroy(gameObject);
-            }
         }
+
+        if (decayTime <= 0 || pierce <= 0)
+        {
+            Destroy(gameObject);
+        }
+   
     }
 
     public void PostDamage(int damage, Vector3 worldPosition)

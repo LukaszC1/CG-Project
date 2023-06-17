@@ -2,7 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class Character : MonoBehaviour
+public abstract class Character : MonoBehaviour
 {
     public int maxHp = 100;
     public int armor = 0;
@@ -14,7 +14,7 @@ public class Character : MonoBehaviour
     public float cooldownMultiplier = 1f;
     public int amountBonus = 0;
 
-    private bool playerIsDead = false;
+    public bool playerIsDead = false;
 
     public float hpRegenTimer;
 
@@ -39,14 +39,14 @@ public class Character : MonoBehaviour
     PassiveItems passiveItems;
     Magnet magnet;
 
-    private void Awake()
+    public void Awake()
     {
         weaponManager = GetComponent<WeaponManager>();
         magnet = GetComponent<Magnet>();
         passiveItems = GetComponent<PassiveItems>();
     }
 
-    private void Update()
+    public void Update()
     {
         hpRegenTimer += Time.deltaTime * hpRegen;
 
@@ -58,7 +58,7 @@ public class Character : MonoBehaviour
     
     }
 
-    private void FixedUpdate()
+    public void FixedUpdate()
     {
         CheckLevelUp();
     }
@@ -72,8 +72,8 @@ public class Character : MonoBehaviour
         else
             return 5 + (level - 1) * 16;
     }
-    
-    private void Start()
+
+    public void Start()
     {
         currentHp = maxHp;
         experienceBar.UpdateExperienceSlider(experience, TO_LEVEL_UP());
@@ -138,7 +138,7 @@ public class Character : MonoBehaviour
         }
     }
 
-    private void LevelUp()
+    public void LevelUp()
     {
         if(selectedUpgrades == null) { selectedUpgrades = new List<UpgradeData>(); }
         selectedUpgrades.Clear();
@@ -153,7 +153,8 @@ public class Character : MonoBehaviour
         experienceBar.UpdateExperienceSlider(experience, TO_LEVEL_UP());
 
         magnet.LevelUpUpdate();
-       
+
+        LevelUpBonus();
         updateWeapons();
     }
 
@@ -237,7 +238,7 @@ public class Character : MonoBehaviour
         weaponManager.UpgradeWeapon(upgradeData);
     }
 
-    private void AddIcon(List<EquipedItem> input, UpgradeData upgradeData)
+    public void AddIcon(List<EquipedItem> input, UpgradeData upgradeData)
     {
         foreach (var icon in input) //find first empty slot and add the icon
         {
@@ -249,7 +250,7 @@ public class Character : MonoBehaviour
         }
     }
 
-    private void AddLevel(List<EquipedItem> input, UpgradeData upgradeData)
+    public void AddLevel(List<EquipedItem> input, UpgradeData upgradeData)
     {
         foreach (var icon in input)
         {
@@ -262,7 +263,7 @@ public class Character : MonoBehaviour
     }
 
 
-    private void CheckForMaxWeapons()
+    public void CheckForMaxWeapons()
     {
         if(weaponManager.weapons.Count >= 6)
         {
@@ -270,7 +271,7 @@ public class Character : MonoBehaviour
         }
     }
 
-    private void CheckForMaxItems()
+    public void CheckForMaxItems()
     {
         if (passiveItems.items.Count >= 6)
         {
@@ -300,4 +301,6 @@ public class Character : MonoBehaviour
     {
         upgrades.Remove(upgrade);
     }
+
+    public abstract void LevelUpBonus();
 }

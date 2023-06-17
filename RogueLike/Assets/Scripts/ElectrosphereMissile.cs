@@ -9,7 +9,7 @@ public class ElectrosphereMissile : MonoBehaviour
     public float damage;
     public float size;
     public int pierce = 1;
-    [SerializeField] float decayTime = 10;
+    [SerializeField] float decayTime = 100;
     [SerializeField] GameObject electroSpherePrefab;
     public Character character;
     public float timeToAttack;
@@ -33,40 +33,39 @@ public class ElectrosphereMissile : MonoBehaviour
         transform.position += direction.normalized * speed * Time.deltaTime;
         //Debug.Log(transform.position);
 
-        if (Time.frameCount % 3 == 0) //save time (check each 6 frames)
+    
+        decayTime -= Time.deltaTime;
+        Collider2D[] collisions = Physics2D.OverlapCircleAll(transform.position, size);
+
+        foreach (Collider2D collision in collisions)
         {
-            decayTime -= Time.deltaTime;
-            Collider2D[] collisions = Physics2D.OverlapCircleAll(transform.position, size);
+            iDamageable enemy = collision.GetComponent<iDamageable>();
 
-            foreach (Collider2D collision in collisions)
+            if (damagedEnemies == null) { damagedEnemies = new List<iDamageable>(); }
+
+            if (enemy != null && !damagedEnemies.Contains(enemy))
             {
-                iDamageable enemy = collision.GetComponent<iDamageable>();
+                damagedEnemies.Add(enemy);
+                pierce--;
+                GameObject electroSphere = Instantiate(electroSpherePrefab);
+                Vector3 currentPosition = transform.position;
+                electroSphere.transform.position = currentPosition;
 
-                if (damagedEnemies == null) { damagedEnemies = new List<iDamageable>(); }
+                ElectroSphere field = electroSphere.GetComponent<ElectroSphere>();
 
-                if (enemy != null && !damagedEnemies.Contains(enemy))
-                {
-                    damagedEnemies.Add(enemy);
-                    pierce--;
-                    GameObject electroSphere = Instantiate(electroSpherePrefab);
-                    Vector3 currentPosition = transform.position;
-                    electroSphere.transform.position = currentPosition;
-
-                    ElectroSphere field = electroSphere.GetComponent<ElectroSphere>();
-
-                    field.damage = damage;
-                    field.size = size * 5;
-                    field.transform.localScale = new Vector2(field.transform.localScale.x * transform.localScale.x, field.transform.localScale.y * transform.localScale.y);
-                    field.timeToAttack = timeToAttack * 0.25f;
-                    break;
-                }
-
+                field.damage = damage;
+                field.size = size * 5;
+                field.transform.localScale = new Vector2(field.transform.localScale.x * transform.localScale.x, field.transform.localScale.y * transform.localScale.y);
+                field.timeToAttack = timeToAttack * 0.25f;
+                break;
             }
 
-            if (decayTime <= 0 || pierce <= 0)
-            {
-                Destroy(gameObject);
-            }
         }
+
+        if (decayTime <= 0 || pierce <= 0)
+        {
+            Destroy(gameObject);
+        }
+    
     }
 }

@@ -100,7 +100,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   speed: 10
   damage: 1.5
-  decayTime: 0.3
+  size: 0
+  pierce: 1
+  decayTime: 3
 --- !u!95 &6946472944796526964
 Animator:
   serializedVersion: 5
