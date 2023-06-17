@@ -30,6 +30,8 @@ public class Enemy : MonoBehaviour, iDamageable
     float maxDistance = 30f;
     float distance;
     DropOnDestroy dropOnDestroy;
+    private float dissolveAmount = 1;
+    private bool isDying=false;
 
     public bool TookDamage { get => tookDamage; set => tookDamage = value; }
 
@@ -77,6 +79,7 @@ public class Enemy : MonoBehaviour, iDamageable
             {
                 dropOnDestroy.quitting = true;
                 Destroy(gameObject);
+                GetComponent<DropOnDestroy>().CheckDrop();
             }
         }
 
@@ -91,7 +94,18 @@ public class Enemy : MonoBehaviour, iDamageable
             sprite.flipX = true;
         }
 
-        if (takingDamage)
+
+        if (isDying)
+        {
+            dissolveAmount -= Time.deltaTime*1.5f;
+            GetComponent<Renderer>().material.SetFloat("_Dissolve_Amount", dissolveAmount);
+            if (dissolveAmount < 0)
+            {
+                Destroy(gameObject);
+
+            }
+        }
+        else if (takingDamage)
         {
             timer2 -= Time.deltaTime;
             GetComponent<Renderer>().material = whiteMat;
@@ -137,6 +151,7 @@ public class Enemy : MonoBehaviour, iDamageable
         {
             targetCharacter = targetGameObject.GetComponent<Character>();
         }
+        if(!isDying)
         targetCharacter.TakeDamage(damage);
     }
 
@@ -150,8 +165,11 @@ public class Enemy : MonoBehaviour, iDamageable
 
         if (hp<= 0)
         {
-            Destroy(gameObject);
             GetComponent<DropOnDestroy>().CheckDrop();
+            GetComponent<Renderer>().material = originalMat;
+            isDying = true;
+            rgbd2d.simulated=false;
+            speed = 0;
         }
     }
 

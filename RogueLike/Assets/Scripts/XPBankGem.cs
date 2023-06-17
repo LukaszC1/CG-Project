@@ -17,6 +17,9 @@ public class XPBankGem : MonoBehaviour, iPickUpObject
         GameManager.Instance.xpBank = 0;
         gameObject.SetActive(false);
         targetDestination = null;
+        speed = 2.3f;
+        speed2 = 3;
+        timer = 0.2f;
     }
     private void Update()
     {
