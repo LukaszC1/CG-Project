@@ -24,8 +24,8 @@ public class LaserRifle : WeaponBase
             Vector3 currentPosition = transform.position;
             thrownKnife.transform.position = currentPosition;
 
-            Transform closestEnemy = GetClosestEnemy(enemies, currentPosition);
-            Vector3 throwDirection = closestEnemy.position - currentPosition;
+            Vector3 closestEnemy = GetClosestEnemy(enemies, currentPosition);
+            Vector3 throwDirection = closestEnemy - currentPosition;
 
             ThrowingDaggerProjectile projectile = thrownKnife.GetComponent<ThrowingDaggerProjectile>();
 
@@ -39,7 +39,7 @@ public class LaserRifle : WeaponBase
         }
     }
 
-    Transform GetClosestEnemy(List<GameObject> enemies, Vector3 currentPosition)
+    Vector3 GetClosestEnemy(List<GameObject> enemies, Vector3 currentPosition)
     {
         Transform bestTarget = null;
         float closestDistanceSqr = Mathf.Infinity;
@@ -56,7 +56,7 @@ public class LaserRifle : WeaponBase
                 }
             }
         }
-        return bestTarget;
+        return bestTarget.position;
     }
 
     public override void Attack()

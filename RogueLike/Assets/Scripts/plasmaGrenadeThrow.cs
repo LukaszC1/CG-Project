@@ -27,10 +27,10 @@ public class plasmaGrenadeThrow : WeaponBase
             Vector3 currentPosition = transform.position;
             grenade.transform.position = currentPosition;
 
-            Transform randomEnemy = enemies[UnityEngine.Random.Range(0, enemies.Count - 1)].transform;
+            Vector3 randomEnemy = enemies[UnityEngine.Random.Range(0, enemies.Count - 1)].transform.position;
             if (randomEnemy == null) { yield break; }
             
-            Vector3 throwDirection = randomEnemy.position - currentPosition;
+            Vector3 throwDirection = randomEnemy - currentPosition;
 
             PlasmaGrenade projectile = grenade.GetComponent<PlasmaGrenade>();
 

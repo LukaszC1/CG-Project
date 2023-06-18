@@ -23,9 +23,9 @@ public class Quickhack : WeaponBase
         {
             GameObject hack = Instantiate(hackAnim);
 
-            Transform randomEnemy = enemies[UnityEngine.Random.Range(0, enemies.Count - 1)].transform;
+            Vector3 randomEnemy = enemies[UnityEngine.Random.Range(0, enemies.Count - 1)].transform.position;
             if (randomEnemy == null) { yield break; }
-            hack.transform.position = randomEnemy.position;
+            hack.transform.position = randomEnemy;
             hack.transform.localScale = new Vector2(hack.transform.localScale.x * transform.localScale.x, hack.transform.localScale.y * transform.localScale.y);
 
             Collider2D[] colliders = Physics2D.OverlapCircleAll(hack.transform.position, weaponStats.size);

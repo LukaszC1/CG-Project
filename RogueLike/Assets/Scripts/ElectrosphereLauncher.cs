@@ -27,9 +27,9 @@ public class ElectrosphereLauncher : WeaponBase
             Vector3 currentPosition = transform.position;
             missile.transform.position = currentPosition;
 
-            Transform randomEnemy = enemies[UnityEngine.Random.Range(0, enemies.Count - 1)].transform;
+            Vector3 randomEnemy = enemies[UnityEngine.Random.Range(0, enemies.Count - 1)].transform.position;
             if (randomEnemy == null) { yield break; }
-            Vector3 throwDirection = randomEnemy.position - currentPosition;
+            Vector3 throwDirection = randomEnemy - currentPosition;
 
             ElectrosphereMissile projectile = missile.GetComponent<ElectrosphereMissile>();
 
