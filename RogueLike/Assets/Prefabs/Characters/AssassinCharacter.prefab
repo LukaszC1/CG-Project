@@ -378,7 +378,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   maxHp: 100
   armor: 0
-  hpRegen: 1
+  hpRegen: 0.2
   damageMultiplier: 1
   areaMultiplier: 1
   projectileSpeedMultiplier: 1
@@ -397,6 +397,7 @@ MonoBehaviour:
   upgrades: []
   acquiredUpgrades: []
   upgradesAvailableOnStart: []
+  magnet: {fileID: 0}
 --- !u!114 &8739416109410436645
 MonoBehaviour:
   m_ObjectHideFlags: 0

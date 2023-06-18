@@ -30477,7 +30477,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 10f54df1ccaca4a4eaccaa7a810ce056, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  spawnArea: {x: 23, y: 8}
+  spawnArea: {x: 17, y: 8}
   player: {fileID: 2004637402815506619}
   enemyList: []
   enemiesSpawnWaveList: []
@@ -32936,6 +32936,7 @@ MonoBehaviour:
   xpBank: 0
   playerTransform: {fileID: 2004637402815506622}
   xpBankGemPrefab: {fileID: 534324648650151031, guid: 469d2eb911e52014594fa30e525cadb6, type: 3}
+  breakableObject: {fileID: 2462822473757790693, guid: fd63d3fef49e1d8468867662f36113fd, type: 3}
 --- !u!114 &1951896867
 MonoBehaviour:
   m_ObjectHideFlags: 0

@@ -39,7 +39,7 @@ Material:
         m_Offset: {x: 0, y: 0}
     m_Ints: []
     m_Floats:
-    - Vector1_450D3E32: 50
+    - Vector1_450D3E32: 30
     - Vector1_E974001A: 1
     - _Dissolve_Amount: 1
     m_Colors:

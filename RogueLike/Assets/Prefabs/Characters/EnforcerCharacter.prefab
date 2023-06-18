@@ -58,7 +58,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   maxHp: 100
   armor: 0
-  hpRegen: 1
+  hpRegen: 0.2
   damageMultiplier: 1
   areaMultiplier: 1
   projectileSpeedMultiplier: 1
@@ -90,6 +90,7 @@ MonoBehaviour:
   - {fileID: 11400000, guid: 60e6def6de7e3d24f80f182f65d36e87, type: 2}
   - {fileID: 11400000, guid: f13e00ef8f6ba7643a0f9704df16d732, type: 2}
   - {fileID: 11400000, guid: 270778dd31864244ba4e4278bedea0f7, type: 2}
+  magnet: {fileID: 0}
 --- !u!114 &6437405970386591926
 MonoBehaviour:
   m_ObjectHideFlags: 0

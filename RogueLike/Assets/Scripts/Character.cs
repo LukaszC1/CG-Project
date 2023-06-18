@@ -37,7 +37,7 @@ public abstract class Character : MonoBehaviour
     
     WeaponManager weaponManager;
     PassiveItems passiveItems;
-    Magnet magnet;
+    [HideInInspector]public Magnet magnet;
 
     public void Awake()
     {

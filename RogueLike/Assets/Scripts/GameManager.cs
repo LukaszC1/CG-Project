@@ -8,9 +8,13 @@ public class GameManager : MonoBehaviour
     public int xpGemAmount;
     public float xpBank;
     public Transform playerTransform;
+    private float timer = 1;
+
 
     [SerializeField] GameObject xpBankGemPrefab;
     GameObject xpBankGem;
+
+    [SerializeField] GameObject breakableObject;
 
     private void Awake()
     {
@@ -21,6 +25,21 @@ public class GameManager : MonoBehaviour
 
     private void Update()
     {
+        timer -= Time.deltaTime;
+        if (timer < 0)
+        {
+            if (UnityEngine.Random.value <= 0.1)
+            {
+                GameObject breakable = Instantiate(breakableObject);
+                Vector3 position = GenerateRandomPosition();
+                while(CheckForCollision(position))
+                    position = GenerateRandomPosition();
+                breakable.transform.position = position;
+            }
+            timer = 1;
+        }
+
+
         if (xpBank > 100 && !xpBankGem.activeSelf)
         {
             xpBankGem.SetActive(true);
@@ -29,7 +48,6 @@ public class GameManager : MonoBehaviour
                 position = GenerateRandomPosition();
             xpBankGem.transform.position = position;   
         }
-
     }
 
     public Vector3 GenerateRandomPosition()
@@ -40,13 +58,13 @@ public class GameManager : MonoBehaviour
 
         if (UnityEngine.Random.value > 0.5f)
         {
-            position.x = UnityEngine.Random.Range(-23, 8);
+            position.x = UnityEngine.Random.Range(-17, 8);
             position.y = 8 * f;
         }
         else
         {
-            position.y = UnityEngine.Random.Range(-23, 8);
-            position.x = 23 * f;
+            position.y = UnityEngine.Random.Range(-17, 8);
+            position.x = 17 * f;
         }
         position.x += playerTransform.position.x;
         position.y += playerTransform.position.y;

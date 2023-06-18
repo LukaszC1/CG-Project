@@ -102,7 +102,6 @@ public class Enemy : MonoBehaviour, iDamageable
             if (dissolveAmount < 0)
             {
                 Destroy(gameObject);
-
             }
         }
         else if (takingDamage)

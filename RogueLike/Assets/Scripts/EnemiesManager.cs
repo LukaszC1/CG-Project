@@ -71,7 +71,8 @@ public class EnemiesManager : MonoBehaviour
     public void SpawnEnemy(GameObject enemyToSpawn)
     {
         Vector3 position = GenerateRandomPosition();
-        position += player.transform.position;
+        while (CheckForCollision(position))
+            position = GenerateRandomPosition();
         GameObject newEnemy;
         newEnemy = Instantiate(enemyToSpawn);
 
@@ -98,8 +99,22 @@ public class EnemiesManager : MonoBehaviour
             position.y = UnityEngine.Random.Range(-spawnArea.y, spawnArea.y);
             position.x = spawnArea.x * f;
         }
+        position.x += player.transform.position.x;
+        position.y += player.transform.position.y;
         position.z = 0;
 
         return position;
+    }
+    private bool CheckForCollision(Vector3 position)
+    {
+        Collider2D[] collisions = Physics2D.OverlapCircleAll(position, 0.1f);
+        foreach (Collider2D collision in collisions)
+        {
+            if (collision.attachedRigidbody != null)
+            {
+                return true;
+            }
+        }
+        return false;
     }
 }
