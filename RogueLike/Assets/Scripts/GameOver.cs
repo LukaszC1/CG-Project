@@ -5,6 +5,7 @@ using UnityEngine;
 public class GameOver : MonoBehaviour
 {
     public GameObject gameOverPanel;
+    public GameObject equipedItemsPanel;
 
     PauseManager pauseManager;
 
@@ -15,6 +16,7 @@ public class GameOver : MonoBehaviour
 
     public void PlayerGameOver()
     {
+        equipedItemsPanel.SetActive(false);
         gameOverPanel.SetActive(true);
         pauseManager.PauseGame();
     }
