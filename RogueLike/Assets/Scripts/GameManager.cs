@@ -82,7 +82,7 @@ public class GameManager : MonoBehaviour
         Collider2D[] collisions = Physics2D.OverlapCircleAll(position, 0.1f);
         foreach (Collider2D collision in collisions)
         {
-            if (collision.attachedRigidbody != null)
+            if (collision.transform.name == "buildings")
             {
                 return true;
             }
