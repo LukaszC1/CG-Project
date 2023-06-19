@@ -30300,7 +30300,7 @@ MonoBehaviour:
   - {fileID: 8479770238918095465, guid: 6ccd9235c5d747947abd73d53dd3ddd7, type: 3}
   currentChunk: {fileID: 0}
   player: {fileID: 3659827454534628241}
-  radius: 0.01
+  radius: 1
   terrainMask:
     serializedVersion: 2
     m_Bits: 64
