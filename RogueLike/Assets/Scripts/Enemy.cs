@@ -169,6 +169,7 @@ public class Enemy : MonoBehaviour, iDamageable
             isDying = true;
             rgbd2d.simulated=false;
             speed = 0;
+            GameManager.Instance.IncrementKillCount();
         }
     }
 

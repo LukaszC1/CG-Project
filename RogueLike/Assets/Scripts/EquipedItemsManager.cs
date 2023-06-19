@@ -9,7 +9,7 @@ public class EquipedItemsManager : MonoBehaviour
 
     public void Start()
     {
-        //disable the visibility of the fields
+        /*//disable the visibility of the fields
         for (int i = 0; i < equipedItems.Count; i++)
         {
             equipedItems[i].gameObject.SetActive(false);
@@ -19,7 +19,7 @@ public class EquipedItemsManager : MonoBehaviour
         for (int i = 1; i < equipedWeapons.Count; i++) //skip the first one since it will always be active at the start
         {
             equipedWeapons[i].gameObject.SetActive(false);
-        }
+        }*/
     }
 
     public List<EquipedItem> ReturnItemsIcons()

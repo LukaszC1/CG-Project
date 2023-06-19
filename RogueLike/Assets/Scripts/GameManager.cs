@@ -5,11 +5,15 @@ using UnityEngine;
 public class GameManager : MonoBehaviour
 {
     public static GameManager Instance;
-    public int xpGemAmount;
-    public float xpBank;
+
+    [HideInInspector] public int xpGemAmount;
+    [HideInInspector] public float xpBank;
+
     public Transform playerTransform;
     private float timer = 1;
 
+    [HideInInspector] public int killCount = 0;
+    [SerializeField] TMPro.TextMeshProUGUI killCounter;
 
     [SerializeField] GameObject xpBankGemPrefab;
     GameObject xpBankGem;
@@ -84,5 +88,11 @@ public class GameManager : MonoBehaviour
             }
         }
         return false;
+    }
+
+    public void IncrementKillCount()
+    {
+        killCount++;
+        killCounter.text = ":" + killCount.ToString();
     }
 }
